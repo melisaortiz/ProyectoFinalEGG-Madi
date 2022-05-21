@@ -1,0 +1,83 @@
+<nav id="cabecera" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/inicio"><span id="nav-title"> Madí ART</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-dark" id="navbarNavAltMarkup">
+            <!--NAVBAR ADMIN-->
+            <div sec:authorize="hasRole('ADMIN')" class="navbar-nav">
+                <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Libros
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="nav-link" href="/admin/libros/admin-libros">Gestionar</a>
+                        <a class="nav-link" href="/admin/autores/admin-autores">Autores</a>
+                        <a class="nav-link" href="/admin/editoriales/admin-editoriales">Editoriales</a>
+                    </div>
+                </li>
+                <a class="nav-link" href="/admin/prestamos/admin-prestamos">Préstamos</a>
+            </div>
+            <!--NAVBAR USUARIO-->
+            <div sec:authorize="hasRole('USUARIO')" class="navbar-nav">
+                <a class="nav-link" th:href="@{/prestamos/admin-prestamos-usuario/__${session.usuariosession.id}__}">Mis Préstamos</a>
+            </div>
+            <!--NAVBAR EN COMÚN
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link date-time">
+                    <i class="bi bi-calendar3"> </i><span id="datetime"></span>
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+                    </script>
+                </a>
+                <a class="nav-link date-time">
+                    <i class="bi bi-clock"> </i> <span id="HoraActual"></span>
+                    <script type="text/javascript">
+                        showTime();
+
+                        function showTime() {
+                        myDate = new Date();
+                        hours = myDate.getHours();
+                        minutes = myDate.getMinutes();
+                        seconds = myDate.getSeconds();
+                        if (hours < 10) hours = 0 + hours;
+
+                        if (minutes < 10) minutes = "0" + minutes;
+
+                        if (seconds < 10) seconds = "0" + seconds;
+
+                        $("#HoraActual").text(hours + ":" + minutes + ":" + seconds);
+                        setTimeout("showTime()", 1000);
+                        }
+                    </script>
+                </a>
+            </div>-->
+            <div sec:authorize="hasAnyRole('ADMIN','USUARIO')" class="navbar-nav">    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                        <i class="bi bi-gear" text="Opciones"></i>
+                    </a>
+                    <div class="dropdown-menu bg-dark dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+                        <a class="nav-link" th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.id}__)}"><i class="bi bi-pencil-square"></i> Configurar perfil</a>
+                        <a class="nav-link" href="/logout"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </div>
+            <!--BOTÓN DE REGISTRO
+            <div th:if="${session.usuariosession} == null">
+                <button class="btn btn-warning btn-sm" id="btn-register" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+                    ¡Regístrate!
+                </button>
+            </div>-->
+        </div>
+    </div>
+</nav>
+<!--Código para agregar en cada plantilla-->
+<!--NAVIGATION-->
+<!--
+<nav th:replace="/fragments/navbar :: nav"></nav>
+-->
