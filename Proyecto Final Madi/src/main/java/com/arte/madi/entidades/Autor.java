@@ -20,8 +20,8 @@ public class Autor {
     private String id;
     private String nombre;
     private boolean alta;
-    private String apellido;
     private String descripcion;
+    
     
     /**
      * @return the id
