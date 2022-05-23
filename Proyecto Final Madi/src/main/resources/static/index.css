@@ -1,0 +1,306 @@
+@@ -0,0 +1,305 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    font-size: 10px;
+}
+
+nav ul{
+    float: left;
+    margin: 0px 0px;
+    padding: 0px 8px;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 2px;
+}
+
+nav a.nav-link{
+    color: white;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+a.nav-link:hover{
+    color: green;
+}
+
+
+img#logo{
+    width: 10%;
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    display: inline-block;
+}
+
+nav #icon{
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 1048px){
+    label.logo{
+        font-size: 32px;
+        padding-right: 60px;
+    }
+    nav ul{
+        margin-left: 20px;
+        
+    }
+    nav a{
+        font-size: 10px;
+    }
+}
+@media (max-width: 909px){
+    nav #icon{
+        font-size: 20px;
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: rgb(70, 70, 70);
+        margin: 0%;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+    }
+    nav li{
+        display: block;
+        margin: 30px 0px;
+        line-height: 15px;
+    }
+    nav a{
+        font-size: 10px;
+    }
+    nav ul.show{
+        left: 0;
+    }
+}
+
+.carousel {
+    width: 900px;
+    height: 350px;
+    left: 120px;
+    margin-top: 100px;
+}
+
+.d-block.w-100 {
+    width: 500px;
+    height: 350px;
+}
+
+.carousel-inner button {
+    float: right;
+}
+
+ol {
+    list-style-type: circle;
+}
+
+#carousel2-list {
+    top: 30px;
+    text-align: left;
+}
+
+.carousel-item li {
+    font-size: small;
+}
+
+#carousel2 {
+    max-width: 100%;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+}
+
+
+.grid {
+    padding: 10%;
+    padding-left: 25%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+   
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery:nth-child(3) {
+    grid-column-start: span 2;
+    /*Le indicamos a esa imagen que ocupe 2 columnas*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+  }
+
+  footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #111;
+  }
+
+  footer .content{
+    max-width: 1700px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer .content p,a{
+    color: #fff;
+  }
+  footer .content .box{
+    width: 33%;
+    transition: all 0.4s ease;
+  }
+  footer .content .topic{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  footer .content p{
+    text-align: justify;
+  }
+  footer .content .lower .topic{
+    margin: 24px 0 5px 0;
+  }
+  footer .content .lower i{
+    padding-right: 16px;
+  }
+  footer .content .middle{
+    padding-left: 80px;
+  }
+  footer .content .middle a{
+    line-height: 32px;
+  }
+  footer .content .right input[type="text"]{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    color: #d9d9d9;
+    background: #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 2px solid #222222;
+  }
+  footer .content .right input[type="submit"]{
+    height: 42px;
+    width: 100%;
+    font-size: 18px;
+    color: #d9d9d9;
+    background: #eb2f06;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 12px;
+    border: 2px solid #eb2f06;
+    transition: all 0.3s ease-in-out;
+  }
+  .content .right input[type="submit"]:hover{
+    background: none;
+    color:  #eb2f06;
+  }
+  footer .content .media-icons a{
+    font-size: 16px;
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    margin: 30px 5px 0 0;
+    transition: all 0.3s ease;
+  }
+  .content .media-icons a:hover{
+    border-color: #eb2f06;
+  }
+
+  .media-icons.fb {
+      color: white;
+  }
+
+  .media-icons.tw {
+      color: lightblue;
+  }
+
+  .media-icons.insta {
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+  }
+
+  footer .bottom{
+    width: 100%;
+    text-align: right;
+    color: #d9d9d9;
+    padding: 0 40px 5px 0;
+  }
+  footer .bottom a{
+    color: #eb2f06;
+  }
+  footer a{
+    transition: all 0.3s ease;
+  }
+  footer a:hover{
+    color: #eb2f06;
+  }
+  @media (max-width:1100px) {
+    footer .content .middle{
+      padding-left: 50px;
+    }
+  }
+  @media (max-width:950px){
+    footer .content .box{
+      width: 50%;
+    }
+    .content .right{
+      margin-top: 40px;
+    }
+  }
+  @media (max-width:560px){
+    footer{
+      position: relative;
+    }
+    footer .content .box{
+      width: 100%;
+      margin-top: 30px;
+    }
+    footer .content .middle{
+      padding-left: 0;
+    }
+  }
+  
