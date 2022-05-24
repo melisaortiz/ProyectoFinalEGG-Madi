@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(179, 179, 179);
+    font-size: 10px;
+   
+}
+
+nav ul {
+    float: left;
+    margin: 0px 0px;
+    padding: 0px 8px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+nav a.nav-link {
+    color: white;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+a.nav-link:hover {
+    color: green;
+}
+
+img#logo {
+    width: 9%;
+    position: absolute;
+    top: 0px;
+    right: 45%;
+    display: inline-block;
+}
+
+nav #icon {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 1048px) {
+    label.logo {
+        font-size: 32px;
+        padding-right: 60px;
+    }
+
+    nav ul {
+        margin-left: 20px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 909px) {
+    nav #icon {
+        font-size: 20px;
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: rgb(165, 165, 165);
+        margin: 0%;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+    }
+
+    nav li {
+        display: block;
+        margin: 30px 0px;
+        line-height: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    nav ul.show {
+        left: 0;
+    }
+}
+
+/*hasta aca todo fue del nav bar*/
+
+main{
+    float: right;
+    width: 80%;
+    overflow: hidden;
+}
+
+/*-------------CARRUSEL--------------*/
+
+.carousel {
+    width: 700px;
+    height: 350px;
+    left: 70px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+/*imagen carrusel*/
+.d-block.w-100 {
+    width: 500px;
+    height: 350px;
+}
+
+.carousel-inner button {
+    float: right;
+}
+
+ol {
+    list-style-type: circle;
+}
+
+#carousel2-list {
+    top: 30px;
+    text-align: left;
+}
+
+.carousel-item li {
+    font-size: small;
+}
+
+#carousel2 {
+    max-width: 100%;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+}
+
+
+/*
+aside{
+    display: inline-block;
+    width: 200px;
+    min-height: 600px;
+    background: greenyellow;
+    margin: 10px;
+
+
+}*/
+
+
+/*-----------------GRID------------------*/
+
+/*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
+section.grid-container {
+    display: flex;
+    justify-content:right;
+    margin: 0 130px 0 0;
+}
+
+.grid {
+    display: grid;
+    max-width: 70vw;
+    /*ancho de cada columna*/
+    grid-template-columns: 25% 25% 25% 25%;
+    /*alto de cada fila
+    grid-template-rows: */
+    margin-top: 40px;
+    gap: 10px;
+   
+
+}
+
+/*producto del grid*/
+.grid div.product {
+    padding: 10px;
+    margin: 1em;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 80%;
+    box-sizing: border-box;
+}
+
+/*cuando le pasamos el mouse se le pone borde*/
+.grid div.product:hover {
+    border: 1px solid black;
+}
+
+img.imagen_tienda {
+    width: 100%;
+}
+
+div.product-name {
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*-------------ASIDE------------*/
+aside.sidebar{
+    float: left;
+    width: 20%;
+    height: 100vh;
+    margin-top: 30px;
+}
+
+.sidebar li{
+    font-size: 12px;
+    padding: 1px;
+    margin: 2px 2px 2px 30px;
+}
+
+.sidebar ul{
+    margin-top: 80px;
+}
+
+
+/*----------------------FOOTER---------------------*/
+footer{
+    margin-top: 1500px;
+    height: 120px;
+    background-color: rgb(179, 179, 179);
+}
