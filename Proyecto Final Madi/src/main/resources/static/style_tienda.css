@@ -14,7 +14,7 @@ nav {
     width: 100%;
     background-color: rgb(179, 179, 179);
     font-size: 10px;
-   
+
 }
 
 nav ul {
@@ -105,20 +105,31 @@ nav #icon {
 
 /*hasta aca todo fue del nav bar*/
 
-main{
-    float: right;
-    width: 80%;
-    overflow: hidden;
+section.flex-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+  
+   
+}
+
+section.carrusel-grid {
+    width: 70%;
+    justify-content: left;
+    padding: 20px 20px;
+    margin-left: 20px;
+
 }
 
 /*-------------CARRUSEL--------------*/
 
-.carousel {
+section.carousel {
+    
     width: 700px;
     height: 350px;
-    left: 70px;
+    justify-content: center;
     margin-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 /*imagen carrusel*/
@@ -151,25 +162,15 @@ ol {
 }
 
 
-/*
-aside{
-    display: inline-block;
-    width: 200px;
-    min-height: 600px;
-    background: greenyellow;
-    margin: 10px;
-
-
-}*/
-
 
 /*-----------------GRID------------------*/
 
 /*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
 section.grid-container {
     display: flex;
-    justify-content:right;
-    margin: 0 130px 0 0;
+    justify-content: right;
+    margin-left: 80px;
+    margin-top: 0;
 }
 
 .grid {
@@ -181,8 +182,6 @@ section.grid-container {
     grid-template-rows: */
     margin-top: 40px;
     gap: 10px;
-   
-
 }
 
 /*producto del grid*/
@@ -211,27 +210,154 @@ div.product-name {
 
 
 /*-------------ASIDE------------*/
-aside.sidebar{
-    float: left;
-    width: 20%;
+aside.sidebar {
+    width: 30%;
+    max-width: 200px;
     height: 100vh;
     margin-top: 30px;
 }
 
-.sidebar li{
+.sidebar li {
     font-size: 12px;
     padding: 1px;
     margin: 2px 2px 2px 30px;
 }
 
-.sidebar ul{
+.sidebar ul {
     margin-top: 80px;
 }
 
 
+
+
+
+
+
+
 /*----------------------FOOTER---------------------*/
-footer{
-    margin-top: 1500px;
-    height: 120px;
-    background-color: rgb(179, 179, 179);
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+}
+
+.container-footer-all {
+    width: 100%;
+    max-width: 85%;
+    padding: 40px;
+    margin-left: 5%;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.colum1 {
+    max-width: 400px;
+}
+
+.colum1 h1 {
+    font-size: 22px;
+}
+
+.colum1 p {
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2 {
+    max-width: 400px;
+
+}
+
+.colum2 h1 {
+    font-size: 22px;
+}
+
+.row {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img {
+    width: 36px;
+    height: 36px;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+.colum3 {
+    max-width: 400px;
+}
+
+.colum3 h1 {
+    font-size: 22px;
+}
+
+.row2 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer {
+    width: 100%;
+    background: #101010;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright {
+    color: #C7C7C7;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .container-body {
+        flex-wrap: wrap;
+    }
+
+    .colum1 {
+        max-width: 100%;
+    }
+
+    .colum2,
+    .colum3 {
+        margin-top: 40px;
+    }
 }
