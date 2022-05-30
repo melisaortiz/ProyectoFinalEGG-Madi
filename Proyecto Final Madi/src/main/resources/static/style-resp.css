@@ -1,0 +1,414 @@
+
+/* --------------------------- ESTILOS GENERALES --------------------------- */
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+#cabecera {
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+#pagina {
+    position: relative;
+    min-height: 100%;
+    background-image: url(https://cdn.pixabay.com/photo/2017/09/09/12/59/background-2731955_960_720.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    font-family:  Tahoma;
+}
+
+#contenido {
+    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
+    margin-top: 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#pie {
+    height:50px;
+    line-height:50px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-size: small;
+    font-family: monospace;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.514);
+    border-radius: 2px;
+    background-color: rgb(19, 19, 24);
+}
+
+#nav-title {
+    font-family: monospace;
+    text-shadow: 0px 0px 5px #1b1e21;
+}
+
+#nav-title:hover {
+    text-shadow: 0px 0px 5px white;
+}
+
+button#btn-register:hover {
+    box-shadow: 0px 0px 5px #d35400;
+}
+
+.date-time {
+    align-items: flex-end;
+}
+
+.row {
+    margin-top: 0px;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgb(19, 19, 24);
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    text-align: left;
+}
+
+form #error {
+    color:red;
+    text-align: center;
+    font-style: italic;
+}
+
+form #logout {
+    color:limegreen;
+    text-align: center;
+    font-style: italic;
+}
+
+input#file {
+    border-style: none;
+}
+
+#profile-photo {
+    max-height: 80px;
+}
+
+#user-banner {
+    margin-top: 3%;
+    text-align: center;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+}
+
+/* --------------------------- ESTILOS DE ALERTAS --------------------------- */
+
+#alert {
+    height: fit-content;
+}
+
+#alert #error {
+    color:red;
+}
+
+#alert #success {
+    color:limegreen;
+}
+
+.close {
+    box-shadow: none;
+}
+
+.close:hover {
+    text-shadow: none;
+    outline-color: darkgray;
+}
+
+/* --------------------------- ESTILOS DE COLLAPSE --------------------------- */
+
+.collapse {
+    width: 100%;
+}
+
+
+/* --------------------------- ESTILOS DE CARDS --------------------------- */
+
+#login-card {
+    width: 18rem;
+    max-height: 100%;
+}
+
+#login-card-banner {
+    height: 90px;
+}
+
+#login-card-body {
+    min-height: 410px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+    align-self: center;
+    margin-top: 1%;
+}
+
+#cards-home {
+    margin-left: 1%;
+    margin-right: 1%;
+    align-items: stretch;
+    align-content: center;
+}
+
+.card-text {
+    font-size: small;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.card-libros {
+    margin: 40px;
+    margin-left: 10%;
+    margin-right: 1%;
+    max-height: 220px;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.card-img-top-libro {
+    background: rgb(135,58,180);
+    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(255,0,0,1) 0%, rgba(252,176,69,1) 100%);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 3px rgba(19, 19, 24, 0.719);
+}
+
+.card-img-top-libro:hover {
+    text-shadow: 3px 3px 3px rgb(19, 19, 24);
+    font-size: 50pt;
+
+}
+
+.card-img-top-autor {
+    background: rgb(135,58,180);
+    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(252,176,69,1) 0%, rgba(113,252,69,1) 100%);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 3px rgba(19, 19, 24, 0.719);
+}
+
+.card-img-top-autor:hover {
+    text-shadow: 3px 3px 3px rgb(19, 19, 24);
+    font-size: 50pt;
+
+}
+
+.card-img-top-editorial {
+    background: rgb(135,58,180);
+    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(113,252,69,1) 0%, rgba(69,226,252,1) 100%);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 3px rgba(19, 19, 24, 0.719);
+}
+
+.card-img-top-editorial:hover {
+    text-shadow: 3px 3px 3px rgb(19, 19, 24);
+    font-size: 50pt;
+
+}
+
+/*CARD FILTRO DE BÚSQUEDA*/
+.card-filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+    align-items: center;
+}
+
+#card-filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#card-filter-buttons button {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*CARDS CON PORTADAS DE LIBROS*/
+.card-body-container {    
+    margin: 1%;
+    text-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-content {
+    height: 250px;
+    width: 420px;
+    border-radius: 15px;
+}
+
+.card-content:hover {
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-img-top-portada {
+    max-width: 128px;
+    height: 197px;
+    align-content: center;
+    vertical-align: middle;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+
+}
+
+.card-img-top-portada:hover {
+    box-shadow: 1px 1px 15px rgb(19, 19, 24);
+}
+
+.card-body-content {
+    height: 197px;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    vertical-align: middle;
+}
+
+.card-body-content-button {
+    align-self: center;
+    vertical-align: bottom;
+}
+
+/* --------------------------- ESTILOS DE MODALS --------------------------- */
+
+.modal-content {
+    border-style: none;
+}
+
+#descripcion-libro {
+    font-style: italic;
+}
+
+/* --------------------------- ESTILOS GENERALES DE BOTONES Y TEXTOS --------------------------- */
+
+.btn {
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+    margin-top: 0%;
+    color: white;
+}
+
+#btn-orange {
+    background-color: #d35400;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+    padding:1%;
+    height: 45px;
+}
+
+#btn-orange:hover {
+    text-shadow: rgb(19, 19, 24);
+    box-shadow: 0px 0px 10px #d35400;
+}
+
+h1 {
+    text-align: center;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+h3 {
+    text-align: center;
+    padding: 1%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+#icon {
+    box-shadow: none;
+    text-shadow: rgb(19, 19, 24);
+}
+
+.bi-book {
+    text-shadow: rgb(19, 19, 24);
+}
+
+/* --------------------------- ESTILOS DE TABLAS --------------------------- */
+
+.table {
+    border-radius: 15px;
+    text-align:center;
+    box-shadow: 1px 1px 10px #1b1e21;
+    border-top: solid #dc3545;
+}
+
+.table-responsive-lg {
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 1px 1px 10px #1b1e21;
+    border-top: solid #dc3545;
+    width: 100%;
+    margin-bottom: 2%;
+    font-size: small;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.table-responsive-lg > tbody > tr > td {
+    vertical-align: middle;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin:1%
+}
+
+.table > thead > tr > th {
+    vertical-align: middle;
+}
+
+.table-responsive-lg > thead > tr > th {
+    vertical-align: middle;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin:1%
+}
