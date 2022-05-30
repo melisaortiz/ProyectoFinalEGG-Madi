@@ -1,0 +1,84 @@
+<!DOCTYPE html5>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<!--HEAD-->
+<head th:replace="/fragments/head :: head"></head>
+<head>
+    <title>Librería EGG - Editar Perfil</title>
+</head>
+    <body>
+        <div id="pagina">
+            <!--NAVIGATION-->
+        <nav th:replace="/fragments/navbar :: nav"></nav>
+            <div id="contenido">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="bg-dark text-white">Modificar Usuario</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="align-items: center;">
+                        <div th:if="${error != null}" class="col-12 alert alert-danger alert-dismissible fade show" style="height: fit-content" role="alert">
+                            <!--Este if mostrará el texto en el caso de que aparezca un error.-->
+                            <span th:text="${error}" style="color:red;"></span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="" id="collapse2" style="width: 100%;">
+                            <div class="card card-body alert alert-dismissible col-12 bg-dark text-white" role="alert">
+                                Ingrese los datos solicitados a continuación:
+                                <div class="registry-form bg-dark text-white">
+                                    <div class="text-justify">
+
+                                        <form action="/usuario/actualizar-perfil" method="POST" enctype="multipart/form-data">
+
+                                                <input type="hidden" name="id" th:value="${usuarioModif.id}"/>
+
+                                                <label>Nombre</label>
+                                                <input type="text" class="form-control" name="nombre" th:value="${usuarioModif.nombre}"/>
+                                                <br>
+                                                <label>Apellido</label>
+                                                <input type="text" class="form-control" name="apellido" th:value="${usuarioModif.apellido}"/>
+                                                <br>
+                                                <label>Documento de Identidad</label>
+                                                <input type="number" class="form-control" name="dni" th:value="${usuarioModif.dni}"/>
+                                                <br>
+                                                <label for="telefono">Teléfono</label>
+                                                <input type="number" class="form-control" name="telefono" th:value="${usuarioModif.telefono}" />
+                                                <br>
+                                                <label>E-mail</label>
+                                                <input type="mail" class="form-control" name="mail" th:value="${usuarioModif.mail}"/>
+                                                <br>
+                                                <label for="clave">Contraseña</label>
+                                                <input type="password" class="form-control" name="clave"/>
+                                                <small id="claveHelp" class="form-text text-muted">Debe contener al menos 6 caracteres.</small>
+                                                <br>
+                                                <label for="clave2">Reingrese la Contraseña</label>
+                                                <input type="password" class="form-control" name="clave2"/>
+                                                <br>
+                                                <hr>
+                                                <label>Foto de Perfil</label><br>
+                                                    <div class="row">
+                                                        <div class="col-1"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" style="max-height: 50px;"/></div>
+                                                        <div class="col-11"><input type="file" class="form-control bg-dark text-white" style="border-style: none" name="archivo" th:value="${archivo}"/></div>
+                                                    </div>
+                                                        <small id="fotoHelp" class="form-text text-muted">Se muestra la foto actual.</small>
+                                                <hr>
+                                                <br>
+                                                <button type="submit" class="btn btn-secondary" formaction="/inicio" formmethod="GET">Cancelar</button>
+                                                <button type="submit" class="btn btn-success">Modificar Usuario</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--FOOTER-->
+                <footer th:replace="/fragments/footer :: footer"></footer>
+            </div>
+        </div>
+    </body>
+</html>
