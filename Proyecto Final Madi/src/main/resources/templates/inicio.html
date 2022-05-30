@@ -83,7 +83,7 @@
                                     Acceder
                                 </button>
                                 <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenu2">
-                                    <a href="/admin/libros/admin-libros"><button class="dropdown-item" type="button">Obras</button></a>
+                                    <a href="/admin/libros/admin-artes"><button class="dropdown-item" type="button">Obras</button></a>
                                     <a href="/admin/autores/admin-autores"><button class="dropdown-item" type="button">Autores</button></a>
                                    
                                 </div>
@@ -120,7 +120,7 @@
                     <br><div th:each="libro : ${libros}" class="col card-body-container">
                         <div class="row bg-dark text-white card-content">
                             <div class="col-4">
-                                <a th:title="'Conocer más sobre ' + ${libro.titulo}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+libro.id}"><img th:src="@{'/foto/libro/' + ${libro.id}}" class="card-img-top-portada" alt="Portada"></a><br>
+                                <a th:title="'Conocer más sobre ' + ${libro.titulo}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}"><img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada"></a><br>
                                 
                             </div>
                             <div class="col-8 card-body-content">
@@ -152,7 +152,7 @@
                                 <div class="modal-body"><br>
                                     <div class="row  text-white">
                                         <div class="col-4">
-                                            <img th:src="@{'/foto/libro/' + ${libro.id}}" class="card-img-top-portada" alt="Portada">
+                                            <img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada">
                                         </div>
                                         <div class="col-8 card-body-content text-justify">
                                         <div>
