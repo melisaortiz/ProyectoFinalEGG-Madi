@@ -48,7 +48,7 @@ public class PortalController {
         if (logout != null) {
             model.put("logout", "Ha salido correctamente.");
         }
-        return "index.html";
+        return "login.html";
     }
 
     /**
@@ -104,10 +104,10 @@ public class PortalController {
             model.put("telefono", telefono);
             model.put("mail", mail);
             model.put("archivo", archivo);
-            return "index.html";
+            return "login.html";
         }
         model.put("success", "¡Registro exitoso! Ahora puede iniciar sesión.");
-        return "index.html";
+        return "login.html";
     }
 
     /**
