@@ -83,21 +83,17 @@ public class ArteController {
      * @return
      */
     @PostMapping("/registrar-arte")
-    public String registrarLibro(ModelMap model,HttpSession session, MultipartFile archivo, 
+    public String registrarArte(ModelMap model,HttpSession session, MultipartFile archivo, 
             @RequestParam(required = false) String id, String nombre, Integer anio, 
-            String descripcion, Integer precio, String idAutor, String nuevoAutor,Categoria categoria) {
+            String descripcion, Integer precio, String idAutor, Categoria categoria) {
         Autor autor;
         try {
             // Seteo del Autor:
             try {
-                if (nuevoAutor == null || nuevoAutor.isEmpty()) {
-                    autor = autorServicio.getById(idAutor);
-                } else {
-                    autorServicio.agregarAutor(nuevoAutor);
-                    autor = autorServicio.buscarPorNombre(nuevoAutor);
-                }
+                autor = autorServicio.getById(idAutor);
+               
             } catch (Exception e) {
-                throw new Exception("Debe seleccionar un Autor.");
+                throw new Exception("Debe seleccionar un Autor");
             }
             // Seteo de la Editorial:
             
