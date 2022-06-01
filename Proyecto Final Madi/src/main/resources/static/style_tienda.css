@@ -35,7 +35,7 @@ nav a.nav-link {
 }
 
 a.nav-link:hover {
-    color: green;
+    color: rgb(151, 151, 151);
 }
 
 img#logo {
@@ -85,7 +85,8 @@ nav #icon {
         top: 80px;
         left: -100%;
         text-align: center;
-        transition: all .4s;
+        transition: all .5s;
+        z-index: 1;
     }
 
     nav li {
@@ -98,8 +99,71 @@ nav #icon {
         font-size: 10px;
     }
 
+    a.nav-link {
+        color: black;
+    }
+
     nav ul.show {
+        margin-top: -10%;
         left: 0;
+        width: 14em;
+        padding-top: 80px;
+        z-index: -1;
+    }
+
+    section.carrusel-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0em 0 0;
+        margin-left: 0;
+
+    }
+
+    /*media ASIDE*/
+    aside label#icon2 {
+        display: block !important;
+        z-index: 3;
+
+    }
+
+    .sidebar ul {
+        margin-top: 10px;
+    }
+
+    aside ul {
+        position: relative;
+        width: 60px;
+        background: none;
+        margin: 0%;
+        left: -250%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    aside li {
+        display: block;
+        margin: 30px 0px;
+        line-height: 15px;
+    }
+
+    aside ul a {
+        font-size: 11px;
+    }
+
+    a.active,
+    a:hover {
+        border: none;
+        color: #C7C7C7;
+    }
+
+    aside ul.show2 {
+        left: 0;
+
+    }
+
+    .wrapper{
+        left: -200%;
     }
 }
 
@@ -107,29 +171,27 @@ nav #icon {
 
 section.flex-container {
     display: flex;
-    width: 100%;
-    position: relative;
-  
-   
+    justify-content: space-between;
 }
 
 section.carrusel-grid {
-    width: 70%;
-    justify-content: left;
-    padding: 20px 20px;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5em;
+    margin-left: 0;
 
 }
+
 
 /*-------------CARRUSEL--------------*/
 
 section.carousel {
-    
-    width: 700px;
-    height: 350px;
+    display: flex;
+    max-width: 700px;
+    max-height: 300px;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px auto;
 }
 
 /*imagen carrusel*/
@@ -168,24 +230,21 @@ ol {
 /*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
 section.grid-container {
     display: flex;
-    justify-content: right;
-    margin-left: 80px;
+    justify-content: center;
     margin-top: 0;
+    max-width: 100%;
 }
 
 .grid {
-    display: grid;
-    max-width: 70vw;
-    /*ancho de cada columna*/
-    grid-template-columns: 25% 25% 25% 25%;
-    /*alto de cada fila
-    grid-template-rows: */
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 40px;
-    gap: 10px;
+    justify-content: space-evenly;
 }
 
 /*producto del grid*/
 .grid div.product {
+    max-width: 200px;
     padding: 10px;
     margin: 1em;
     text-align: center;
@@ -211,10 +270,12 @@ div.product-name {
 
 /*-------------ASIDE------------*/
 aside.sidebar {
-    width: 30%;
     max-width: 200px;
+    width: 30%;
     height: 100vh;
     margin-top: 30px;
+    padding-left: 15px;
+
 }
 
 .sidebar li {
@@ -223,13 +284,108 @@ aside.sidebar {
     margin: 2px 2px 2px 30px;
 }
 
+.nav-link {
+    color: black;
+}
+
 .sidebar ul {
     margin-top: 80px;
 }
 
+/*icono fas fa aside*/
+aside label#icon2 {
+    color: black;
+    font-size: 20px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
 
+/*PRICE RANGE*/
+.wrapper {
+    position: relative;
+    width: 20vmin;
 
+}
 
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+
+}
+
+.slider-track {
+    width: 100%;
+    height: 5px;
+    background-color: #d5d5d5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 5px;
+
+}
+
+input[type="range"]::-ms-track {
+    appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.6em;
+    width: 0.3em;
+    background-color: #101010;
+    cursor: pointer;
+
+    pointer-events: auto;
+    margin-top: -9px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]:active ::-webkit-slider-thumb {
+    background-color: #ffffff;
+    border: 3px solid#3264fe;
+}
 
 
 
