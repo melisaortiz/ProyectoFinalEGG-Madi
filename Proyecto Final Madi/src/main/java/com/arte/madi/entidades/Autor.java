@@ -25,6 +25,7 @@ public class Autor {
     private String descripcion;
     private String redSocial;
     private boolean alta;
+
     @OneToOne
     private Foto foto;
     @Enumerated(EnumType.STRING)
@@ -41,6 +42,7 @@ public class Autor {
         this.foto = foto;
         this.provincias = provincias;
     }
+
 
     public String getId() {
         return id;
