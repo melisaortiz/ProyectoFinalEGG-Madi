@@ -2,10 +2,13 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <!--HEAD-->
+
 <head th:replace="/fragments/head :: head"></head>
+
 <head>
     <title>Madi ART</title>
 </head>
+
 <body>
     <div id="pagina">
         <!--NAVIGATION-->
@@ -17,16 +20,16 @@
                         <h1 class="bg-dark text-white">¡Bienvenidos a Madi ART!</h1>
                     </div>
                     <div th:if="${errorReg != null}" class="col-12 alert alert-danger alert-dismissible fade show" id="alert" role="alert">
-                            <!--Este if mostrará el texto en el caso de que aparezca un error.-->
-                            <span th:text="${errorReg}" id="error"></span>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <!--Este if mostrará el texto en el caso de que aparezca un error.-->
+                        <span th:text="${errorReg}" id="error"></span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                     </div>
                     <div th:if="${success != null}" class="col-12 alert alert-success alert-dismissible fade show" id="alert" role="alert">
-                            <!--Este if mostrará el texto en el caso de el registro sea exitoso.-->
-                            <span th:text="${success}" id="success"></span>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <!--Este if mostrará el texto en el caso de el registro sea exitoso.-->
+                        <span th:text="${success}" id="success"></span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                     </div>
@@ -38,7 +41,7 @@
                             <div class="registry-form col-12 text-justify">
                                 <div class="col-12 text-justify">
                                     <form action="/registrar" method="POST" enctype="multipart/form-data">
-                                        
+
                                         <label>Nombre</label>
                                         <input type="text" class="form-control" name="nombre" th:value="${nombre}" />
                                         <br>
@@ -55,37 +58,36 @@
                                         <input type="mail" class="form-control" name="mail" th:value="${mail}" />
                                         <br>
                                         <label for="clave">Contraseña</label>
-                                        <input type="password" class="form-control" name="clave"/>
+                                        <input type="password" class="form-control" name="clave" />
                                         <small id="claveHelp" class="form-text text-muted">Debe contener al menos 6 caracteres.</small>
                                         <br>
                                         <label for="clave2">Reingrese la Contraseña</label>
-                                        <input type="password" class="form-control" name="clave2"/>
+                                        <input type="password" class="form-control" name="clave2" />
                                         <br>
                                         <label>Foto de Perfil</label>
-                                        <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file"/>
+                                        <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file" />
                                         <small id="fotoHelp" class="form-text text-muted">Ingrese una foto (preferentemente en formato cuadrado) donde se pueda ver su rostro.</small>
                                         <hr>
                                         <p><button type="submit" class="btn btn-success">Registrarse</button></p>
                                     </form>
                                 </div>
                             </div>
-                            <button type="button" class="close" data-toggle="collapse" data-target="#collapse1"
-                                aria-label="Close">
+                            <button type="button" class="close" data-toggle="collapse" data-target="#collapse1" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                     </div>
                     <div class="row">
-                    <div class="col">
-                        <div class="card bg-dark text-white" id="login-card">
-                            <div class="card-img-top-libro" id="login-card-banner">
-                                <span>
+                        <div class="col">
+                            <div class="card bg-dark text-white" id="login-card">
+                                <div class="card-img-top-libro" id="login-card-banner">
+                                    <span>
                                     <h1 id="icon"><i class="bi bi-people-fill" fill="currentColor"></i></h1>
                                 </span>
-                            </div>
-                            <div class="card-body" id="login-card-body">
-                                <h5>Iniciar sesión</h5>
-                                <span class="card-text">
+                                </div>
+                                <div class="card-body" id="login-card-body">
+                                    <h5>Iniciar sesión</h5>
+                                    <span class="card-text">
                                     <div>
                                         <form action="/logincheck" method="POST">                                            
                                             <p th:if="${error} != null" th:text="${error}" id="error"></p>
@@ -102,21 +104,20 @@
                                     </div>
                                     <br>
                                     <span>Crear Cuenta</span>
-                                    <br><button class="btn btn-warning" type="button" data-toggle="collapse"
-                                        data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+                                    <br><button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
                                         ¡Regístrate!
                                     </button>
-                                </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                   </div>
                 </div>
             </div>
         </div>
         <!--FOOTER-->
         <footer th:replace="/fragments/footer :: footer"></footer>
-        </div>
+    </div>
 </body>
 
 </html>
