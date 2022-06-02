@@ -1,10 +1,10 @@
-
 /* --------------------------- ESTILOS GENERALES --------------------------- */
 
-html, body {
-    margin:0;
-    padding:0;
-    height:100%;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 #cabecera {
@@ -19,11 +19,12 @@ html, body {
     background-attachment: scroll;
     background-size: cover;
     background-position: center;
-    font-family:  Tahoma;
+    font-family: Tahoma;
 }
 
 #contenido {
-    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
+    padding-bottom: 50px;
+    /* este valor debe ser igual o mayor al alto del pie */
     margin-top: 2%;
     box-sizing: border-box;
     display: flex;
@@ -31,13 +32,13 @@ html, body {
 }
 
 #pie {
-    height:50px;
-    line-height:50px;
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    text-align:center;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
     font-size: small;
     font-family: monospace;
     text-align: center;
@@ -86,13 +87,13 @@ form {
 }
 
 form #error {
-    color:red;
+    color: red;
     text-align: center;
     font-style: italic;
 }
 
 form #logout {
-    color:limegreen;
+    color: limegreen;
     text-align: center;
     font-style: italic;
 }
@@ -116,6 +117,7 @@ input#file {
     align-items: baseline;
 }
 
+
 /* --------------------------- ESTILOS DE ALERTAS --------------------------- */
 
 #alert {
@@ -123,11 +125,11 @@ input#file {
 }
 
 #alert #error {
-    color:red;
+    color: red;
 }
 
 #alert #success {
-    color:limegreen;
+    color: limegreen;
 }
 
 .close {
@@ -138,6 +140,7 @@ input#file {
     text-shadow: none;
     outline-color: darkgray;
 }
+
 
 /* --------------------------- ESTILOS DE COLLAPSE --------------------------- */
 
@@ -194,8 +197,8 @@ input#file {
 }
 
 .card-img-top-libro {
-    background: rgb(135,58,180);
-    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(255,0,0,1) 0%, rgba(252,176,69,1) 100%);
+    background: rgb(135, 58, 180);
+    background: linear-gradient(90deg, rgba(135, 58, 180, 1) 0%, rgba(255, 0, 0, 1) 0%, rgba(252, 176, 69, 1) 100%);
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -207,12 +210,11 @@ input#file {
 .card-img-top-libro:hover {
     text-shadow: 3px 3px 3px rgb(19, 19, 24);
     font-size: 50pt;
-
 }
 
 .card-img-top-autor {
-    background: rgb(135,58,180);
-    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(252,176,69,1) 0%, rgba(113,252,69,1) 100%);
+    background: rgb(135, 58, 180);
+    background: linear-gradient(90deg, rgba(135, 58, 180, 1) 0%, rgba(252, 176, 69, 1) 0%, rgba(113, 252, 69, 1) 100%);
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -224,12 +226,11 @@ input#file {
 .card-img-top-autor:hover {
     text-shadow: 3px 3px 3px rgb(19, 19, 24);
     font-size: 50pt;
-
 }
 
 .card-img-top-editorial {
-    background: rgb(135,58,180);
-    background: linear-gradient(90deg, rgba(135,58,180,1) 0%, rgba(113,252,69,1) 0%, rgba(69,226,252,1) 100%);
+    background: rgb(135, 58, 180);
+    background: linear-gradient(90deg, rgba(135, 58, 180, 1) 0%, rgba(113, 252, 69, 1) 0%, rgba(69, 226, 252, 1) 100%);
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -241,10 +242,11 @@ input#file {
 .card-img-top-editorial:hover {
     text-shadow: 3px 3px 3px rgb(19, 19, 24);
     font-size: 50pt;
-
 }
 
+
 /*CARD FILTRO DE BÚSQUEDA*/
+
 .card-filter {
     display: flex;
     flex-direction: column;
@@ -263,8 +265,10 @@ input#file {
     margin-right: 1%;
 }
 
+
 /*CARDS CON PORTADAS DE LIBROS*/
-.card-body-container {    
+
+.card-body-container {
     margin: 1%;
     text-shadow: 1px 1px 5px rgb(19, 19, 24);
 }
@@ -285,7 +289,6 @@ input#file {
     align-content: center;
     vertical-align: middle;
     box-shadow: 1px 1px 5px rgb(19, 19, 24);
-
 }
 
 .card-img-top-portada:hover {
@@ -306,6 +309,7 @@ input#file {
     vertical-align: bottom;
 }
 
+
 /* --------------------------- ESTILOS DE MODALS --------------------------- */
 
 .modal-content {
@@ -315,6 +319,7 @@ input#file {
 #descripcion-libro {
     font-style: italic;
 }
+
 
 /* --------------------------- ESTILOS GENERALES DE BOTONES Y TEXTOS --------------------------- */
 
@@ -330,7 +335,7 @@ input#file {
     color: white;
     font-weight: bold;
     margin-left: 5px;
-    padding:1%;
+    padding: 1%;
     height: 45px;
 }
 
@@ -368,11 +373,12 @@ h3 {
     text-shadow: rgb(19, 19, 24);
 }
 
+
 /* --------------------------- ESTILOS DE TABLAS --------------------------- */
 
 .table {
     border-radius: 15px;
-    text-align:center;
+    text-align: center;
     box-shadow: 1px 1px 10px #1b1e21;
     border-top: solid #dc3545;
 }
@@ -387,28 +393,152 @@ h3 {
     font-size: small;
 }
 
-.table > tbody > tr > td {
+.table>tbody>tr>td {
     vertical-align: middle;
 }
 
-.table-responsive-lg > tbody > tr > td {
+.table-responsive-lg>tbody>tr>td {
     vertical-align: middle;
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 1%;
     padding-right: 1%;
-    margin:1%
+    margin: 1%
 }
 
-.table > thead > tr > th {
+.table>thead>tr>th {
     vertical-align: middle;
 }
 
-.table-responsive-lg > thead > tr > th {
+.table-responsive-lg>thead>tr>th {
     vertical-align: middle;
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 1%;
     padding-right: 1%;
-    margin:1%
+    margin: 1%
+}
+
+
+/* --------------------------- ESTILOS DE FOOTER --------------------------- */
+
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+}
+
+.container-footer-all {
+    width: 100%;
+    max-width: 85%;
+    padding: 40px;
+    margin-left: 5%;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1 {
+    max-width: 400px;
+}
+
+.colum1 h1 {
+    font-size: 22px;
+}
+
+.colum1 p {
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2 {
+    max-width: 400px;
+}
+
+.colum2 h1 {
+    font-size: 22px;
+}
+
+.row {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img {
+    width: 60px;
+    height: 36px;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+.colum3 {
+    max-width: 400px;
+}
+
+.colum3 h1 {
+    font-size: 22px;
+}
+
+.row2 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer {
+    width: 100%;
+    background: #101010;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright {
+    color: #C7C7C7;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+@media screen and (max-width: 1100px) {
+    .container-body {
+        flex-wrap: wrap;
+    }
+    .colum1 {
+        max-width: 100%;
+    }
+    .colum2,
+    .colum3 {
+        margin-top: 40px;
+    }
 }

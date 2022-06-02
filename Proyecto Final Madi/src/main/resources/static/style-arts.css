@@ -134,10 +134,11 @@ div#carousel {
 }
 
 div.item {
+    background-color: rgb(32, 32, 32);
     position: absolute;
     width: 300px;
     height: 400px;
-    background-color: rgb(32, 32, 32);
+    
     --r: calc(var(--position) - var(--offset));
     --abs: max(calc(var(--r) * -1), var(--r));
     transition: all 0.25s linear;
