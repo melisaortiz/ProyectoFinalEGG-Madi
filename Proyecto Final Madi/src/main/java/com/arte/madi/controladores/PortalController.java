@@ -48,7 +48,7 @@ public class PortalController {
         if (logout != null) {
             model.put("logout", "Ha salido correctamente.");
         }
-        return "login.html";
+        return "index.html";
     }
 
     /**
