@@ -7,13 +7,13 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
 }
 
 nav {
   height: 80px;
   width: 100%;
   background-color: black;
-  font-size: 10px;
 }
 
 nav ul {
@@ -111,8 +111,8 @@ nav #icon {
 
 #inicses {
   position: absolute;
-  top: 32px;
-  left: 1710px;
+  top: 31px;
+  left: 1690px;
 }
 
 .carousel {
@@ -122,12 +122,15 @@ nav #icon {
   margin-top: 100px;
 }
 
+
 .d-block.w-100 {
+  object-fit: cover;
   width: 1250px;
   height: 435px;
 }
 
 .carousel-inner button {
+  text-transform: uppercase;
   float: right;
 }
 
@@ -153,6 +156,21 @@ ol {
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
 }
+
+@media only screen and (max-width: 850px) and (min-width: 450px) {
+  .carousel {
+      border-radius: 0;
+  }
+}
+
+/*---- MOBILE----*/
+@media only screen and (max-width: 450px) {
+  .carousel {
+      border-radius: 0;
+  }
+
+}
+
 
 
 .grid {
@@ -183,29 +201,33 @@ ol {
 
 
 #btn1 {
+  text-transform: uppercase;
   position: relative;
   z-index: 100;
-  left: 76%;
+  left: 73%;
   top: -95%
 }
 
 #btn2 {
+  text-transform: uppercase;
   position: relative;
   z-index: 100;
-  left: 83%;
+  left: 82%;
   top: -95%;
 }
 
 #btn3 {
+  text-transform: uppercase;
   position: relative;
   z-index: 100;
-  left: 90%;
+  left: 89%;
   top: -95%;
 }
 
 
 
 footer {
+  font-size: 13px;
   width: 100%;
   background: #202020;
   color: white;
@@ -213,23 +235,24 @@ footer {
 
 .container-footer-all {
   width: 100%;
-  max-width: 85%;
+  max-width: 90%;
   padding: 40px;
-  margin-left: 5%;
+  margin-left: 4.5%;
 }
 
 .container-body {
   display: flex;
   justify-content: space-between;
-
 }
+
+
 
 .colum1 {
   max-width: 400px;
 }
 
 .colum1 h1 {
-  font-size: 22px;
+  font-size: 15px;
 }
 
 .colum1 p {
@@ -244,7 +267,7 @@ footer {
 }
 
 .colum2 h1 {
-  font-size: 22px;
+  font-size: 15px;
 }
 
 .row {
@@ -268,7 +291,7 @@ footer {
 }
 
 .colum3 h1 {
-  font-size: 22px;
+  font-size: 15px;
 }
 
 .row2 {
@@ -293,6 +316,8 @@ footer {
 }
 
 .footer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
   max-width: 1200px;
   margin: auto;
   display: flex;
