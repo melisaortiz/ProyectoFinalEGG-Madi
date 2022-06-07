@@ -61,7 +61,40 @@ public class PortalController {
         }
         return "login.html";
     }
-
+    
+         @GetMapping("/tienda")
+    public String tienda(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
+        if (error != null) {
+            model.put("error", "Usuario o clave incorrectos.");
+        }
+        if (logout != null) {
+            model.put("logout", "Ha salido correctamente.");
+        }
+        return "tienda.html";
+    }
+    
+         @GetMapping("/contacto")
+    public String contacto(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
+        if (error != null) {
+            model.put("error", "Usuario o clave incorrectos.");
+        }
+        if (logout != null) {
+            model.put("logout", "Ha salido correctamente.");
+        }
+        return "contacto.html";
+    }
+    
+         @GetMapping("/faqs")
+    public String faqs(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
+        if (error != null) {
+            model.put("error", "Usuario o clave incorrectos.");
+        }
+        if (logout != null) {
+            model.put("logout", "Ha salido correctamente.");
+        }
+        return "faqs.html";
+    }
+    
     /**
      * Vista principal para los usuarios logueados. Para los ADMIN se ve el Menú
      * Administrativo (acceso a Dashboard, Gestión de Libros/Autores/Editoriales
