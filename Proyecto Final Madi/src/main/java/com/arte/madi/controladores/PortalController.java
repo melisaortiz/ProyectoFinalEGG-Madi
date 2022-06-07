@@ -50,6 +50,17 @@ public class PortalController {
         }
         return "index.html";
     }
+    
+       @GetMapping("/login")
+    public String login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
+        if (error != null) {
+            model.put("error", "Usuario o clave incorrectos.");
+        }
+        if (logout != null) {
+            model.put("logout", "Ha salido correctamente.");
+        }
+        return "login.html";
+    }
 
     /**
      * Vista principal para los usuarios logueados. Para los ADMIN se ve el Menú

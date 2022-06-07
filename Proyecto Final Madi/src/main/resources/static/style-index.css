@@ -125,6 +125,7 @@ nav #icon {
 .d-block.w-100 {
   width: 1250px;
   height: 435px;
+  object-fit: cover;
 }
 
 .carousel-inner button {
