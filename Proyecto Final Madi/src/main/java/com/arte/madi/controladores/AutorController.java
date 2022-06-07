@@ -2,8 +2,10 @@ package com.arte.madi.controladores;
 
 
 import com.arte.madi.entidades.Autor;
+import com.arte.madi.enums.Provincias;
 import com.arte.madi.servicios.AutorServicio;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -13,12 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Controlador para gestionar la entidad Autor (listar, registrar, modificar,
  * dar de baja/alta, eliminar).
- *
- * @author Mauro Montenegro <maumontenegro.s at gmail.com>
  */
 @Controller
 @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -39,6 +40,7 @@ public class AutorController {
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
         model.put("autores", autores);
+        model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
     }
 
@@ -53,10 +55,12 @@ public class AutorController {
      * @return
      */
     @PostMapping("/registrar-autor")
-    public String registrarAutor(ModelMap model, @RequestParam(required = false) String id, String nombre) {
+    public String registrarAutor(ModelMap model,HttpSession session, MultipartFile archivo,
+                                 @RequestParam(required = false) String nombre,
+                                 String descripcion, String redSocial, Provincias provincias) {
 
         try {
-            autorServicio.agregarAutor(nombre);
+            autorServicio.agregarAutor(archivo,nombre,descripcion,redSocial, provincias);
             // Mensaje de éxito inyectado al modelo de "admin-autor.html":
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue registrado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
@@ -103,10 +107,11 @@ public class AutorController {
      * @return
      */
     @PostMapping("/modificar-autor")
-    public String modificarAutor(ModelMap model, @RequestParam String id, @RequestParam String nombre) {
+    public String modificarAutor(ModelMap model, MultipartFile archivo, @RequestParam String id, 
+            @RequestParam String nombre, String descripcion, String redSocial, Provincias provincias)  {
 
         try {
-            autorServicio.modificarAutor(id, nombre);
+            autorServicio.modificarAutor(id, archivo, nombre, descripcion, redSocial, provincias);
             // Mensaje de éxito inyectado al modelo:
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue modificado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
