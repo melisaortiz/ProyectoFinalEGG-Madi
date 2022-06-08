@@ -4,10 +4,127 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
-.main-content {
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
 
-	padding-top: 200px;
-	padding-bottom: 100px;
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(179, 179, 179);
+    font-size: 10px;
+
+}
+
+nav ul {
+    float: left;
+    margin: 0px 0px;
+    padding: 0px 8px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+nav a.nav-link {
+    color: white;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+a.nav-link:hover {
+    color: rgb(151, 151, 151);
+}
+
+img#logo {
+    width: 9%;
+    position: absolute;
+    top: 0px;
+    right: 45%;
+    display: inline-block;
+}
+
+nav #icon {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 1048px) {
+    label.logo {
+        font-size: 32px;
+        padding-right: 60px;
+    }
+
+    nav ul {
+        margin-left: 20px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 909px) {
+    nav #icon {
+        font-size: 20px;
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: rgb(165, 165, 165);
+        margin: 0%;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1;
+    }
+
+    nav li {
+        display: block;
+        margin: 30px 0px;
+        line-height: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    a.nav-link {
+        color: black;
+    }
+
+    nav ul.show {
+        margin-top: -10%;
+        left: 0;
+        width: 14em;
+        padding-top: 80px;
+        z-index: -1;
+    }
+
+	.img-fluid {
+		max-width: 60%;
+		height: auto;
+	}
+}
+.main-content {
+	padding-top: 60px;
+	padding-bottom: 80px;
 }
 
 .flex-center {
@@ -17,17 +134,19 @@ body {
 #accordion .accordion-card {
 	background: transparent;
 	border: 0;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 #accordion .accordion-card__header {
-	background: #3f51b5;
+	background: #000000;
 	color: #fff;
+	font-size: 14px;
 	padding: 15px;
 	border-radius: 5px;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin: 10px;
 }
 #accordion .accordion-card__header.collapsed .drop-icon {
 	transform: rotate(0deg);
@@ -38,6 +157,7 @@ body {
 }
 #accordion .accordion-card__header h5 span {
 	margin-left: 10px;
+	font-size: 1rem;
 }
 #accordion .accordion-card__header .drop-icon {
 	margin-right: 15px;
@@ -49,4 +169,131 @@ body {
 	background: #fff;
 	border-radius: 5px;
 	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+/*----------------------FOOTER---------------------*/
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+}
+
+.container-footer-all {
+    width: 100%;
+    max-width: 85%;
+    padding: 40px;
+    margin-left: 5%;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.colum1 {
+    max-width: 400px;
+}
+
+.colum1 h1 {
+    font-size: 22px;
+}
+
+.colum1 p {
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2 {
+    max-width: 400px;
+
+}
+
+.colum2 h1 {
+    font-size: 22px;
+}
+
+.row3 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row3 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row3 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+.colum3 {
+    max-width: 400px;
+}
+
+.colum3 h1 {
+    font-size: 22px;
+}
+
+.row2 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer {
+    width: 100%;
+    background: #101010;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright {
+    color: #C7C7C7;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+@media screen and (max-width: 1100px) {
+    .container-body {
+        flex-wrap: wrap;
+    }
+
+    .colum1 {
+        max-width: 100%;
+    }
+
+    .colum2,
+    .colum3 {
+        margin-top: 40px;
+    }
 }
