@@ -170,6 +170,10 @@ ol {
   filter: grayscale(1);
 }
 
+.gallery {
+  z-index: 100;
+}
+
 .gallery:nth-child(3) {
   grid-column-start: span 2;
   /* /Le indicamos a esa imagen que ocupe 2 columnas/ */
@@ -186,21 +190,21 @@ ol {
 #btn1 {
   position: relative;
   z-index: 100;
-  left: 76%;
+  left: 71%;
   top: -95%
 }
 
 #btn2 {
   position: relative;
   z-index: 100;
-  left: 83%;
+  left: 81%;
   top: -95%;
 }
 
 #btn3 {
   position: relative;
   z-index: 100;
-  left: 90%;
+  left: 88%;
   top: -95%;
 }
 
@@ -230,7 +234,8 @@ footer {
 }
 
 .colum1 h1 {
-  font-size: 22px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .colum1 p {
@@ -245,7 +250,8 @@ footer {
 }
 
 .colum2 h1 {
-  font-size: 22px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .row {
@@ -269,7 +275,8 @@ footer {
 }
 
 .colum3 h1 {
-  font-size: 22px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .row2 {
@@ -300,6 +307,8 @@ footer {
   justify-content: space-between;
   padding: 20px;
 }
+
+
 
 .copyright {
   color: #C7C7C7;
