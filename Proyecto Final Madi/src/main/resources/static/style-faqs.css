@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
-	background: #f3f4fb;
-	font-family: "Roboto", sans-serif;
+    background: #f3f4fb;
+    font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -20,7 +20,6 @@ nav {
     width: 100%;
     background-color: rgb(179, 179, 179);
     font-size: 10px;
-
 }
 
 nav ul {
@@ -66,11 +65,9 @@ nav #icon {
         font-size: 32px;
         padding-right: 60px;
     }
-
     nav ul {
         margin-left: 20px;
     }
-
     nav a {
         font-size: 10px;
     }
@@ -81,7 +78,6 @@ nav #icon {
         font-size: 20px;
         display: block;
     }
-
     nav ul {
         position: fixed;
         width: 30%;
@@ -94,21 +90,17 @@ nav #icon {
         transition: all .5s;
         z-index: 1;
     }
-
     nav li {
         display: block;
         margin: 30px 0px;
         line-height: 15px;
     }
-
     nav a {
         font-size: 10px;
     }
-
     a.nav-link {
         color: black;
     }
-
     nav ul.show {
         margin-top: -10%;
         left: 0;
@@ -116,63 +108,70 @@ nav #icon {
         padding-top: 80px;
         z-index: -1;
     }
-
-	.img-fluid {
-		max-width: 60%;
-		height: auto;
-	}
+    .img-fluid {
+        max-width: 60%;
+        height: auto;
+    }
 }
+
 .main-content {
-	padding-top: 60px;
-	padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 80px;
 }
 
 .flex-center {
-	align-items: center;
+    align-items: center;
 }
 
 #accordion .accordion-card {
-	background: transparent;
-	border: 0;
-	margin-bottom: 15px;
+    background: transparent;
+    border: 0;
+    margin-bottom: 15px;
 }
+
 #accordion .accordion-card__header {
-	background: #000000;
-	color: #fff;
-	font-size: 14px;
-	padding: 15px;
-	border-radius: 5px;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px;
+    background: #000000;
+    color: #fff;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
 }
+
 #accordion .accordion-card__header.collapsed .drop-icon {
-	transform: rotate(0deg);
+    transform: rotate(0deg);
 }
+
 #accordion .accordion-card__header h5 {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 #accordion .accordion-card__header h5 span {
-	margin-left: 10px;
-	font-size: 1rem;
+    margin-left: 10px;
+    font-size: 1rem;
 }
+
 #accordion .accordion-card__header .drop-icon {
-	margin-right: 15px;
-	transform: rotate(180deg);
-	transition: all 0.2s;
+    margin-right: 15px;
+    transform: rotate(180deg);
+    transition: all 0.2s;
 }
+
 #accordion .accordion-card__body {
-	padding: 25px;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
 }
 
 
 /*----------------------FOOTER---------------------*/
+
 footer {
     width: 100%;
     background: #202020;
@@ -189,7 +188,6 @@ footer {
 .container-body {
     display: flex;
     justify-content: space-between;
-
 }
 
 .colum1 {
@@ -208,7 +206,6 @@ footer {
 
 .colum2 {
     max-width: 400px;
-
 }
 
 .colum2 h1 {
@@ -287,11 +284,9 @@ footer {
     .container-body {
         flex-wrap: wrap;
     }
-
     .colum1 {
         max-width: 100%;
     }
-
     .colum2,
     .colum3 {
         margin-top: 40px;
