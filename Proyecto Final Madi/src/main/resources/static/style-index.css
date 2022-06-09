@@ -104,19 +104,19 @@ nav #icon {
 #inicses {
     position: absolute;
     top: 32px;
-    left: 1710px;
+    left: 80%;
 }
 
 .carousel {
-    width: 1250px;
-    height: 350px;
-    left: 10.5%;
+    width: 90%;
+    left: 20%;
+    left: 5%;
     margin-top: 100px;
 }
 
 .d-block.w-100 {
     width: 1250px;
-    height: 435px;
+    height: 370px;
     object-fit: cover;
 }
 
@@ -162,7 +162,7 @@ ol {
 }
 
 .gallery {
-  z-index: 100;
+    z-index: 100;
 }
 
 .gallery:nth-child(3) {
@@ -180,21 +180,21 @@ ol {
 #btn1 {
     position: relative;
     z-index: 100;
-    left: 76%;
+    margin-left: 60%;
     top: -95%
 }
 
 #btn2 {
     position: relative;
     z-index: 100;
-    left: 83%;
+    margin-left: 73%;
     top: -95%;
 }
 
 #btn3 {
     position: relative;
     z-index: 100;
-    left: 90%;
+    margin-left: 83%;
     top: -95%;
 }
 
@@ -221,8 +221,8 @@ footer {
 }
 
 .colum1 h1 {
-  font-size: 18px;
-  text-transform: uppercase;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .colum1 p {
@@ -236,8 +236,8 @@ footer {
 }
 
 .colum2 h1 {
-  font-size: 18px;
-  text-transform: uppercase;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .row {
@@ -261,8 +261,8 @@ footer {
 }
 
 .colum3 h1 {
-  font-size: 18px;
-  text-transform: uppercase;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .row2 {
@@ -293,8 +293,6 @@ footer {
     justify-content: space-between;
     padding: 20px;
 }
-
-
 
 .copyright {
     color: #C7C7C7;
