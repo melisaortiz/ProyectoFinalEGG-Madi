@@ -172,14 +172,14 @@ footer {
 }
 
 .colum2 {
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .colum2 h1 {
     font-size: 22px;
 }
 
-.row {
+#redes-sociales {
     margin-top: 20px;
     display: flex;
 }
