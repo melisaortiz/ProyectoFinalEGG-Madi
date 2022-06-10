@@ -2,322 +2,282 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madí - tienda</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madí - tienda</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-  <link rel="stylesheet"
-    href="../static/style_tienda.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-  <script>
-    $(document).ready(function () {
-      $('#icon').click(function () {
-        $('ul').toggleClass('show');
-      });
-    });
-  </script>
+    <link rel="stylesheet" href="/style_tienda.css">
+    <link rel="stylesheet" href="/style-resp.css">
 
-  <script>
-    $(document).ready(function () {
-      $('#icon2').click(function () {
-        $('ul').toggleClass('show2');
-      });
-    });
-  </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#icon').click(function() {
+                $('ul').toggleClass('show');
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#icon2').click(function() {
+                $('ul').toggleClass('show2');
+            });
+        });
+    </script>
 </head>
 
 <body>
 
-  <!--NAV BAR -->
+    <!--NAVBAR -->
 
-  <nav class="navbar">
-    <ul>
-      <li class="nav-item"><a class="nav-link" href="index.html"> INICIO </a></li>
-      <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
-      <li class="nav-item"><a class="nav-link" href="faqs.html">FAQS</a></li>
-    </ul>
+    <nav th:replace="/fragments/navbar :: nav"></nav>
 
-    <label id="icon">
-      <i class="fa fa-bars"></i>
-    </label>
+    <section class="flex-container">
+        <section class="carrusel-grid" style="order: 2;">
+            <!-------------- CARROUSEL --------------->
+            <section class="carousel">
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    </ol>
 
-    <!--LOGO en nav-->
-    <img id="logo"
-      src="../static/img/logo.png">
-  </nav>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../static/img/carrousel1.jpeg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <button type="button" class="btn btn-light">Artistas</button>
+                            </div>
 
-  <section class="flex-container">
-    <section class="carrusel-grid" style="order: 2;">
-      <!-------------- CARROUSEL --------------->
-      <section class="carousel">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          </ol>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../static/img/carousel2.png" class="d-block w-100" id="carousel2" alt="...">
+                        </div>
+                    </div>
 
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="../static/img/carrousel1.jpeg"
-                class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <button type="button" class="btn btn-light">Artistas</button>
-              </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
 
-            </div>
-            <div class="carousel-item">
-              <img
-                src="../static/img/carousel2.png"
-                class="d-block w-100" id="carousel2" alt="...">
-            </div>
-          </div>
+            <!----------------  GRID ------------->
+            <section class="grid-container">
+                <section class="grid">
 
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </section>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-      <!----------------  GRID ------------->
-      <section class="grid-container">
-        <section class="grid">
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda3.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda3.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda2.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda2.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda3.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda3.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda2.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda2.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
+                    <div class="product">
+                        <img class="imagen_tienda" src="../static/img/imagen_tienda2.jpeg" alt="cuadro">
+                        <div class="product-name"> CUADRO </div>
+                        <div class="product-price"><strong>$6000</strong></div>
+                    </div>
+                </section>
+            </section>
 
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
-
-          <div class="product">
-            <img class="imagen_tienda"
-              src="../static/img/imagen_tienda2.jpeg"
-              alt="cuadro">
-            <div class="product-name"> CUADRO </div>
-            <div class="product-price"><strong>$6000</strong></div>
-          </div>
         </section>
-      </section>
 
-    </section>
+        <!--SIDEBAR -->
+        <aside class="sidebar" style="order: 1;">
 
-    <!--SIDEBAR -->
-    <aside class="sidebar" style="order: 1;">
-
-      <label id="icon2">
+            <label id="icon2">
         <i class="fa fa-bars"></i>
       </label>
 
-      <section class="show2">
-        <Ul>
-          <strong>
+            <section class="show2">
+                <Ul>
+                    <strong>
             <li> FILTRAR POR PRECIO </li>
           </strong>
-          <li style="font-size: 10px">Precio: $500 - $10.000</li>
-        
-          <li>
-            <div class="wrapper">
-              <div class="values" style="padding: 1em 1em 4em;">
-                  <span id="range1">
+                    <li style="font-size: 10px">Precio: $500 - $10.000</li>
+
+                    <li>
+                        <div class="wrapper">
+                            <div class="values" style="padding: 1em 1em 4em;">
+                                <span id="range1">
                       $500
                   </span>
-                  <span> &dash; </span>
-                  <span id="range2">
+                                <span> &dash; </span>
+                                <span id="range2">
                       $10000
                   </span>
-              </div>
-              <div class="container">
-                  <div class="slider-track"></div>
-                  <input type="range" min="500" max="10000" value="500" id="slider-1" oninput="slideOne()">
-                  <input type="range" min="500" max="10000" value="5000" id="slider-2" oninput="slideTwo()">
-              </div>
-          </div>
-          
-        </li>
-        </Ul>
+                            </div>
+                            <div class="container">
+                                <div class="slider-track"></div>
+                                <input type="range" min="500" max="10000" value="500" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="500" max="10000" value="5000" id="slider-2" oninput="slideTwo()">
+                            </div>
+                        </div>
 
-        <Ul>
-          <strong>
+                    </li>
+                </Ul>
+
+                <Ul>
+                    <strong>
             <li> CATEGORIAS </li>
           </strong>
-          <li><a class="nav-link" href="">fotografia</a></li>
-          <li><a class="nav-link" href="faqs.html">óleo</a></li>
-          <li><a class="nav-link" href="faqs.html">acuarela</a></li>
-          <li><a class="nav-link" href="faqs.html">acrílico</a></li>
-          <li><a class="nav-link" href="faqs.html">collage</a></li>
-          <li><a class="nav-link" href="faqs.html">ilustraciones</a></li>
-        </Ul>
+                    <li><a class="nav-link" href="">fotografia</a></li>
+                    <li><a class="nav-link" href="faqs.html">óleo</a></li>
+                    <li><a class="nav-link" href="faqs.html">acuarela</a></li>
+                    <li><a class="nav-link" href="faqs.html">acrílico</a></li>
+                    <li><a class="nav-link" href="faqs.html">collage</a></li>
+                    <li><a class="nav-link" href="faqs.html">ilustraciones</a></li>
+                </Ul>
 
-        <Ul>
-          <strong>
+                <Ul>
+                    <strong>
             <li> ARTISTAS </li>
           </strong>
-          <li><a class="nav-link" href="faqs.html">artista</a></li>
-          <li><a class="nav-link" href="faqs.html">artista</a></li>
-          <li><a class="nav-link" href="faqs.html">artista</a></li>
-          <li><a class="nav-link" href="faqs.html">artista</a></li>
-          <li><a class="nav-link" href="faqs.html">artista</a></li>
-        </Ul>
-      </section>
-    </aside>
-  </section>
+                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                </Ul>
+            </section>
+        </aside>
+    </section>
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script>
-<!--Script filtrar precio-->
-<script src="scripttienda.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!--Script filtrar precio-->
+    <script src="scripttienda.js"></script>
 </body>
 
 <footer>
 
-  <div class="container-footer-all">
+    <div class="container-footer-all">
 
-    <div class="container-body">
+        <div class="container-body">
 
-      <div class="colum1">
-        <h1>Más información sobre nosotres</h1>
+            <div class="colum1">
+                <h1>Más información sobre nosotres</h1>
 
-        <p>Esta compañía se dedica a la venta arte priorizando el consumo de artistas nacionales.
-          También nos enfocamos en generar consciencia medio-ambiental a través del arte reciclado.
-        </p>
+                <p>Esta compañía se dedica a la venta arte priorizando el consumo de artistas nacionales. También nos enfocamos en generar consciencia medio-ambiental a través del arte reciclado.
+                </p>
 
-      </div>
+            </div>
 
-      <div class="colum2">
+            <div class="colum2">
 
-        <h1>Redes sociales</h1>
+                <h1>Redes sociales</h1>
 
-        <div class="row">
-          <img href="https://facebook.com" src="../static/img/facebook.png">
-          <label>Seguinos en Facebook</label>
+                <div class="row">
+                    <img href="https://facebook.com" src="../static/img/facebook.png">
+                    <label>Seguinos en Facebook</label>
+                </div>
+                <div class="row">
+                    <img href="https://instagram.com" src="../static/img/instagram.png">
+                    <label>Seguinos en Instagram</label>
+                </div>
+            </div>
+
+            <div class="colum3">
+
+                <h1>Contactános</h1>
+
+                <div class="row2">
+                    <img src="../static/img/house.png">
+                    <label>Balcarce 50, C1064 CABA</label>
+                </div>
+
+                <div class="row2">
+                    <img src="../static/img/smartphone.png">
+                    <label>+54926143434</label>
+                </div>
+
+                <div class="row2">
+                    <img src="../static/img/contact.png">
+                    <label>madiarte@gmail.com</label>
+                </div>
+
+            </div>
+
         </div>
-        <div class="row">
-          <img href="https://instagram.com" src="../static/img/instagram.png">
-          <label>Seguinos en Instagram</label>
-        </div>
-      </div>
-
-      <div class="colum3">
-
-        <h1>Contactános</h1>
-
-        <div class="row2">
-          <img src="../static/img/house.png">
-          <label>Balcarce 50, C1064 CABA</label>
-        </div>
-
-        <div class="row2">
-          <img src="../static/img/smartphone.png">
-          <label>+54926143434</label>
-        </div>
-
-        <div class="row2">
-          <img src="../static/img/contact.png">
-          <label>madiarte@gmail.com</label>
-        </div>
-
-      </div>
 
     </div>
 
-  </div>
+    <div class="container-footer">
+        <div class="footer">
+            <div class="copyright">
+                © 2022 Todos los derechos reservados | <a href="">Madí</a>
+            </div>
 
-  <div class="container-footer">
-    <div class="footer">
-      <div class="copyright">
-        © 2022 Todos los derechos reservados | <a href="">Madí</a>
-      </div>
-
-      <div class="information">
-        <a href="">Información compañia</a> | <a href="">Política y privacidad</a> | <a href="">Terminos y
+            <div class="information">
+                <a href="">Información compañia</a> | <a href="">Política y privacidad</a> | <a href="">Terminos y
           Condiciones</a>
-      </div>
-    </div>
+            </div>
+        </div>
 
-  </div>
+    </div>
 
 </footer>
 
