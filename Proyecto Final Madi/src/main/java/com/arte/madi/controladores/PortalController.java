@@ -41,13 +41,7 @@ public class PortalController {
      * @return
      */
     @GetMapping("/")
-    public String index(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
-        if (error != null) {
-            model.put("error", "Usuario o clave incorrectos.");
-        }
-        if (logout != null) {
-            model.put("logout", "Ha salido correctamente.");
-        }
+    public String index() {
         return "index.html";
     }
     
@@ -63,35 +57,17 @@ public class PortalController {
     }
     
          @GetMapping("/tienda")
-    public String tienda(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
-        if (error != null) {
-            model.put("error", "Usuario o clave incorrectos.");
-        }
-        if (logout != null) {
-            model.put("logout", "Ha salido correctamente.");
-        }
+    public String tienda() {
         return "tienda.html";
     }
     
          @GetMapping("/contacto")
-    public String contacto(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
-        if (error != null) {
-            model.put("error", "Usuario o clave incorrectos.");
-        }
-        if (logout != null) {
-            model.put("logout", "Ha salido correctamente.");
-        }
+    public String contacto() {
         return "contacto.html";
     }
     
          @GetMapping("/faqs")
-    public String faqs(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
-        if (error != null) {
-            model.put("error", "Usuario o clave incorrectos.");
-        }
-        if (logout != null) {
-            model.put("logout", "Ha salido correctamente.");
-        }
+    public String faqs() {
         return "faqs.html";
     }
     
