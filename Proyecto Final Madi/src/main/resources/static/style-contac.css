@@ -1,107 +1,11 @@
-* {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-}
+/* --------------------------- ESTILOS GENERALES --------------------------- */
 
+html,
 body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-nav {
-    height: 80px;
-    width: 100%;
-    background-color: #202020;
-    font-size: 10px;
-}
-
-nav ul {
-    float: left;
-    margin: 0px 0px;
-    padding: 0px 8px;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 2px;
-}
-
-nav a.nav-link {
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    padding: 5px;
-}
-
-a.nav-link:hover {
-    color: green;
-}
-
-img#logo {
-    width: 10%;
-    position: absolute;
-    top: 0px;
-    right: 45%;
-    display: inline-block;
-}
-
-nav #icon {
-    color: white;
-    font-size: 30px;
-    float: left;
-    margin-left: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-@media (max-width: 1048px) {
-    label.logo {
-        font-size: 32px;
-        padding-right: 60px;
-    }
-    nav ul {
-        margin-left: 20px;
-    }
-    nav a {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 909px) {
-    nav #icon {
-        font-size: 20px;
-        display: block;
-    }
-    nav ul {
-        position: fixed;
-        width: 30%;
-        height: 100vh;
-        background: rgb(0, 0, 0);
-        margin: 0%;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .4s;
-    }
-    nav li {
-        display: block;
-        margin: 30px 0px;
-        line-height: 15px;
-    }
-    nav a {
-        font-size: 10px;
-    }
-    nav ul.show {
-        left: 0;
-    }
-}
-
-
-/*------------------texto---------------- */
-
-.text-nav {
-    text-align: center;
-    margin-top: 2%;
 }
 
 
