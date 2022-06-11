@@ -87,6 +87,10 @@
                                             </select>
                                             <small id="editorialHelp" class="form-text text-muted">Elija la provincia en la cual desarrolla la actividad el Artista.</small><br>
                                             
+                                            <label>Foto del Artista</label>
+                                        <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file" />
+                                        <small id="fotoHelp" class="form-text text-muted">Ingrese una foto (preferentemente en formato cuadrado) donde se pueda ver su rostro.</small>
+                                        
                                             
                                             <p><br><button type="submit" class="btn btn-success">Guardar Autor</button></p>
                                         </form>
