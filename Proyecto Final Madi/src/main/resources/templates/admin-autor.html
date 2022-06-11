@@ -71,7 +71,23 @@
 
                                             <label>Nombre y Apellido</label>
                                             <input type="text" class="form-control" name="nombre" th:value="${nombre}"/>
-
+                                           
+                                            <label for="descripcion">Descripción</label>
+                                            <input type="textarea" class="form-control" name="descripcion" th:value="${descripcion}"/>
+                                            <small id="descripcionHelp" class="form-text text-muted">Reseña de máx. 255 caracteres que identifica al autor.</small>
+                                            
+                                            <label for="redSocial">Red Social</label>
+                                            <input type="textarea" class="form-control" name="redSocial" th:value="${redSocial}"/>
+                                            <small id="descripcionHelp" class="form-text text-muted">Ingrese la red social del Artista.</small>
+                                           
+                                            <label>Provincia</label>
+                                             <select class="form-control custom-select" name="provincia">
+                                                <option selected disabled value="">Seleccionar...</option>
+                                                <option th:each="autor : ${provincias}" th:value="${autor}" th:text="${autor.displayName()}"></option> 
+                                            </select>
+                                            <small id="editorialHelp" class="form-text text-muted">Elija la provincia en la cual desarrolla la actividad el Artista.</small><br>
+                                            
+                                            
                                             <p><br><button type="submit" class="btn btn-success">Guardar Autor</button></p>
                                         </form>
                                     </div>
