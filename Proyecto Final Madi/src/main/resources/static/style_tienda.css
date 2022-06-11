@@ -9,165 +9,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav {
-    height: 80px;
-    width: 100%;
-    background-color: rgb(179, 179, 179);
-    font-size: 10px;
-
-}
-
-nav ul {
-    float: left;
-    margin: 0px 0px;
-    padding: 0px 8px;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 2px;
-}
-
-nav a.nav-link {
-    color: white;
-    text-transform: uppercase;
-    padding: 5px;
-}
-
-a.nav-link:hover {
-    color: rgb(151, 151, 151);
-}
-
-img#logo {
-    width: 9%;
-    position: absolute;
-    top: 0px;
-    right: 45%;
-    display: inline-block;
-}
-
-nav #icon {
-    color: white;
-    font-size: 30px;
-    float: left;
-    margin-left: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-@media (max-width: 1048px) {
-    label.logo {
-        font-size: 32px;
-        padding-right: 60px;
-    }
-
-    nav ul {
-        margin-left: 20px;
-    }
-
-    nav a {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 909px) {
-    nav #icon {
-        font-size: 20px;
-        display: block;
-    }
-
-    nav ul {
-        position: fixed;
-        width: 30%;
-        height: 100vh;
-        background: rgb(165, 165, 165);
-        margin: 0%;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-        z-index: 1;
-    }
-
-    nav li {
-        display: block;
-        margin: 30px 0px;
-        line-height: 15px;
-    }
-
-    nav a {
-        font-size: 10px;
-    }
-
-    a.nav-link {
-        color: black;
-    }
-
-    nav ul.show {
-        margin-top: -10%;
-        left: 0;
-        width: 14em;
-        padding-top: 80px;
-        z-index: -1;
-    }
-
-    section.carrusel-grid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 0em 0 0;
-        margin-left: 0;
-
-    }
-
-    /*media ASIDE*/
-    aside label#icon2 {
-        display: block !important;
-        z-index: 3;
-    }
-
-    .sidebar ul {
-        margin-top: 10px;
-    }
-
-    aside ul {
-        position: relative;
-        width: 60px;
-        background: none;
-        margin: 0%;
-        left: -250%;
-        text-align: center;
-        transition: all .5s;
-    }
-
-    aside li {
-        display: block;
-        margin: 30px 0px;
-        line-height: 15px;
-    }
-
-    aside ul a {
-        font-size: 11px;
-    }
-
-    a.active,
-    a:hover {
-        border: none;
-        color: #C7C7C7;
-    }
-
-    aside ul.show2 {
-        left: 0;
-
-    }
-
-    .wrapper{
-        left: -200%;
-    }
-}
-
-/*hasta aca todo fue del nav bar*/
-
 section.flex-container {
     display: flex;
     justify-content: space-between;
@@ -179,10 +20,11 @@ section.carrusel-grid {
     justify-content: center;
     padding: 0 5em;
     margin-left: 0;
-
 }
 
+
 /*-------------CARRUSEL--------------*/
+
 section.carousel {
     display: flex;
     max-width: 700px;
@@ -191,7 +33,9 @@ section.carousel {
     margin: 30px auto;
 }
 
+
 /*imagen carrusel*/
+
 .d-block.w-100 {
     width: 500px;
     height: 350px;
@@ -223,7 +67,9 @@ ol {
 
 /*-----------------GRID------------------*/
 
+
 /*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
+
 section.grid-container {
     display: flex;
     justify-content: center;
@@ -238,7 +84,9 @@ section.grid-container {
     justify-content: space-evenly;
 }
 
+
 /*producto del grid*/
+
 .grid div.product {
     max-width: 200px;
     padding: 10px;
@@ -249,7 +97,9 @@ section.grid-container {
     box-sizing: border-box;
 }
 
+
 /*cuando le pasamos el mouse se le pone borde*/
+
 .grid div.product:hover {
     border: 1px solid black;
 }
@@ -263,14 +113,15 @@ div.product-name {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 /*-------------ASIDE------------*/
+
 aside.sidebar {
     max-width: 200px;
     width: 30%;
     height: 100vh;
     margin-top: 30px;
     padding-left: 15px;
-
 }
 
 .sidebar li {
@@ -287,7 +138,9 @@ aside.sidebar {
     margin-top: 80px;
 }
 
+
 /*icono fas fa aside*/
+
 aside label#icon2 {
     color: black;
     font-size: 20px;
@@ -297,11 +150,12 @@ aside label#icon2 {
     display: none;
 }
 
+
 /*PRICE RANGE*/
+
 .wrapper {
     position: relative;
     width: 20vmin;
-
 }
 
 input[type="range"] {
@@ -316,7 +170,6 @@ input[type="range"] {
     bottom: 0;
     background-color: transparent;
     pointer-events: none;
-
 }
 
 .slider-track {
@@ -338,7 +191,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 input[type="range"]::-moz-range-track {
     -moz-appearance: none;
     height: 5px;
-
 }
 
 input[type="range"]::-ms-track {
@@ -352,7 +204,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 0.3em;
     background-color: #101010;
     cursor: pointer;
-
     pointer-events: auto;
     margin-top: -9px;
 }
@@ -380,133 +231,4 @@ input[type="range"]::-ms-thumb {
 input[type="range"]:active ::-webkit-slider-thumb {
     background-color: #ffffff;
     border: 3px solid#3264fe;
-}
-
-
-
-/*----------------------FOOTER---------------------*/
-footer {
-    width: 100%;
-    background: #202020;
-    color: white;
-}
-
-.container-footer-all {
-    width: 100%;
-    max-width: 85%;
-    padding: 40px;
-    margin-left: 5%;
-}
-
-.container-body {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.colum1 {
-    max-width: 400px;
-}
-
-.colum1 h1 {
-    font-size: 22px;
-}
-
-.colum1 p {
-    font-size: 14px;
-    color: #C7C7C7;
-    margin-top: 20px;
-}
-
-.colum2 {
-    max-width: 400px;
-
-}
-
-.colum2 h1 {
-    font-size: 22px;
-}
-
-.row {
-    margin-top: 20px;
-    display: flex;
-}
-
-.row img {
-    width: 36px;
-    height: 36px;
-}
-
-.row label {
-    margin-top: 10px;
-    margin-left: 20px;
-    color: #C7C7C7;
-}
-
-.colum3 {
-    max-width: 400px;
-}
-
-.colum3 h1 {
-    font-size: 22px;
-}
-
-.row2 {
-    margin-top: 20px;
-    display: flex;
-}
-
-.row2 img {
-    width: 36px;
-    height: 36px;
-}
-
-.row2 label {
-    margin-top: 10px;
-    margin-left: 20px;
-    max-width: 140px;
-}
-
-.container-footer {
-    width: 100%;
-    background: #101010;
-}
-
-.footer {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.copyright {
-    color: #C7C7C7;
-}
-
-.copyright a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.information a {
-    text-decoration: none;
-    color: #C7C7C7;
-}
-
-@media screen and (max-width: 1100px) {
-
-    .container-body {
-        flex-wrap: wrap;
-    }
-
-    .colum1 {
-        max-width: 100%;
-    }
-
-    .colum2,
-    .colum3 {
-        margin-top: 40px;
-    }
 }

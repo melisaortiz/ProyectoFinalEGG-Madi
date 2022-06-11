@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/*").hasRole("ADMIN")
                 .antMatchers("/css/*", "/js/*", "/img/*", "/**").permitAll()
                 .and().formLogin()
-                .loginPage("/") // Que formulario esta mi login
+                .loginPage("/login") // Que formulario esta mi login
                 .loginProcessingUrl("/logincheck")
                 .usernameParameter("username") // Como viajan los datos del logueo
                 .passwordParameter("password")// Como viajan los datos del logueo

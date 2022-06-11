@@ -41,13 +41,7 @@ public class PortalController {
      * @return
      */
     @GetMapping("/")
-    public String index(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) {
-        if (error != null) {
-            model.put("error", "Usuario o clave incorrectos.");
-        }
-        if (logout != null) {
-            model.put("logout", "Ha salido correctamente.");
-        }
+    public String index() {
         return "index.html";
     }
     
@@ -61,7 +55,22 @@ public class PortalController {
         }
         return "login.html";
     }
-
+    
+         @GetMapping("/tienda")
+    public String tienda() {
+        return "tienda.html";
+    }
+    
+         @GetMapping("/contacto")
+    public String contacto() {
+        return "contacto.html";
+    }
+    
+         @GetMapping("/faqs")
+    public String faqs() {
+        return "faqs.html";
+    }
+    
     /**
      * Vista principal para los usuarios logueados. Para los ADMIN se ve el Menú
      * Administrativo (acceso a Dashboard, Gestión de Libros/Autores/Editoriales

@@ -9,8 +9,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title></title>
-    <link rel="stylesheet" href="/ProyectoFinal/Proyecto Final Madi/src/main/resources/static/style-contac.css">
+    <link rel="stylesheet" href="/style-resp.css">
+    <link rel="stylesheet" href="/style-contac.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
@@ -24,18 +28,8 @@
 
 <body>
 
-    <nav class="navbar">
-        <ul>
-            <li class="nav-item"><a class="nav-link" href="tienda.html">TIENDA </a></li>
-            <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
-            <li class="nav-item"><a class="nav-link" href="faqs.html">FAQS</a></li>
-        </ul>
-        <label id="icon">
-            <i class="fa fa-bars"></i>
-        </label>
+    <nav th:replace="/fragments/navbar :: nav"></nav>
 
-        <img id="logo" src="/ProyectoFinal/Proyecto Final Madi/src/main/resources/imagenes/logo.png">
-    </nav>
     <section class="form">
         <form>
             <label for="nombreapellido">NOMBRE</label>
@@ -60,81 +54,19 @@
 
             <label class="checkbox"><input type="checkbox" checked="">Quiero recibir novedades de Madí por e-mail</label>
 
-            <input type="submit" value="ENVIAR" class=" enviar ">
+            <input type="submit" value="ENVIAR" class="enviar">
 
         </form>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!--FOOTER-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
+
 </body>
 
-<footer>
 
-    <div class="container-footer-all ">
-
-        <div class="container-body ">
-
-            <div class="colum1 ">
-                <h1>Más información sobre nosotres</h1>
-
-                <p>Esta compañía se dedica a la venta arte priorizando el consumo de artistas nacionales. También nos enfocamos en generar consciencia medio-ambiental a través del arte reciclado.
-                </p>
-
-            </div>
-
-            <div class="colum2 ">
-
-                <h1>Redes sociales</h1>
-
-                <div class="row ">
-                    <img href="https://facebook.com " src="../imagenes/facebook.png ">
-                    <label>Seguinos en Facebook</label>
-                </div>
-                <div class="row ">
-                    <img href="https://instagram.com " src="../imagenes/instagram.png ">
-                    <label>Seguinos en Instagram</label>
-                </div>
-            </div>
-
-            <div class="colum3 ">
-
-                <h1>Contactános</h1>
-
-                <div class="row2 ">
-                    <img src="../imagenes/house.png ">
-                    <label>Balcarce 50, C1064 CABA</label>
-                </div>
-
-                <div class="row2 ">
-                    <img src="../imagenes/smartphone.png ">
-                    <label>+54926143434</label>
-                </div>
-
-                <div class="row2 ">
-                    <img src="../imagenes/contact.png ">
-                    <label>madiarte@gmail.com</label>
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="container-footer ">
-        <div class="footer ">
-            <div class="copyright ">
-                © 2022 Todos los derechos reservados | <a href=" ">Madí</a>
-            </div>
-
-            <div class="information ">
-                <a href=" ">Información compañia</a> | <a href=" ">Política y privacidad</a> | <a href=" ">Terminos y Condiciones</a>
-            </div>
-        </div>
-
-    </div>
-
-</footer>
 
 </html>
