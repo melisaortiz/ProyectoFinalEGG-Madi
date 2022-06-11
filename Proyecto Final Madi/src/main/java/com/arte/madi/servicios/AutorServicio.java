@@ -187,7 +187,7 @@ public class AutorServicio {
             throw new Exception("La descripción no puede tener más de 200 caracteres.");
         }
         if (redSocial == null || redSocial.isEmpty()) {
-            throw new Exception("Precio ingresado no es válido.");
+            throw new Exception("La red social inresada no es válido.");
         }
     }
 }
