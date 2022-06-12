@@ -102,25 +102,15 @@
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
                         <thead>
                             <tr class="bg-danger text-white">
-                                <th>Foto</th>
                                 <th>Id</th>
                                 <th>Nombre y Apellido</th>
-                                <th>Descripción</th>
-                                <th>Red Social</th>
-                                <th>Provincia</th>
                                 <th>Estado / Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="">
                             <tr th:each="autor : ${autores}">
-                                <td><img class="img-fluid rounded-circle" th:if="${autor.foto != null}" 
-                                    th:src="${'/foto/autor/' + autor.id}" alt="" 
-                                    id="profile-photo"></img></td>
                                 <td th:text="${autor.id}"></td>
                                 <td th:text="${autor.nombre}"></td>
-                                <td th:text="${autor.descripcion}"></td>
-                                <td th:text="${autor.redSocial}"></td>
-                                <td th:text="${autor.provincias}"></td>
                                 <td>
                                     <i th:if="${autor.alta == true}" class="bi bi-circle-fill text-success"
                                        title="De alta"></i>
