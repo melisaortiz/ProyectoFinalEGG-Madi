@@ -39,7 +39,6 @@ public class AutorController {
     @GetMapping("/admin-autores")
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
-        
         model.addAttribute("autores", autores);
         model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
