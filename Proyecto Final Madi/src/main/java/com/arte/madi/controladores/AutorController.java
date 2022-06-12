@@ -91,7 +91,6 @@ public class AutorController {
     public String datosAutor(ModelMap model, @PathVariable String idAutorModif) {
         Autor autor = autorServicio.getById(idAutorModif);
         model.put("autorModif", autor);
-        model.addAttribute("provincias", Provincias.values());
         return "modif-autor.html";
     }
 
