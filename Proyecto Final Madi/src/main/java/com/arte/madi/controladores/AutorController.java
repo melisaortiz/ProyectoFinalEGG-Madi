@@ -39,8 +39,8 @@ public class AutorController {
     @GetMapping("/admin-autores")
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
-        model.put("autores", autores);
-        model.addAttribute("provincias", Provincias.values());
+        model.addAttribute("autores", autores);
+//        model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
     }
 
@@ -90,8 +90,8 @@ public class AutorController {
     @GetMapping("/modificar-autor-datos/{idAutorModif}")
     public String datosAutor(ModelMap model, @PathVariable String idAutorModif) {
         Autor autor = autorServicio.getById(idAutorModif);
-        model.put("autorModif", autor);
         model.addAttribute("autorModif", autor);
+        model.addAttribute("provincias", Provincias.values());
         return "modif-autor.html";
     }
 
@@ -109,10 +109,10 @@ public class AutorController {
      */
     @PostMapping("/modificar-autor")
     public String modificarAutor(ModelMap model, MultipartFile archivo, @RequestParam String id, 
-            @RequestParam String nombre, String descripcion, String redSocial, Provincias provincias)  {
+            @RequestParam String nombre, String descripcion, String redSocial, Provincias provincia)  {
 
         try {
-            autorServicio.modificarAutor(id, archivo, nombre, descripcion, redSocial, provincias);
+            autorServicio.modificarAutor(id, archivo, nombre, descripcion, redSocial, provincia);
             // Mensaje de éxito inyectado al modelo:
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue modificado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
