@@ -39,7 +39,7 @@ public class AutorController {
     @GetMapping("/admin-autores")
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
-        model.put("autores", autores);
+        model.addAttribute("autores", autores);
         model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
     }
@@ -57,10 +57,10 @@ public class AutorController {
     @PostMapping("/registrar-autor")
     public String registrarAutor(ModelMap model,HttpSession session, MultipartFile archivo,
                                  @RequestParam(required = false) String nombre,
-                                 String descripcion, String redSocial, Provincias provincias) {
+                                 String descripcion, String redSocial, Provincias provincia) {
 
         try {
-            autorServicio.agregarAutor(archivo,nombre,descripcion,redSocial, provincias);
+            autorServicio.agregarAutor(archivo,nombre,descripcion,redSocial, provincia);
             // Mensaje de éxito inyectado al modelo de "admin-autor.html":
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue registrado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
@@ -109,10 +109,10 @@ public class AutorController {
      */
     @PostMapping("/modificar-autor")
     public String modificarAutor(ModelMap model, MultipartFile archivo, @RequestParam String id, 
-            @RequestParam String nombre, String descripcion, String redSocial, Provincias provincias)  {
+            @RequestParam String nombre, String descripcion, String redSocial, Provincias provincia)  {
 
         try {
-            autorServicio.modificarAutor(id, archivo, nombre, descripcion, redSocial, provincias);
+            autorServicio.modificarAutor(id, archivo, nombre, descripcion, redSocial, provincia);
             // Mensaje de éxito inyectado al modelo:
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue modificado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
