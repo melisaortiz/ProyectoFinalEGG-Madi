@@ -57,10 +57,10 @@ public class AutorController {
     @PostMapping("/registrar-autor")
     public String registrarAutor(ModelMap model,HttpSession session, MultipartFile archivo,
                                  @RequestParam(required = false) String nombre,
-                                 String descripcion, String redSocial, Provincias provincia) {
+                                 String descripcion, String redSocial, Provincias provincias) {
 
         try {
-            autorServicio.agregarAutor(archivo,nombre,descripcion,redSocial, provincia);
+            autorServicio.agregarAutor(archivo,nombre,descripcion,redSocial, provincias);
             // Mensaje de éxito inyectado al modelo de "admin-autor.html":
             model.put("success", "El autor '" + nombre.toUpperCase() + "' fue registrado exitosamente.");
             // Datos inyectados al modelo de "admin-autor.html":
