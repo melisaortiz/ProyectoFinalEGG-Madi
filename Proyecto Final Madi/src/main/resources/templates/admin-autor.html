@@ -87,8 +87,6 @@
                                             </select>
                                             <small id="editorialHelp" class="form-text text-muted">Elija la provincia en la cual desarrolla la actividad el Artista.</small><br>
                                             
-                                            <label>Foto</label>
-                                            <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file"/><br>
                                             
                                             <p><br><button type="submit" class="btn btn-success">Guardar Autor</button></p>
                                         </form>
@@ -101,7 +99,6 @@
                             </div>
                         </div>
                     </div>
-                    <div sec:authorize="hasRole('ADMIN')" class="row">
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
                         <thead>
                             <tr class="bg-danger text-white">
@@ -114,10 +111,11 @@
                                 <th>Estado / Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="">
                             <tr th:each="autor : ${autores}">
                                 <td><img class="img-fluid rounded-circle" th:if="${autor.foto != null}" 
-                                    th:src="${'/foto/autor/' + autor.id}" alt="" id="profile-photo"></img></td>
+                                    th:src="${'/foto/autor/' + autor.id}" alt="" 
+                                    id="profile-photo"></img></td>
                                 <td th:text="${autor.id}"></td>
                                 <td th:text="${autor.nombre}"></td>
                                 <td th:text="${autor.descripcion}"></td>
@@ -136,11 +134,12 @@
                             </tr>
                         </tbody>
                     </table>
-                        </div>
                 </div>
                 <!-- SCRIPTS-->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
                 
                 <!--FOOTER-->
                 <footer th:replace="/fragments/footer :: footer"></footer>
