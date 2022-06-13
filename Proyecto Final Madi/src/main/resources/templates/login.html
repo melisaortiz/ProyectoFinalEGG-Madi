@@ -1,12 +1,15 @@
 <!DOCTYPE html5>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
+
 <!--HEAD-->
 
 <head th:replace="/fragments/head :: head"></head>
 
 <head>
     <title>Madi ART</title>
+    <link rel="stylesheet" href="/style-login.css">
+
 </head>
 
 <body>
@@ -16,9 +19,6 @@
         <div id="contenido">
             <div class="container text-center">
                 <div class="row">
-                    <div class="col-12">
-                        <h1 class="bg-dark text-white">¡Bienvenidos a Madi ART!</h1>
-                    </div>
                     <div th:if="${errorReg != null}" class="col-12 alert alert-danger alert-dismissible fade show" id="alert" role="alert">
                         <!--Este if mostrará el texto en el caso de que aparezca un error.-->
                         <span th:text="${errorReg}" id="error"></span>
@@ -34,9 +34,9 @@
                             </button>
                     </div>
                 </div>
-                <div class="">
+                <div class="formulario-login">
                     <div class="collapse" id="collapse1">
-                        <div class="card card-body alert alert-dismissible col-12 bg-dark text-white" role="alert">
+                        <div class="card card-body alert alert-dismissible bg-dark col-12 text-white" role="alert">
                             Ingrese los datos solicitados a continuación:
                             <div class="registry-form col-12 text-justify">
                                 <div class="col-12 text-justify">
@@ -79,12 +79,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="card bg-dark text-white" id="login-card">
-                                <div class="card-img-top-libro" id="login-card-banner">
-                                    <span>
-                                    <h1 id="icon"><i class="bi bi-people-fill" fill="currentColor"></i></h1>
-                                </span>
-                                </div>
+                            <div class="card text-white" id="login-card">
                                 <div class="card-body" id="login-card-body">
                                     <h5>Iniciar sesión</h5>
                                     <span class="card-text">
@@ -99,12 +94,12 @@
                                             <label>Contraseña</label>
                                             <input type="password" class="form-control" name="password"/>
     
-                                            <br><button type="submit" class="form-control btn btn-warning">Acceder</button>
+                                            <br><button type="submit" class="form-control btn" id="btn-acceder">Acceder</button>
                                         </form>
                                     </div>
                                     <br>
                                     <span>Crear Cuenta</span>
-                                    <br><button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+                                    <br><button class="btn btn-default" id="btn-crear" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
                                         ¡Regístrate!
                                     </button>
                                     </span>
