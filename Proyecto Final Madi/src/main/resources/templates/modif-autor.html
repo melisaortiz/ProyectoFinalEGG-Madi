@@ -60,6 +60,9 @@
                                                 <option th:each="autor : ${provincias}" th:value="${autor}" th:text="${autor.displayName()}"></option> 
                                             </select>
                                             
+                                            <label>Foto del Artista</label>
+                                        <input type="file" class="form-control" name="archivo" th:value="${archivo}"/>
+                                            
                                             <br>
                                                 <button type="submit" class="btn btn-secondary" formaction="/admin/autores/admin-autores" formmethod="GET">Cancelar</button>
                                                 <button type="submit" class="btn btn-success">Modificar Autor</button>
