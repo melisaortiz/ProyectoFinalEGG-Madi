@@ -109,7 +109,7 @@
                                 <th>Id</th>
                                 <th>Nombre y Apellido</th>
                                 <th>Descripcion</th>
-                                <!--<th>Provincia</th>-->
+                                <th>Provincia</th>
                                 <th>Estado / Acciones</th>
                             </tr>
                         </thead>
@@ -118,7 +118,7 @@
                                 <td th:text="${autor.id}"></td>
                                 <td th:text="${autor.nombre}"></td>
                                 <td th:text="${autor.descripcion}"></td>
-                                <!--<td th:text="${autor.provincia}"></td>-->
+                                <td th:text="${autor.provincias}"></td>
                                 <td>
                                     <i th:if="${autor.alta == true}" class="bi bi-circle-fill text-success"
                                        title="De alta"></i>
