@@ -103,10 +103,12 @@
                             </div>
                         </div>
                     </div>
+                    <div sec:authorize="hasRole('ADMIN')" class="row">
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
                         <thead>
                             <tr class="bg-danger text-white">
-                                <th>Id</th>
+                                <th>Foto</th>
+<!--                                <th>Id</th>-->
                                 <th>Nombre y Apellido</th>
                                 <th>Descripcion</th>
                                 <th>Provincia</th>
@@ -115,7 +117,9 @@
                         </thead>
                         <tbody>
                             <tr th:each="autor : ${autores}">
-                                <td th:text="${autor.id}"></td>
+                                <td><img class="img-fluid rounded-circle" th:if="${autor.foto != null}" 
+                                             th:src="${'/foto/autor/' + autor.id}" alt="" id="profile-photo"></img></td>
+<!--                                <td th:text="${autor.id}"></td>-->
                                 <td th:text="${autor.nombre}"></td>
                                 <td th:text="${autor.descripcion}"></td>
                                 <td th:text="${autor.provincias}"></td>
@@ -132,6 +136,7 @@
                             </tr>
                         </tbody>
                     </table>
+                        </div>
                 </div>
                 <!-- SCRIPTS-->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
