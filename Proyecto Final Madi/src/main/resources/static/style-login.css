@@ -45,7 +45,7 @@ body {
 #login-card {
   margin: 0% 33%;
   width: 45%;
-  height: 150%;
+  height: 450px;
   border-radius: 10px;
 }
 
@@ -226,7 +226,6 @@ body {
   border-radius: 10px;
   box-shadow: 1px 1px 5px rgb(19, 19, 24);
   margin-top: 0%;
-  color: white;
 }
 
 .form-control.btn{
