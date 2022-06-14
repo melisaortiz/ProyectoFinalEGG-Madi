@@ -1,0 +1,292 @@
+/* --------------------------- ESTILOS GENERALES --------------------------- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* ------------------------ NAVBAR ------------------------*/
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: #202020;
+    font-size: 10px;
+}
+
+nav ul {
+    float: left;
+    margin: 0px 0px;
+    padding: 0px 8px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+nav a.nav-link {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+a.nav-link:hover {
+    color: orange;
+}
+
+img#logo {
+    width: 10%;
+    height: 80%;
+    position: absolute;
+    top: 5px;
+    right: 45%;
+    display: inline-block;
+}
+
+.navbar#carrito {
+    right: 9.5%;
+    position: absolute;
+}
+
+#carrito:hover {
+    background-color: orange;
+    color: white;
+}
+
+#inicses {
+    right: 15%;
+    position: absolute;
+    top: 35%;
+}
+
+nav #icon {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-item.dropdown {
+    right: 5%;
+    position: absolute;
+    top: 35%;
+}
+
+.nav-item.dropdown:hover {
+    color: transparent;
+}
+
+@media (max-width: 1048px) {
+    label.logo {
+        font-size: 32px;
+        padding-right: 60px;
+    }
+
+    nav ul {
+        margin-left: 20px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 909px) {
+    nav #icon {
+        font-size: 20px;
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: rgb(70, 70, 70);
+        margin: 0%;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+    }
+
+    nav li {
+        display: block;
+        margin: 30px 0px;
+        line-height: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    nav ul.show {
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.navbar-nav .dropdown-menu.dropdown-menu-lg-right.show {
+    position: absolute;
+    float: none;
+    margin-left: -450%;
+    margin-top: 90%;
+    padding: 50%;
+    font-size: 10px;
+    background-color: #202020;
+}
+
+.img-fluid {
+    max-width: 100%;
+    width: 300px;
+    position: relative;
+    align-items: center;
+    padding: 15px 15px;
+}
+
+.bg-dark {
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.row {
+    font-size: 18px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    font-size: 15px;
+}
+/* --------------------------- ESTILOS DE FOOTER --------------------------- */
+
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+}
+
+.container-footer-all {
+    width: 100%;
+    max-width: 85%;
+    padding: 40px;
+    margin-left: 5%;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1 {
+    max-width: 400px;
+}
+
+.colum1 h1 {
+    font-size: 22px;
+}
+
+.colum1 p {
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2 {
+    max-width: 500px;
+}
+
+.colum2 h1 {
+    font-size: 22px;
+}
+
+#redes-sociales {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img.redes {
+    width: 60px;
+    height: 36px;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+.colum3 {
+    max-width: 400px;
+}
+
+.colum3 h1 {
+    font-size: 22px;
+}
+
+.row2 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer {
+    width: 100%;
+    background: #101010;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright {
+    color: #C7C7C7;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+@media screen and (max-width: 1100px) {
+    .container-body {
+        flex-wrap: wrap;
+    }
+
+    .colum1 {
+        max-width: 100%;
+    }
+
+    .colum2,
+    .colum3 {
+        margin-top: 40px;
+    }
+}
