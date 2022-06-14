@@ -40,15 +40,15 @@
         <nav th:replace="/fragments/navbar :: nav"></nav>
         <!--MAIN CONTENT-->
         <div id="contenido">
-            <div class="container text-center">
+            <div class="bg-dark container text-center">
                 <div class="row">
-                    <div class="col-12">
-                        <h1 class="bg-dark text-white">¡Bienvenidos a Madí ART!</h1>
+                    <div class="col-12 text-white row">
+                        <h1>Bienvenides a Madí ART!</h1>
                     </div>
                 </div>
                 <!--USER WELCOME BANNER-->
                 <div class="col-12">
-                    <h1 class="bg-dark text-white row" sec:authorize="hasRole('ADMIN')">
+                    <h2 class="bg-dark text-white row" sec:authorize="hasRole('ADMIN')">
                         <!--Div que aparece sólo si el usuario logueado es Administrador-->
                         <div class="col-auto"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
                         <div class="col-auto">
@@ -58,7 +58,7 @@
                     </h1>
                 </div>
                 <div class="col-12">
-                    <h1 class="bg-dark text-white row" sec:authorize="hasRole('USUARIO')">
+                    <h2 class="bg-dark text-white row" sec:authorize="hasRole('USUARIO')">
                         <!--Div que aparece para el resto de los usuarios-->
                         <div class="col-auto"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
                         <div class="col-auto">
@@ -92,8 +92,12 @@
                                 </span>
                             </div>
                             <div class="card-body">
-                                <h5>Administrador de<br>Usuarios</h5><span class="card-text"> Dashboard: aquí podrás listar usuarios, modificar datos, dar de baja/alta y modificar roles.</span>
-                                <a href="/admin/dashboard"><button type="button" class="btn btn-warning">Acceder</button></a>
+                                <h5>Administrador de Usuarios</h5>
+                                <span class="card-text"> Dashboard: aquí podrás listar usuarios, modificar datos, dar de baja/alta y modificar roles.</span>
+                                <br>
+                                <a href="/admin/dashboard">
+                                    <button type="button" class="btn btn-warning">Acceder</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -105,9 +109,11 @@
                                 </span>
                             </div>
                             <div class="card-body">
-                                <h5>Administrador de<br>Obras</h5><span class="card-text"> Aquí podrás cargar datos
+                                <h5>Administrador de Obras</h5>
+                                <span class="card-text"> Aquí podrás cargar datos
                                     de una obra, autores, modificar datos, listar y dar de baja/alta.</span>
-                                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+                                <br>
+                                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
                                     Acceder
                                 </button>
                                 <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenu2">
