@@ -41,11 +41,9 @@ a.nav-link:hover {
 
 img#logo {
     width: 10%;
-    height: 80%;
     position: absolute;
-    top: 5px;
+    top: 0px;
     right: 45%;
-    display: inline-block;
 }
 
 .navbar#carrito {
@@ -93,6 +91,12 @@ nav #icon {
     }
     nav a {
         font-size: 10px;
+    }
+    img#logo {
+        width: 20%;
+        position: absolute;
+        top: 2px;
+        right: 50%;
     }
 }
 
