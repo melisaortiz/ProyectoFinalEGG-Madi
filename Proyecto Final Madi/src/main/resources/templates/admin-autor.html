@@ -87,6 +87,10 @@
                                             </select>
                                             <small id="editorialHelp" class="form-text text-muted">Elija la provincia en la cual desarrolla la actividad el Artista.</small><br>
                                             
+                                            <label>Foto del Artista</label>
+                                        <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file" />
+                                        <small id="fotoHelp" class="form-text text-muted">Ingrese una foto (preferentemente en formato cuadrado) donde se pueda ver su rostro.</small>
+                                        
                                             
                                             <p><br><button type="submit" class="btn btn-success">Guardar Autor</button></p>
                                         </form>
@@ -99,24 +103,24 @@
                             </div>
                         </div>
                     </div>
+                    <div sec:authorize="hasRole('ADMIN')" class="row">
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
                         <thead>
                             <tr class="bg-danger text-white">
                                 <th>Foto</th>
-                                <th>Id</th>
+<!--                                <th>Id</th>-->
                                 <th>Nombre y Apellido</th>
-                                <th>Descripción</th>
+                                <th>Descripcion</th>
                                 <th>Red Social</th>
                                 <th>Provincia</th>
                                 <th>Estado / Acciones</th>
                             </tr>
                         </thead>
-                        <tbody class="">
+                        <tbody>
                             <tr th:each="autor : ${autores}">
                                 <td><img class="img-fluid rounded-circle" th:if="${autor.foto != null}" 
-                                    th:src="${'/foto/autor/' + autor.id}" alt="" 
-                                    id="profile-photo"></img></td>
-                                <td th:text="${autor.id}"></td>
+                                             th:src="${'/foto/autor/' + autor.id}" alt="" id="profile-photo"></img></td>
+<!--                                <td th:text="${autor.id}"></td>-->
                                 <td th:text="${autor.nombre}"></td>
                                 <td th:text="${autor.descripcion}"></td>
                                 <td th:text="${autor.redSocial}"></td>
@@ -134,6 +138,7 @@
                             </tr>
                         </tbody>
                     </table>
+                        </div>
                 </div>
                 <!-- SCRIPTS-->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

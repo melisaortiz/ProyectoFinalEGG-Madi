@@ -1,4 +1,4 @@
-<!DOCTYPE html5>
+-<!DOCTYPE html5>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <!--HEAD-->
@@ -59,6 +59,9 @@
                                                  <option selected disabled value="">Seleccionar...</option>
                                                 <option th:each="autor : ${provincias}" th:value="${autor}" th:text="${autor.displayName()}"></option> 
                                             </select>
+                                            
+                                            <label>Foto del Artista</label>
+                                        <input type="file" class="form-control" name="archivo" th:value="${archivo}"/>
                                             
                                             <br>
                                                 <button type="submit" class="btn btn-secondary" formaction="/admin/autores/admin-autores" formmethod="GET">Cancelar</button>

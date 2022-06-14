@@ -40,7 +40,7 @@ public class AutorController {
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
         model.addAttribute("autores", autores);
-        model.addAttribute("provincias", Provincias.values());
+//        model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
     }
 
@@ -90,7 +90,7 @@ public class AutorController {
     @GetMapping("/modificar-autor-datos/{idAutorModif}")
     public String datosAutor(ModelMap model, @PathVariable String idAutorModif) {
         Autor autor = autorServicio.getById(idAutorModif);
-        model.put("autorModif", autor);
+        model.addAttribute("autorModif", autor);
         model.addAttribute("provincias", Provincias.values());
         return "modif-autor.html";
     }
