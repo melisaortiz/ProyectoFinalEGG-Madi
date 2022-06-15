@@ -319,11 +319,13 @@ public class ArteController {
             // Mensaje de error inyectado al modelo de "error.html":
             model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
             // Datos inyectados al modelo de "admin-arte.html":
-            List<Arte> artes = arteServicio.findAll();
-            model.put("artes", artes);
-            List<Autor> autores = autorServicio.findAll();
-            model.put("autores", autores);
-            
+               List<Arte> artes = arteServicio.findAll();
+        model.put("artes", artes);
+        List<Arte> artesDeBaja = arteServicio.listarDeBaja();
+        model.put("artesDeBaja", artesDeBaja);
+        List<Autor> autores = autorServicio.findAll();
+        model.put("autores", autores);
+        
             return "admin-arte.html";
         }
     }
