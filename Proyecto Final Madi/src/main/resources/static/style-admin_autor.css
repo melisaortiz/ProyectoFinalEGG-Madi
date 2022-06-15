@@ -1,0 +1,58 @@
+body {
+    background-color: #202020;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container.text-center {
+    margin-bottom: 3%;
+}
+
+h1.menu-adm {
+    background-color: transparent;
+    color: white;
+    margin-top: 4%;
+    text-transform: uppercase;
+}
+
+div#menu.container {
+    width: 30%;
+    margin-right: 0;
+}
+
+#menu button {
+    background-color: white;
+    color: #101010;
+    height: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#menu button.btn-crear {
+    margin-right: 50%;
+}
+
+thead tr.encabezado-tabla {
+    background-color: #101010;
+}
+
+thead tr.encabezado-tabla th {
+    height: 60px;
+    width: 13.3%;
+    text-align: center;
+    text-decoration: dotted;
+}
+
+tbody {
+    text-align: center;
+}
+
+tbody tr td img {
+    width: 70%;
+}
+
+@media screen and (max-width: 980px) {
+    div#menu.container {
+        width: 30%;
+        margin-right: 25%;
+    }
+}
