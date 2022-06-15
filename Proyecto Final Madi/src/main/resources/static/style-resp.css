@@ -18,6 +18,10 @@ nav {
     font-size: 10px;
 }
 
+.seccion-uno {
+    width: 33%;
+}
+
 nav ul {
     float: left;
     margin: 0px 0px;
@@ -39,27 +43,34 @@ a.nav-link:hover {
     color: orange;
 }
 
-img#logo {
-    width: 10%;
-    position: absolute;
-    top: 0px;
-    right: 45%;
+.seccion-dos {
+    width: 33%;
 }
 
-.navbar#carrito {
-    right: 9.5%;
-    position: absolute;
+.menu-logo {
+    display: block;
+    height: 70px;
+}
+
+img#logo {
+    height: 100%;
+    margin-left: 50%;
+}
+
+.seccion-tres {
+    width: 33%;
+    padding-left: 15%;
+    display: inline-flex;
+}
+
+#inicses {
+    margin-left: -60%;
+    width: 100%;
 }
 
 #carrito:hover {
     background-color: orange;
     color: white;
-}
-
-#inicses {
-    right: 15%;
-    position: absolute;
-    top: 35%;
 }
 
 nav #icon {
@@ -82,6 +93,19 @@ nav #icon {
 }
 
 @media (max-width: 1048px) {
+    .seccion-uno {
+        width: 1%;
+    }
+    .seccion-dos {
+        width: 30%;
+        height: 70px;
+    }
+    .seccion-tres {
+        width: 33%;
+        padding-left: 1%;
+        height: 27px;
+        display: inline-flex;
+    }
     label.logo {
         font-size: 32px;
         padding-right: 60px;
@@ -92,11 +116,17 @@ nav #icon {
     nav a {
         font-size: 10px;
     }
+    .menu-logo {
+        display: block;
+        height: 70px;
+        width: 50%;
+    }
     img#logo {
-        width: 20%;
-        position: absolute;
-        top: 2px;
-        right: 50%;
+        height: 100%;
+        margin-left: 30%;
+    }
+    .navbar-nav .nav-link {
+        margin-top: -27px;
     }
 }
 
@@ -127,6 +157,18 @@ nav #icon {
     nav ul.show {
         left: 0;
         z-index: 1;
+    }
+    .menu-logo {
+        display: block;
+        height: 70px;
+        width: 50%;
+    }
+    img#logo {
+        height: 100%;
+        margin-left: 10%;
+    }
+    .navbar-nav .nav-link {
+        margin-top: -27px;
     }
 }
 
