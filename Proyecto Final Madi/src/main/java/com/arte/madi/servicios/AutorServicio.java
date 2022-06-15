@@ -143,7 +143,7 @@ public class AutorServicio {
         try {
             Autor autor = autorRepositorio.getById(id);
             if (autor != null) { // El autor con ese id SI existe en la DB
-                // Dar de baja todos sus libros:
+                // Dar de baja todos sus artes:
                autor.setAlta(false);
                 // Persistencia en la DB:
                 autorRepositorio.save(autor);
@@ -164,7 +164,7 @@ public class AutorServicio {
                 autor.setAlta(true);
                 // Persistencia en la DB:
                 autorRepositorio.save(autor);
-                // Dar de alta todos sus libros:
+                // Dar de alta todos sus artes:
               
             } else { // El autor con ese id NO existe en la DB
                 throw new Exception("No existe el autor con el id indicado.");
