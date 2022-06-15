@@ -73,9 +73,9 @@ public class PortalController {
     
     /**
      * Vista principal para los usuarios logueados. Para los ADMIN se ve el Menú
-     * Administrativo (acceso a Dashboard, Gestión de Libros/Autores/Editoriales
+     * Administrativo (acceso a Dashboard, Gestión de artes/Autores/Editoriales
      * y Gestión de Préstamos); para los USUARIOS se ve la lista de todos los
-     * libros activos disponibles para solicitar préstamos, además del cuadro
+     * artes activos disponibles para solicitar préstamos, además del cuadro
      * para filtrar la búsqueda por autor.
      *
      * @param model
@@ -131,7 +131,7 @@ public class PortalController {
     }
 
     /**
-     * Método para filtrar Libros por Autor en la vista para USUARIO.
+     * Método para filtrar artes por Autor en la vista para USUARIO.
      *
      * @param model
      * @param idAutor

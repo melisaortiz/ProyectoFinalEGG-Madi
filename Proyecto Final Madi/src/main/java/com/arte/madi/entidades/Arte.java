@@ -11,9 +11,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 
 /**
- * La entidad libro modela los libros que están disponibles en la biblioteca
+ * La entidad arte modela los artes que están disponibles en la biblioteca
  * para ser prestados. En esta entidad, el atributo “ejemplares” contiene la
- * cantidad total de ejemplares de ese libro, mientras que el atributo
+ * cantidad total de ejemplares de ese arte, mientras que el atributo
  * “ejemplaresPrestados” contiene cuántos de esos ejemplares se encuentran
  * prestados en este momento y el atributo “ejemplaresRestantes” contiene
  * cuántos de esos ejemplares quedan para prestar.

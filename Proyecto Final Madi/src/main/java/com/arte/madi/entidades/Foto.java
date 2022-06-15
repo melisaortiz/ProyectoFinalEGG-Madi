@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**
  * La entidad foto modela los datos de las fotos que se utilicen en el proyecto.
  * Estas pueden ser foto de perfil de cada cliente, o foto de la portada de cada
- * libro.
+ * arte.
  *
  * @author Mauro Montenegro <maumontenegro.s at gmail.com>
  */
