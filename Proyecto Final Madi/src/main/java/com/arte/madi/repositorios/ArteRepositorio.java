@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 
 
 /**
- * (LibroRepositorio) debe contener los métodos necesarios para
- * guardar/actualizar libros en la base de datos, realizar consultas o dar de
+ * (arteRepositorio) debe contener los métodos necesarios para
+ * guardar/actualizar artes en la base de datos, realizar consultas o dar de
  * baja según corresponda. Extiende de JpaRepository: será un repositorio de
- * Libro con la Primary Key de tipo String.
+ * arte con la Primary Key de tipo String.
  *
  * Los métodos save(), findById() y delete() se implementan por JpaRepository.
  *
