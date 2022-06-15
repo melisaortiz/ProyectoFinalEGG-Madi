@@ -3,20 +3,16 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container.text-center {
-    margin-bottom: 3%;
-}
-
-h1.menu-adm {
-    background-color: transparent;
-    color: white;
-    margin-top: 4%;
+div h1#encabezado {
+    margin: 3%;
+    margin-left: 0;
     text-transform: uppercase;
+    width: 0%;
 }
 
 div#menu.container {
     width: 30%;
-    margin-right: 0;
+    margin-right: -6%;
 }
 
 #menu button {
@@ -28,7 +24,7 @@ div#menu.container {
 }
 
 #menu button.btn-crear {
-    margin-right: 50%;
+    margin-right: 60%;
 }
 
 thead tr.encabezado-tabla {
@@ -48,6 +44,23 @@ tbody {
 
 tbody tr td img {
     width: 70%;
+}
+
+.btn.btn-success {
+    background-color: #d35400;
+    border-color: rgb(19 19 24);
+    box-shadow: 1px 1px 5px rgb(19 19 24);
+}
+
+.btn.btn-success:hover {
+    background-color: #e9803a;
+}
+
+#collapsehelp {
+    width: 80%;
+    color: #101010;
+    background-color: #bdbdbd;
+    border-color: #ffffff;
 }
 
 @media screen and (max-width: 980px) {

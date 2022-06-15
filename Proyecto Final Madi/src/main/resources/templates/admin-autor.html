@@ -18,7 +18,7 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="menu-adm">Gestión de autores </h1>
+                        <h1 id="encabezado" class="text-white">Gestión de___ autores </h1>
                     </div>
                 </div>
                 <div class="row">
@@ -48,15 +48,15 @@
                         <ul style="list-style-type:disc;">
                             <li><strong>Nuevo Autor</strong></li>
                             <ul>
-                                <li>En ésta sección podrá cargar todos los datos necesarios para registrar un Autor en la base de datos.</li>
+                                <li>En ésta sección podrá cargar todos los datos necesarios para registrar un autor en la base de datos.</li>
                             </ul>
                         </ul>
                         <ul style="list-style-type:disc;">
-                            <li><strong>Listar Autores + Gestionar</strong></li>
+                            <li><strong>Gestionar</strong></li>
                             <ul>
-                                <li><strong>Listar Autores</strong> en ésta sección se listan datos de todos los Autores registrados en la base de datos.</li>
+                                <li><strong>Listar autores</strong> en ésta sección se listan datos de todos los autores registrados en la base de datos.</li>
                                 <li><strong>Gestionar:</strong> se incluyen las funciones de "Dar de baja/alta", "Modificar" y "Eliminar".</li>
-                                <li><strong><i class="bi bi-exclamation-triangle"></i> Eliminar </strong> un Autor implica la eliminación de los artes registrados bajo su nombre y los préstamos en los que el mismo esté registrado.</li>
+                                <li><strong><i class="bi bi-exclamation-triangle"></i> Eliminar</strong> un autor implica la eliminación de los artes registrados bajo su nombre que el mismo tenga registrado.</li>
                             </ul>
                         </ul>
                         <button type="button" class="close" data-toggle="collapse" data-target="#collapsehelp" aria-label="Close">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="collapse" id="collapse1">
                         <div class="card card-body alert alert-dismissible bg-dark text-white" role="alert">
-                            Ingrese los datos solicitados a continuación:
+                            Agregá un nuevo autor completando los datos:
                             <div class="registry-form text-justify text-white">
                                 <div class="col-12 text-justify">
                                     <form action="/admin/autores/registrar-autor" method="POST" enctype="multipart/form-data">
