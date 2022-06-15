@@ -26,7 +26,7 @@ public class AdminController {
     private UsuarioServicio usuarioServicio;
 
    //... @Autowired
-    //...private ArteServicio arteServicio;
+    //...private LibroServicio libroServicio;
 
     /**
      * Trae la vista del Dashboard. Incluye una tabla (para lo cual se pasan
