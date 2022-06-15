@@ -186,20 +186,16 @@ nav #icon {
 /* --------------------------- ESTILOS DE FOOTER --------------------------- */
 
 footer {
-    margin-top: 10%;
     width: 100%;
-    height: 40%;
     background: #202020;
     color: white;
-
-
 }
 
 .container-footer-all {
     width: 100%;
     max-width: 85%;
-    padding: 60px;
-    margin-left: 3%;
+    padding: 40px;
+    margin-left: 5%;
 }
 
 .container-body {
@@ -212,21 +208,21 @@ footer {
 }
 
 .colum1 h1 {
-    font-size: 90%;
+    font-size: 22px;
 }
 
 .colum1 p {
-    font-size: 75%;
+    font-size: 14px;
     color: #C7C7C7;
     margin-top: 20px;
 }
 
 .colum2 {
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .colum2 h1 {
-    font-size: 90%;
+    font-size: 22px;
 }
 
 #redes-sociales {
@@ -235,15 +231,14 @@ footer {
 }
 
 .row img.redes {
-    width: 15%;
-    height: 15%;
+    width: 60px;
+    height: 36px;
 }
 
 .row label {
     margin-top: 10px;
     margin-left: 20px;
     color: #C7C7C7;
-    font-size: 75%;
 }
 
 .colum3 {
@@ -251,7 +246,7 @@ footer {
 }
 
 .colum3 h1 {
-    font-size: 90%;
+    font-size: 22px;
 }
 
 .row2 {
@@ -260,16 +255,14 @@ footer {
 }
 
 .row2 img {
-    width: 15%;
-    height: 15%;
+    width: 36px;
+    height: 36px;
 }
 
 .row2 label {
     margin-top: 10px;
     margin-left: 20px;
     max-width: 140px;
-    font-size: 75%;
-
 }
 
 .container-footer {
@@ -279,10 +272,10 @@ footer {
 
 .footer {
     max-width: 1200px;
-    margin:auto;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
 }
 
 .copyright {
