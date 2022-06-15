@@ -62,6 +62,13 @@
                                             <label for="anio">Precio</label>
                                             <input type="number" class="form-control" name="precio" th:value="${arteModif.precio}"/>
                                             
+                                            <label>Categoria</label>
+                                            
+                                             <select class="form-control custom-select" name="categoria">
+                                                 <option selected disabled value="">Seleccionar...</option>
+                                                <option th:each="arte : ${categorias}" th:value="${arte}" th:text="${arte.displayName()}"></option> 
+                                            </select>
+                                            
                                             <label>Foto</label>
                                             <input type="file" class="form-control" name="archivo" th:value="${archivo}"/>
                                             
