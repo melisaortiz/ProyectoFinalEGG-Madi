@@ -85,7 +85,7 @@ body {
   align-content: space-around;
 }
 
-.card-libros {
+.card-artes {
   margin: 40px;
   margin-left: 10%;
   margin-right: 1%;
@@ -95,7 +95,7 @@ body {
   justify-content: center;
 }
 
-.card-img-top-libro {
+.card-img-top-arte {
   background: rgb(135, 58, 180);
   background: linear-gradient(90deg, rgba(135, 58, 180, 1) 0%, rgba(255, 0, 0, 1) 0%, rgba(252, 176, 69, 1) 100%);
   height: 150px;
@@ -106,7 +106,7 @@ body {
   text-shadow: 3px 3px 3px rgba(19, 19, 24, 0.719);
 }
 
-.card-img-top-libro:hover {
+.card-img-top-arte:hover {
   text-shadow: 3px 3px 3px rgb(19, 19, 24);
   font-size: 50pt;
 }
@@ -165,7 +165,7 @@ body {
 }
 
 
-/*CARDS CON PORTADAS DE LIBROS*/
+/*CARDS CON PORTADAS DE arteS*/
 
 .card-body-container {
   margin: 1%;
@@ -215,7 +215,7 @@ body {
   border-style: none;
 }
 
-#descripcion-libro {
+#descripcion-arte {
   font-style: italic;
 }
 
