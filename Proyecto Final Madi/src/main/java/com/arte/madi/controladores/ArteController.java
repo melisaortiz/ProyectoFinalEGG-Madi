@@ -118,11 +118,12 @@ public class ArteController {
             }
             // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
-            model.put("artes", artes);
-            List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-            model.put("artesDeBaja", artesDeBaja);
-            List<Autor> autores = autorServicio.findAll();
-            model.put("autores", autores);
+        model.addAttribute("artes", artes);
+        List<Arte> artesDeBaja = arteServicio.listarDeBaja();
+        model.addAttribute("artesDeBaja", artesDeBaja);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
            
         }
         return "admin-arte.html";
@@ -271,12 +272,13 @@ public class ArteController {
             model.put("error", "Error al intentar dar de baja el arte: " + e.getMessage());
         }
         // Datos inyectados al modelo de "admin-arte.html":
-        List<Arte> artes = arteServicio.findAll();
-        model.put("artes", artes);
+       List<Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
         List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-        model.put("artesDeBaja", artesDeBaja);
+        model.addAttribute("artesDeBaja", artesDeBaja);
         List<Autor> autores = autorServicio.findAll();
-        model.put("autores", autores);
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
         
         return "admin-arte.html";
     }
@@ -320,9 +322,12 @@ public class ArteController {
             model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
             // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
-            model.put("artes", artes);
-            List<Autor> autores = autorServicio.findAll();
-            model.put("autores", autores);
+        model.addAttribute("artes", artes);
+        List<Arte> artesDeBaja = arteServicio.listarDeBaja();
+        model.addAttribute("artesDeBaja", artesDeBaja);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
             
             return "admin-arte.html";
         }
