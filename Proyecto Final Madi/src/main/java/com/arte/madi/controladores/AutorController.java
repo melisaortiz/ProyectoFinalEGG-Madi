@@ -40,7 +40,7 @@ public class AutorController {
     public String administradorAutores(ModelMap model) {
         List<Autor> autores = autorServicio.findAll();
         model.addAttribute("autores", autores);
-//        model.addAttribute("provincias", Provincias.values());
+        model.addAttribute("provincias", Provincias.values());
         return "admin-autor.html";
     }
 
@@ -99,8 +99,8 @@ public class AutorController {
      * Función para modificar un autor.
      *
      * ESTE MÉTODO USA EL MODEL PARA QUE APAREZCA LA ALERTA ("success") EN LA
-     * MISMA PLANTILA DE "admin-libro.html", O LA ALERTA ("error") EN LA
-     * PLANTILLA DE "modif-libro.html".
+     * MISMA PLANTILA DE "admin-arte.html", O LA ALERTA ("error") EN LA
+     * PLANTILLA DE "modif-arte.html".
      *
      * @param model
      * @param id
