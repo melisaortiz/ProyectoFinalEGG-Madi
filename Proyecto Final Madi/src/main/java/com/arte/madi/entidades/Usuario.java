@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * La entidad usuario modela los Usuarios (a quienes se les presta libros) de la
+ * La entidad usuario modela los Usuarios (a quienes se les presta artes) de la
  * biblioteca. Se almacenan los datos personales y de contacto de ese Usuario.
  *
  * @author Mauro Montenegro <maumontenegro.s at gmail.com>
