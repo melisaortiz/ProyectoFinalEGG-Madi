@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Controlador para gestionar todo lo relacionado a la entidad Libro (listar,
+ * Controlador para gestionar todo lo relacionado a la entidad arte (listar,
  * registrar, modificar, dar de baja/alta, eliminar). Sólo accesible por un
  * ADMIN.
  *
@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Controller
 @PreAuthorize("hasRole('ROLE_ADMIN')")
-@RequestMapping("/admin/libros")
+@RequestMapping("/admin/artes")
 public class ArteController {
 
     
@@ -40,28 +40,28 @@ public class ArteController {
 
     
     /**
-     * Muestra el Menú Administrativo de Libros, con los datos de todos los
-     * libros, autores y editoriales inyectados al modelo.
+     * Muestra el Menú Administrativo de artes, con los datos de todos los
+     * artes, autores y editoriales inyectados al modelo.
      *
      * @param model
      * @return
      */
     @GetMapping("/admin-artes")
     public String administradorArtes(ModelMap model) {
-        // Datos inyectados al modelo de "admin-libro.html":
+        // Datos inyectados al modelo de "admin-arte.html":
         List<Arte> artes = arteServicio.findAll();
-        model.put("artes", artes);
+        model.addAttribute("artes", artes);
         List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-        model.put("artesDeBaja", artesDeBaja);
+        model.addAttribute("artesDeBaja", artesDeBaja);
         List<Autor> autores = autorServicio.findAll();
-        model.put("autores", autores);
+        model.addAttribute("autores", autores);
         model.addAttribute("categorias", Categoria.values());
         
-        return "admin-libro.html";
+        return "admin-arte.html";
     }
 
     /**
-     * Función para registrar un libro. Se usa un "try-catch" para verificar que
+     * Función para registrar un arte. Se usa un "try-catch" para verificar que
      * se haya elegido un Autor y una Editorial, ya sea de la lista o se haya
      * registrado uno nuevo.
      *
@@ -98,9 +98,9 @@ public class ArteController {
             // Seteo de la Editorial:
             
             arteServicio.agregarArte(archivo, nombre, anio, descripcion, precio, autor,categoria);
-            // Mensaje de éxito inyectado al modelo de "admin-libro.html":
+            // Mensaje de éxito inyectado al modelo de "admin-arte.html":
             model.put("success", "La obra " + categoria + "' fue registrado exitosamente.");
-            // Datos inyectados al modelo de "admin-libro.html":
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
             model.put("artes", artes);
             List<Arte> artesDeBaja = arteServicio.listarDeBaja();
@@ -116,7 +116,7 @@ public class ArteController {
             } else {
                 model.put("error", "Error al intentar guardar la obra de arte: " + e.getMessage());
             }
-            // Datos inyectados al modelo de "admin-libro.html":
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
             model.put("artes", artes);
             List<Arte> artesDeBaja = arteServicio.listarDeBaja();
@@ -125,36 +125,37 @@ public class ArteController {
             model.put("autores", autores);
            
         }
-        return "admin-libro.html";
+        return "admin-arte.html";
     }
 
     /**
-     * Función que carga la vista para modificar los datos de un libro elegido
-     * previamente. Busca el libro en el repositorio por id, y lo inyecta al
+     * Función que carga la vista para modificar los datos de un arte elegido
+     * previamente. Busca el arte en el repositorio por id, y lo inyecta al
      * modelo para tener todos sus datos. También se inyecta la lista de Autores
      * y Editoriales.
      *
      * @param model
-     * @param idLibroModif
+     * @param idarteModif
      * @return
      */
-    @GetMapping("/modificar-libro-datos/{idLibroModif}")
+    @GetMapping("/modificar-arte-datos/{idArteModif}")
     public String datosArte(ModelMap model,
             @PathVariable String idArteModif
     ) {
         Arte arte = arteServicio.getById(idArteModif);
-        model.put("arteModif", arte);
+        model.addAttribute("arteModif", arte);
         List<Autor> autores = autorServicio.findAll();
-        model.put("autores", autores);
-        return "modif-libro.html";
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
+        return "modif-arte.html";
     }
 
     /**
-     * Función para modificar un libro.
+     * Función para modificar un arte.
      *
      * ESTE MÉTODO USA EL MODEL PARA QUE APAREZCA LA ALERTA ("success") EN LA
-     * MISMA PLANTILA DE "admin-libro.html", O LA ALERTA ("error") EN LA
-     * PLANTILLA DE "modif-libro.html".
+     * MISMA PLANTILA DE "admin-arte.html", O LA ALERTA ("error") EN LA
+     * PLANTILLA DE "modif-arte.html".
      *
      * @param model
      * @param id
@@ -168,7 +169,7 @@ public class ArteController {
      * @param idEditorial
      * @return
      */
-    @PostMapping("/modificar-libro")
+    @PostMapping("/modificar-arte")
     public String modificarArte(ModelMap model, @RequestParam String id, MultipartFile archivo, @RequestParam String nombre, @RequestParam Integer anio, @RequestParam String descripcion, @RequestParam Integer precio, @RequestParam String idAutor, @RequestParam Categoria categoria) {
 
         try {
@@ -177,7 +178,7 @@ public class ArteController {
             if (nombre.isEmpty()) {
                 throw new Exception("Nombre no válido.");
             }
-            arteServicio.modificarLibro(id, archivo, nombre, anio, descripcion, precio, autor, categoria);
+            arteServicio.modificarArte(id, archivo, nombre, anio, descripcion, precio, autor, categoria);
             // Mensaje de éxito inyectado al modelo:
             model.put("success", "La Obra '" + categoria + "' fue modificado exitosamente.");
             // Datos inyectados al modelo:
@@ -187,41 +188,45 @@ public class ArteController {
             model.put("artesDeBaja", artesDeBaja);
             List<Autor> autores = autorServicio.findAll();
             model.put("autores", autores);
-            return "admin-libro.html";
+            return "admin-arte.html";
         } catch (Exception e) {
             if (e.getMessage() == null || nombre == null || anio == null || descripcion == null || precio == null || idAutor == null || categoria == null) {
-                model.put("error", "Error al intentar modificar el libro: faltó completar algún campo.");
+                model.put("error", "Error al intentar modificar el arte: faltó completar algún campo.");
             } else {
-                model.put("error", "Error al intentar modificar el libro: " + e.getMessage());
+                model.put("error", "Error al intentar modificar el arte: " + e.getMessage());
             }
-            // Datos inyectados al modelo de "admin-libro.html":
-            Arte arte = arteServicio.getById(id);
-            model.put("arteModif", arte);
+            // Datos inyectados al modelo de "admin-arte.html":
+            List<Arte> artes = arteServicio.findAll();
+            model.addAttribute("artes", artes);
+            List<Arte> artesDeBaja = arteServicio.listarDeBaja();
+            model.addAttribute("artesDeBaja", artesDeBaja);
             List<Autor> autores = autorServicio.findAll();
+            model.addAttribute("autores", autores);
+            model.addAttribute("categorias", Categoria.values());
             model.put("autores", autores);
             
-            return "modif-libro.html";
+            return "modif-arte.html";
         }
     }
 
     /**
-     * Función para eliminar un libro. Antes de eliminarlo desde el servicio,
+     * Función para eliminar un arte. Antes de eliminarlo desde el servicio,
      * capturo el titulo en una variable para poder utilizarlo en el mensaje de
-     * "success". Es una url con "path variable" (id del libro a eliminar).
+     * "success". Es una url con "path variable" (id del arte a eliminar).
      *
      * @param model
      * @param id
      * @return
      */
-    @GetMapping("/eliminar-libro/{id}")
+    @GetMapping("/eliminar-arte/{id}")
     public String eliminarArte(ModelMap model, @PathVariable String id) {
         try {
             String nombre = arteServicio.getById(id).getNombre().toUpperCase();
-            // Con el id, llamo al método para eliminar el libro:
+            // Con el id, llamo al método para eliminar el arte:
             arteServicio.eliminarArte(id);
             // Mensaje de éxito inyectado al modelo de "exito.html":
             model.put("success", "La Obra '" + nombre + "' fue eliminado exitosamente.");
-            // Datos inyectados al modelo de "admin-libro.html":
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
             model.put("artes", artes);
             List<Arte> artesDeBaja = arteServicio.listarDeBaja();
@@ -231,25 +236,25 @@ public class ArteController {
             
         } catch (Exception e) {
             // Mensaje de error inyectado al modelo:
-            model.put("error", "Error al intentar eliminar el libro: " + e.getMessage());
-            // Datos inyectados al modelo de "admin-libro.html":
+            model.put("error", "Error al intentar eliminar el arte: " + e.getMessage());
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
             model.put("artes", artes);
             List<Autor> autores = autorServicio.findAll();
             model.put("autores", autores);
        
         }
-        return "admin-libro.html";
+        return "admin-arte.html";
     }
 
     /**
-     * Función para dar de baja un libro. Una vez modificado el atributo "alta"
-     * desde el servicio, muestra la página de "admin-libro.html" con mensajes
-     * inyectados al modelo. Es una url con "path variable" (id del libro a dar
+     * Función para dar de baja un arte. Una vez modificado el atributo "alta"
+     * desde el servicio, muestra la página de "admin-arte.html" con mensajes
+     * inyectados al modelo. Es una url con "path variable" (id del arte a dar
      * de baja).
      *
      * ESTE MÉTODO USA EL MODEL PARA QUE APAREZCA LA ALERTA ("success" O
-     * "error") EN LA MISMA PLANTILA DE "admin-libro.html".
+     * "error") EN LA MISMA PLANTILA DE "admin-arte.html".
      *
      * @param model
      * @param id
@@ -263,9 +268,9 @@ public class ArteController {
             model.put("success", "La Obra '" + arteServicio.getById(id).getNombre().toUpperCase() + "' fue dado de baja exitosamente.");
         } catch (Exception e) {
             // Mensaje de error inyectado al modelo:
-            model.put("error", "Error al intentar dar de baja el libro: " + e.getMessage());
+            model.put("error", "Error al intentar dar de baja el arte: " + e.getMessage());
         }
-        // Datos inyectados al modelo de "admin-libro.html":
+        // Datos inyectados al modelo de "admin-arte.html":
         List<Arte> artes = arteServicio.findAll();
         model.put("artes", artes);
         List<Arte> artesDeBaja = arteServicio.listarDeBaja();
@@ -273,17 +278,17 @@ public class ArteController {
         List<Autor> autores = autorServicio.findAll();
         model.put("autores", autores);
         
-        return "admin-libro.html";
+        return "admin-arte.html";
     }
 
     /**
-     * Función para dar de alta un libro. Una vez modificado el atributo "alta"
+     * Función para dar de alta un arte. Una vez modificado el atributo "alta"
      * desde el servicio, muestra la página de "exito" o "error" con mensajes
-     * inyectados al modelo. Es una url con "path variable" (id del libro a dar
+     * inyectados al modelo. Es una url con "path variable" (id del arte a dar
      * de alta).
      *
      * ESTE MÉTODO USA EL MODEL PARA QUE APAREZCA LA ALERTA ("success" O
-     * "error") EN LA MISMA PLANTILA DE "admin-libro.html".
+     * "error") EN LA MISMA PLANTILA DE "admin-arte.html".
      *
      * @param model
      * @param id
@@ -301,25 +306,25 @@ public class ArteController {
                         + " al igual que su autor '" + autor.getNombre().toUpperCase() + "'.");
             }
             arteServicio.alta(id);
-            // Datos inyectados al modelo de "admin-libro.html":
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
-            model.put("artes", artes);
+            model.addAttribute("artes", artes);
             List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-            model.put("artesDeBaja", artesDeBaja);
+            model.addAttribute("artesDeBaja", artesDeBaja);
             List<Autor> autores = autorServicio.findAll();
-            model.put("autores", autores);
-            
-            return "admin-libro.html";
+            model.addAttribute("autores", autores);
+            model.addAttribute("categorias", Categoria.values());
+            return "admin-arte.html";
         } catch (Exception e) {
             // Mensaje de error inyectado al modelo de "error.html":
-            model.put("error", "Error al intentar dar de alta el libro: " + e.getMessage());
-            // Datos inyectados al modelo de "admin-libro.html":
+            model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
+            // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
             model.put("artes", artes);
             List<Autor> autores = autorServicio.findAll();
             model.put("autores", autores);
             
-            return "admin-libro.html";
+            return "admin-arte.html";
         }
     }
 }
