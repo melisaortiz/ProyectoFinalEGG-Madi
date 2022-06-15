@@ -84,7 +84,7 @@ public class ArteController {
      */
     @PostMapping("/registrar-arte")
     public String registrarArte(ModelMap model,HttpSession session, MultipartFile archivo, 
-            @RequestParam(required = false) String id, String nombre, Integer anio, 
+            @RequestParam(required = false) String nombre, Integer anio, 
             String descripcion, Integer precio, String idAutor, Categoria categoria) {
         Autor autor;
         try {
