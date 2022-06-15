@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Controlador para gestionar las fotos (de portada de libros y de perfil de
+ * Controlador para gestionar las fotos (de portada de artes y de perfil de
  * usuarios).
  *
  * @author Mauro Montenegro <maumontenegro.s at gmail.com>
