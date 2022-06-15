@@ -3,7 +3,7 @@
 <!--HEAD-->
 <head th:replace="/fragments/head :: head"></head>
 <head>
-    <title>Madi ART - Autores</title>
+    <title>Madi ART - Obra de Arte</title>
 </head>
     <body>
         <div id="pagina">
@@ -97,34 +97,19 @@
                                                  <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <select class="form-control custom-select" name="idAutor">
-                                                <option selected disabled value="">Seleccionar...</option>
-                                                <option th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
-                                            </select>
-                                            <small id="autorHelp" class="form-text text-muted">Autor registrado en nuestra base de datos.</small><br>
-                                            <!-- BLOQUE PARA AGREGAR AUTOR DESDE ÉSTE FORMULARIO -->
-                                            <input type="text" class="form-control" name="nuevoAutor" th:value="${nuevoAutor}" placeholder="Ingrese Nombre y Apellido del Autor..."/>
-                                            <small id="autorHelp" class="form-text text-muted">Registrar nuevo Autor en nuestra base de datos.</small>
+                                            
+                                            
                                             <!-- FIN DEL BLOQUE -->
                                             <hr>
                                             <label>Categoria</label>
-                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                <p><i class="bi bi-info-circle-fill"></i> Si la Editorial del arte no se
-                                                 encuentra en la lista, debe crearla previamente en la segunda opción.</p>
-                                                <button type="button" class="close" data-dismiss="alert">
-                                                 <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
+                                            
                                             <select class="form-control custom-select" name="categoria">
                                                 <option selected disabled value="">Seleccionar...</option>
                                                 <option th:each="arte : ${categorias}" th:value="${arte}" th:text="${arte.displayName()}"></option> 
                                             </select>
-                                            <small id="editorialHelp" class="form-text text-muted">Editorial registrada en nuestra base de datos.</small><br>
-                                            <!-- BLOQUE PARA AGREGAR EDITORIAL DESDE ÉSTE FORMULARIO -->
-                                            <input type="text" class="form-control" name="nuevaEditorial" th:value="${nuevaEditorial}" placeholder="Ingrese Nombre de la Editorial..."/>
-                                            <small id="editorialHelp" class="form-text text-muted">Registrar nueva Editorial en nuestra base de datos.</small>
-                                            <!-- FIN DEL BLOQUE -->
-                                            <hr>
+                                            
+                                            
+                                            <br>
                                             <p><button type="submit" class="btn btn-success">Guardar arte</button></p>
                                         </form>
                                     </div>
@@ -137,11 +122,12 @@
                         </div>
                     </div>
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
-                        <h3 class="bg-dark text-white">artes de alta</h3>
+                        <h3 class="bg-dark text-white">Obras de Artes de alta</h3>
                         <thead class=>
                             <tr class="bg-danger text-white">
                                 <th>Portada</th>
                                 <th>Nombre (Año)</th>
+                                <th>Descripción</th>
                                 <th>Precio</th>
                                 <th>Autor</th>
                                 <th>Categoria</th>
@@ -152,6 +138,7 @@
                             <tr th:each="arte : ${artes}">
                                 <td><img class="img-fluid" th:if="${arte.foto != null}" th:src="${'/foto/arte/' + arte.id}" alt="" id="profile-photo"></img></td>
                                 <td th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></td>
+                                <td th:text="${arte.descripcion}"></td>
                                 <td th:text="${arte.precio}"></td>
                                 <td th:text="${arte.autor.nombre}"></td>
                                 <td th:text="${arte.categoria}"></td>
@@ -169,11 +156,12 @@
                         </tbody>
                     </table>
                     <table class="table-responsive-lg table-hover table-dark table-bordered">
-                        <h3 class="bg-dark text-white">artes de baja</h3>
+                        <h3 class="bg-dark text-white">Obra de Artes de baja</h3>
                         <thead class=>
                             <tr class="bg-danger text-white">
                                 <th>Portada</th>
                                 <th>Nombre (Año)</th>
+                                <th>Descripcion</th>
                                 <th>Precio</th>
                                 <th>Autor</th>
                                 <th>Categoria</th>
@@ -185,6 +173,7 @@
                                 <td><img class="img-fluid" th:if="${arte.foto != null}" th:src="${'/foto/arte/' + arte.id}" alt="" id="profile-photo"></img></td>
                                 
                                 <td th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></td>
+                                <td th:text="${arte.descripcion}"></td>
                                 <td th:text="${arte.precio}"></td>
                                 <td th:text="${arte.autor.nombre}"></td>
                                 <td th:text="${arte.categoria}"></td>
