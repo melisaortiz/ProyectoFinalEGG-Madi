@@ -1,6 +1,8 @@
 package com.arte.madi.controladores;
 
+import com.arte.madi.entidades.Arte;
 import com.arte.madi.entidades.Autor;
+import com.arte.madi.servicios.ArteServicio;
 import com.arte.madi.servicios.AutorServicio;
 import com.arte.madi.servicios.UsuarioServicio;
 import java.util.List;
@@ -26,7 +28,8 @@ public class PortalController {
     @Autowired
     private UsuarioServicio usuarioServicio;
 
-    
+    @Autowired
+    private ArteServicio arteServicio;
 
     @Autowired
     private AutorServicio autorServicio;
@@ -87,6 +90,9 @@ public class PortalController {
         List<Autor> autores = autorServicio.findAll();
         model.addAttribute("autores", autores);
         model.addAttribute("autorSelected", null);
+        List<Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
+
         return "inicio.html";
     }
 
