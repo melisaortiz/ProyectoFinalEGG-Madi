@@ -96,15 +96,12 @@
                                         <label>Foto</label>
                                         <input type="file" class="form-control bg-dark text-white" name="archivo" th:value="${archivo}" id="file" /><br>
 
-
                                         <label>Autor</label>
-                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                            <p><i class="bi bi-info-circle-fill"></i> Si el Autor del arte no se encuentra en la lista, debe crearlo previamente en la segunda opción.</p>
-                                            <button type="button" class="close" data-dismiss="alert">
-                                                 <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
-
+                                        
+                                        <select class="form-control custom-select" name="idAutor">
+                                                <option selected disabled value="">Seleccionar...</option>
+                                                <option th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+                                            </select>
 
                                         <!-- FIN DEL BLOQUE -->
 
@@ -184,7 +181,7 @@
                                 <a th:if="${arte.alta == false}" th:href="@{/admin/artes/alta/__${arte.id}__}"><i class="bi bi-arrow-up-circle text-success" title="Dar de alta"></i></a>
                                 <a th:if="${arte.alta == true}" th:href="@{/admin/artes/baja/__${arte.id}__}"><i class="bi bi-arrow-down-circle text-danger" title="Dar de baja"></i></a>
                                 <a th:href="@{/admin/artes/modificar-arte-datos/__${arte.id}__}"><i class="bi bi-pencil-square text-danger" title="Editar"></i></a>
-                                <a th:href="@{/admin/artes/eliminar-arte/__${art.id}__}"><i class="bi bi-x-circle text-danger" title="Eliminar"></i></a>
+                                <a th:href="@{/admin/artes/eliminar-arte/__${arte.id}__}"><i class="bi bi-x-circle text-danger" title="Eliminar"></i></a>
                             </td>
                         </tr>
                     </tbody>
