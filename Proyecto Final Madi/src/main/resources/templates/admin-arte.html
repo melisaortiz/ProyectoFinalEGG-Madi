@@ -119,15 +119,13 @@
                                                 <option selected disabled value="">Seleccionar...</option>
                                                 <option th:each="arte : ${categorias}" th:value="${arte}" th:text="${arte.displayName()}"></option> 
                                             </select>
-                                            <small id="editorialHelp" class="form-text text-muted">Editorial registrada en nuestra base de datos.</small><br>
-                                            <!-- BLOQUE PARA AGREGAR EDITORIAL DESDE ÉSTE FORMULARIO -->
-                                            <input type="text" class="form-control" name="nuevaEditorial" th:value="${nuevaEditorial}" placeholder="Ingrese Nombre de la Editorial..."/>
-                                            <small id="editorialHelp" class="form-text text-muted">Registrar nueva Editorial en nuestra base de datos.</small>
-                                            <!-- FIN DEL BLOQUE -->
-                                            <hr>
-                                            <p><button type="submit" class="btn btn-success">Guardar arte</button></p>
-                                        </form>
-                                    </div>
+
+                                        <!-- FIN DEL BLOQUE -->
+
+                                        <br>
+                                        <p><button type="submit" class="btn btn-success">Guardar arte</button></p>
+                                    </form>
+
                                 </div>
                                 <button type="button" class="close" data-toggle="collapse" data-target="#collapse1"
                                         aria-label="Close">
