@@ -58,7 +58,7 @@
                         </div>
                         </h1>
                 </div>
-                <div class="">
+                <div class="usuario">
                     <h2 class="text-white row" sec:authorize="hasRole('USUARIO')">
                         <!--Div que aparece para el resto de los usuarios-->
                         <div class="col-auto"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
@@ -133,9 +133,10 @@
                             </div>
                         </div>
                     </div>
-
+</div>
                     <!--USUARIO SECTION-->
                     <div sec:authorize="hasRole('USUARIO')" class="row">
+                        <h1 class="bg-danger text-white">Libros disponibles</h1>
                         <!--CARDS TITLE SECTION-->
                         <div class="col-12">
                             <h1 class="bg-danger text-white">Libros disponibles</h1>
