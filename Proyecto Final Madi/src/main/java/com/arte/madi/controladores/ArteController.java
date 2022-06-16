@@ -84,7 +84,7 @@ public class ArteController {
      */
     @PostMapping("/registrar-arte")
     public String registrarArte(ModelMap model,HttpSession session, MultipartFile archivo, 
-            @RequestParam(required = false) String nombre, Integer anio, 
+            @RequestParam(required = false) String id, String nombre, Integer anio, 
             String descripcion, Integer precio, String idAutor, Categoria categoria) {
         Autor autor;
         try {
@@ -118,12 +118,11 @@ public class ArteController {
             }
             // Datos inyectados al modelo de "admin-arte.html":
             List<Arte> artes = arteServicio.findAll();
-        model.addAttribute("artes", artes);
-        List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-        model.addAttribute("artesDeBaja", artesDeBaja);
-        List<Autor> autores = autorServicio.findAll();
-        model.addAttribute("autores", autores);
-        model.addAttribute("categorias", Categoria.values());
+            model.put("artes", artes);
+            List<Arte> artesDeBaja = arteServicio.listarDeBaja();
+            model.put("artesDeBaja", artesDeBaja);
+            List<Autor> autores = autorServicio.findAll();
+            model.put("autores", autores);
            
         }
         return "admin-arte.html";
@@ -272,13 +271,12 @@ public class ArteController {
             model.put("error", "Error al intentar dar de baja el arte: " + e.getMessage());
         }
         // Datos inyectados al modelo de "admin-arte.html":
-       List<Arte> artes = arteServicio.findAll();
-        model.addAttribute("artes", artes);
+        List<Arte> artes = arteServicio.findAll();
+        model.put("artes", artes);
         List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-        model.addAttribute("artesDeBaja", artesDeBaja);
+        model.put("artesDeBaja", artesDeBaja);
         List<Autor> autores = autorServicio.findAll();
-        model.addAttribute("autores", autores);
-        model.addAttribute("categorias", Categoria.values());
+        model.put("autores", autores);
         
         return "admin-arte.html";
     }
@@ -321,14 +319,13 @@ public class ArteController {
             // Mensaje de error inyectado al modelo de "error.html":
             model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
             // Datos inyectados al modelo de "admin-arte.html":
-            List<Arte> artes = arteServicio.findAll();
-        model.addAttribute("artes", artes);
+               List<Arte> artes = arteServicio.findAll();
+        model.put("artes", artes);
         List<Arte> artesDeBaja = arteServicio.listarDeBaja();
-        model.addAttribute("artesDeBaja", artesDeBaja);
+        model.put("artesDeBaja", artesDeBaja);
         List<Autor> autores = autorServicio.findAll();
-        model.addAttribute("autores", autores);
-        model.addAttribute("categorias", Categoria.values());
-            
+        model.put("autores", autores);
+        
             return "admin-arte.html";
         }
     }

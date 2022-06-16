@@ -1,19 +1,15 @@
--
-<!DOCTYPE html5>
+-<!DOCTYPE html5>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <!--HEAD-->
-
 <head th:replace="/fragments/head :: head"></head>
-
 <head>
     <link rel="stylesheet" href="/style-modificar.css">
     <title>Madi ART</title>
 </head>
-
-<body>
-    <div id="pagina">
-        <!--NAVIGATION-->
+    <body>
+        <div id="pagina">
+            <!--NAVIGATION-->
         <nav th:replace="/fragments/navbar :: nav"></nav>
         <div id="contenido">
             <div class="container text-center">
@@ -21,12 +17,11 @@
                     <div class="col-12">
                         <h1 id="encabezado" class="text-white">Editar autor___</h1>
                     </div>
-                </div>
-                <div class="row" style="align-items: center;">
-                    <div th:if="${error != null}" class="col-12 alert alert-danger alert-dismissible fade show" style="height: fit-content" role="alert">
-                        <!--Este if mostrará el texto en el caso de que aparezca un error.-->
-                        <span th:text="${error}" style="color:red;"></span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <div class="row" style="align-items: center;">
+                         <div th:if="${error != null}" class="col-12 alert alert-danger alert-dismissible fade show" style="height: fit-content" role="alert">
+                            <!--Este if mostrará el texto en el caso de que aparezca un error.-->
+                            <span th:text="${error}" style="color:red;"></span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                     </div>
@@ -34,53 +29,52 @@
                         <button class="btn btn-danger" id="btn-orange" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample" disabled="">
                                 <i class="bi bi-pencil-square"></i> Editar autor
                             </button>
-                    </div>
+                        </div>
 
-                    <div class="" id="collapse2" style="width: 100%;">
-                        <div class="card card-body alert alert-dismissible col-12 bg-dark text-white" role="alert">
-                            Ingrese los datos solicitados a continuación:
-                            <div class="registry-form bg-dark text-white">
-                                <div class="text-justify">
+                        <div class="" id="collapse2" style="width: 100%;">
+                            <div class="card card-body alert alert-dismissible col-12 bg-dark text-white" role="alert">
+                                Ingrese los datos solicitados a continuación:
+                                <div class="registry-form bg-dark text-white">
+                                    <div class="text-justify">
 
-                                    <form action="/admin/autores/modificar-autor" method="POST" enctype="multipart/form-data">
+                                        <form action="/admin/autores/modificar-autor" method="POST" enctype="multipart/form-data">
 
-                                        <input type="hidden" name="id" th:value="${autorModif.id}" />
+                                            <input type="hidden" name="id" th:value="${autorModif.id}"/>
 
-                                        <label>Nombre y Apellido</label>
-                                        <input type="text" class="form-control" name="nombre" th:value="${autorModif.nombre}" />
-
-                                        <label for="descripcion">Descripción</label>
-                                        <input type="textarea" class="form-control" name="descripcion" th:value="${autorModif.descripcion}" />
-                                        <small id="descripcionHelp" class="form-text text-muted">Reseña de máx. 255 caracteres que identifica al autor.</small>
-
-                                        <label for="redSocial">Red Social</label>
-                                        <input type="textarea" class="form-control" name="redSocial" th:value="${autorModif.redSocial}" />
-                                        <small id="descripcionHelp" class="form-text text-muted">Ingrese la red social del Artista.</small>
-
-                                        <label>Provincia</label>
-
-                                        <select class="form-control custom-select" name="provincia">
+                                            <label>Nombre y Apellido</label>
+                                            <input type="text" class="form-control" name="nombre" th:value="${autorModif.nombre}"/>
+                                            
+                                            <label for="descripcion">Descripción</label>
+                                            <input type="textarea" class="form-control" name="descripcion" th:value="${autorModif.descripcion}"/>
+                                            <small id="descripcionHelp" class="form-text text-muted">Reseña de máx. 255 caracteres que identifica al autor.</small>
+                                            
+                                            <label for="redSocial">Red Social</label>
+                                            <input type="textarea" class="form-control" name="redSocial" th:value="${autorModif.redSocial}"/>
+                                            <small id="descripcionHelp" class="form-text text-muted">Ingrese la red social del Artista.</small>
+                                            
+                                            <label>Provincia</label>
+                                            
+                                             <select class="form-control custom-select" name="provincia">
                                                  <option selected disabled value="">Seleccionar...</option>
                                                 <option th:each="autor : ${provincias}" th:value="${autor}" th:text="${autor.displayName()}"></option> 
                                             </select>
-
-                                        <label>Foto del Artista</label>
-                                        <input type="file" class="form-control" name="archivo" th:value="${archivo}" />
-
-                                        <br>
-                                        <button type="submit" class="btn btn-secondary" formaction="/admin/autores/admin-autores" formmethod="GET">Cancelar</button>
-                                        <button type="submit" class="btn btn-success">Modificar Autor</button>
-                                    </form>
+                                            
+                                            <label>Foto del Artista</label>
+                                        <input type="file" class="form-control" name="archivo" th:value="${archivo}"/>
+                                            
+                                            <br>
+                                                <button type="submit" class="btn btn-secondary" formaction="/admin/autores/admin-autores" formmethod="GET">Cancelar</button>
+                                                <button type="submit" class="btn btn-success">Modificar Autor</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
                 </div>
+                <!--FOOTER-->
+                <footer th:replace="/fragments/footer :: footer"></footer>
             </div>
-            <!--FOOTER-->
-            <footer th:replace="/fragments/footer :: footer"></footer>
-        </div>
-</body>
-
+    </body>
 </html>

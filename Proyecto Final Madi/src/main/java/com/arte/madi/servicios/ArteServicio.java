@@ -62,7 +62,7 @@ public class ArteServicio {
             arte.setDescripcion(descripcion);
             arte.setPrecio(precio);
             arte.setAutor(autor);
-            
+            arte.setCategoria(categoria);
             // Se da de alta el autor en caso de que esté dado de baja:
             if (!arte.getAutor().isAlta()) {
                 autorServicio.alta(arte.getAutor().getId());
@@ -71,7 +71,6 @@ public class ArteServicio {
             Foto foto = fotoServicio.guardar(archivo);
             arte.setFoto(foto);
             // Persistencia en la DB:
-            arte.setCategoria(categoria);
             arteRepositorio.save(arte);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
