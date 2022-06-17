@@ -56,7 +56,7 @@ public class ArteServicio {
             validar(nombre, anio, descripcion, precio);
             // Seteo de atributos:
             arte.setAlta(true);
-            arte.setVoto(true);
+            arte.setCompra(true);
             arte.setNombre(nombre);
             arte.setAnio(anio);
             arte.setDescripcion(descripcion);
@@ -180,6 +180,46 @@ public class ArteServicio {
         }
     }
 
+     @Transactional
+    public void bajaDeCompra(String id) throws Exception {
+        try {
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
+            Arte arte = arteRepositorio.getById(id);
+            if (arte != null) { // El arte con ese id SI existe en la DB
+                // Se dan de baja los préstamos del arte:
+                
+                arte.setCompra(false);
+                arteRepositorio.save(arte);
+            } else { // El arte con ese id NO existe en la DB
+                throw new Exception("No existe Obra de Arte con el id indicado.");
+            }
+        } catch (Exception e) {
+            throw new Exception("Error al intentar dar de baja la Obra de Arte.");
+        }
+    }
+    
+     @Transactional
+    public void altaDeCompra(String id) throws Exception {
+        try {
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
+            Arte arte = arteRepositorio.getById(id);
+            if (arte != null) { // El arte con ese id SI existe en la DB
+                // Se dan de baja los préstamos del arte:
+                
+                arte.setCompra(true);
+                arteRepositorio.save(arte);
+            } else { // El arte con ese id NO existe en la DB
+                throw new Exception("No existe Obra de Arte con el id indicado.");
+            }
+        } catch (Exception e) {
+            throw new Exception("Error al intentar dar de alta la Obra de Arte.");
+        }
+    }
+    
+    
+    
+    
+    
     /**
      * El método sirve para setear como 'true' el atributo 'alta' del arte.
      * También da de alta el autor, en caso de que esté dado de baja.
