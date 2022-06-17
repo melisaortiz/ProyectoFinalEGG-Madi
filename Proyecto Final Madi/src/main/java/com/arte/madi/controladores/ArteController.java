@@ -332,4 +332,46 @@ public class ArteController {
             return "admin-arte.html";
         }
     }
+    
+    @PreAuthorize("hasRole('USUARIO')")
+    @GetMapping("/bajaDeCompra/{id}")
+    public String bajaDeCompra(ModelMap model, @PathVariable String id) {
+        try {
+            arteServicio.bajaDeCompra(id);
+            // Mensaje de éxito inyectado al modelo:
+            model.put("success", "La Obra '" + arteServicio.getById(id).getNombre().toUpperCase() + "' fue dado de baja exitosamente.");
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar dar de baja el arte: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+       List<Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
+        
+        return "inicio.html";
+    }
+    
+    @PreAuthorize("hasRole('USUARIO')")
+    @GetMapping("/altaDeCompra/{id}")
+    public String altaDeCompra(ModelMap model, @PathVariable String id) {
+        try {
+            arteServicio.altaDeCompra(id);
+            // Mensaje de éxito inyectado al modelo:
+            model.put("success", "La Obra '" + arteServicio.getById(id).getNombre().toUpperCase() + "' fue dado de alta exitosamente.");
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+       List<Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("categorias", Categoria.values());
+        
+        return "inicio.html";
+    }
 }
