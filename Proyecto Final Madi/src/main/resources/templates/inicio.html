@@ -42,14 +42,20 @@
         <!--MAIN CONTENT-->
         <div id="contenido">
             <div class="container text-center">
-                <div class="row">
+<!--                <div class="row">
+                    <div class="col-12">
+                        <h1 id="encabezado" class="text-white">Inicio de___ administrador</h1>
+                    </div>
+                </div>-->
+                <!--USER WELCOME BANNER-->
+                <div class="usuario">
+                    <h2 class="text-white row" sec:authorize="hasRole('ADMIN')">
+                        <div class="row">
                     <div class="col-12">
                         <h1 id="encabezado" class="text-white">Inicio de___ administrador</h1>
                     </div>
                 </div>
-                <!--USER WELCOME BANNER-->
-                <div class="usuario">
-                    <h2 class="text-white row" sec:authorize="hasRole('ADMIN')">
+                        
                         <!--Div que aparece sólo si el usuario logueado es Administrador-->
                         <div class="usuario-img"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
                         <div class="usuario-nombre">
@@ -60,6 +66,11 @@
                 </div>
                 <div class="usuario">
                     <h2 class="text-white row" sec:authorize="hasRole('USUARIO')">
+                        <div class="row">
+                    <div class="col-12">
+                        <h1 id="encabezado" class="text-white">Inicio de___ compra</h1>
+                    </div>
+                </div>
                         <!--Div que aparece para el resto de los usuarios-->
                         <div class="col-auto"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
                         <div class="col-auto">
@@ -136,10 +147,47 @@
 </div>
                     <!--USUARIO SECTION-->
                     <div sec:authorize="hasRole('USUARIO')" class="row">
-                        
-                        <!--CARDS TITLE SECTION-->
                         <div class="col-12">
-                            <h1 class="bg-danger text-white">Estas son las Artes Seleccionadas</h1>
+                            <h1 class="bg-danger text-white">Estas son las Obras de Artes Seleccionadas</h1>
+                        </div>
+                        <table class="table-responsive-lg table-hover table-dark table-bordered">
+<!--                            <h3 class="titulo-tabla">Estas son las Obras de Artes Seleccionadas</h3>-->
+                            <thead class=>
+                                <tr class="encabezado-tabla">
+                                    <th>Portada</th>
+                                    <th>Nombre (Año)</th>
+                                    <th>Descripción</th>
+                                    <th>Precio</th>
+                                    <th>Autor</th>
+                                    <th>Categoria</th>
+                                    <th>Estado / Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="arte : ${artes}">
+                                    <td><img class="img-fluid" th:if="${arte.foto != null}" th:src="${'/foto/arte/' + arte.id}" alt="" id="profile-photo"></img>
+                                    </td>
+                                    <td th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></td>
+                                    <td th:text="${arte.descripcion}"></td>
+                                    <td th:text="${arte.precio}"></td>
+                                    <td th:text="${arte.autor.nombre}"></td>
+                                    <td th:text="${arte.categoria}"></td>
+                                    <td>
+                                        <i th:if="${arte.compra == true}" class="bi bi-circle-fill text-success" title="De alta"></i>
+                                        <i th:if="${arte.compra == false}" class="bi bi-circle-fill text-danger" title="De baja del carrito"></i>
+                                        <a th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}"><i class="bi bi-arrow-up-circle text-success" title="Dar de alta"></i></a>
+                                        <a th:if="${arte.compra == true}" th:href="@{/admin/artes/bajaDeCompra/__${arte.id}__}"><i class="bi bi-arrow-down-circle text-danger" title="De baja del carrito"></i></a>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        
+                        
+<!--                        CARDS TITLE SECTION
+                        <div class="col-12">
+                            <h1 class="bg-danger text-white">Estas son las Obras de Artes Seleccionadas</h1>
                         </div>
                         <div class="col-12 card-filter">
                             <div class="card text-white bg-warning col-12" id="login-card">
@@ -183,8 +231,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--PRESTAMO-->
-                        <!-- Modal -->arte
+                        PRESTAMO
+                         Modal arte
 
                         <div th:each="arte: ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
@@ -221,7 +269,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--FIN USUARIO SECTION-->
+                        FIN USUARIO SECTION-->
                     </div>
                 </div>
 
