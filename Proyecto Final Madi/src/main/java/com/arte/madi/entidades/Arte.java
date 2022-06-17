@@ -31,7 +31,7 @@ public class Arte {
     private String descripcion;
     private Integer anio;    
     private Integer precio;
-    private boolean voto;
+    private boolean compra;
     private boolean alta;
     @OneToOne
     private Autor autor;
@@ -82,12 +82,12 @@ public class Arte {
         this.precio = precio;
     }
 
-    public boolean isVoto() {
-        return voto;
+    public boolean isCompra() {
+        return compra;
     }
 
-    public void setVoto(boolean voto) {
-        this.voto = voto;
+    public void setCompra(boolean compra) {
+        this.compra = compra;
     }
 
     public boolean isAlta() {
@@ -124,8 +124,10 @@ public class Arte {
 
     @Override
     public String toString() {
-        return "Arte{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", anio=" + anio + ", precio=" + precio + ", voto=" + voto + ", alta=" + alta + ", autor=" + autor + ", foto=" + foto + ", categoria=" + categoria + '}';
+        return "Arte{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", anio=" + anio + ", precio=" + precio + ", compra=" + compra + ", alta=" + alta + ", autor=" + autor + ", foto=" + foto + ", categoria=" + categoria + '}';
     }
+
+    
 
     
 
