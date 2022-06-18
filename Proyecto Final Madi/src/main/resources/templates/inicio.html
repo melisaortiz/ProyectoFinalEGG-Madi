@@ -42,20 +42,14 @@
         <!--MAIN CONTENT-->
         <div id="contenido">
             <div class="container text-center">
-<!--                <div class="row">
-                    <div class="col-12">
-                        <h1 id="encabezado" class="text-white">Inicio de___ administrador</h1>
-                    </div>
-                </div>-->
-                <!--USER WELCOME BANNER-->
+                               <!--USER WELCOME BANNER-->
                 <div class="usuario">
                     <h2 class="text-white row" sec:authorize="hasRole('ADMIN')">
-                        <div class="row">
+                         <div class="row">
                     <div class="col-12">
                         <h1 id="encabezado" class="text-white">Inicio de___ administrador</h1>
                     </div>
                 </div>
-                        
                         <!--Div que aparece sólo si el usuario logueado es Administrador-->
                         <div class="usuario-img"><img class="img-fluid rounded-circle" th:if="${session.usuariosession != null}" th:src="@{'/foto/usuario/' + ${session.usuariosession.id}}" id="profile-photo" /></div>
                         <div class="usuario-nombre">
@@ -64,11 +58,11 @@
                         </div>
                         </h1>
                 </div>
-                <div class="usuario">
+                <div class="">
                     <h2 class="text-white row" sec:authorize="hasRole('USUARIO')">
-                        <div class="row">
+                         <div class="row">
                     <div class="col-12">
-                        <h1 id="encabezado" class="text-white">Inicio de___ compra</h1>
+                        <h1 id="encabezado" class="text-white">Inicio de___ Compra</h1>
                     </div>
                 </div>
                         <!--Div que aparece para el resto de los usuarios-->
@@ -134,21 +128,15 @@
 
                                 </div>
                                     
-                                    <a href="/admin/autores/admin-autores">
-                                    <button type="button" class="btn btn-warning" id="btn-usuario">Acceder Artistas</button>
-                                </a>
-                                    <a href="/admin/artes/admin-artes">
-                                    <button type="button" class="btn btn-warning" id="btn-usuario">Acceder a Obra</button>
-                                </a>
-                                    
                             </div>
                         </div>
                     </div>
-</div>
+                    </div>
                     <!--USUARIO SECTION-->
                     <div sec:authorize="hasRole('USUARIO')" class="row">
+                        <!--CARDS TITLE SECTION-->
                         <div class="col-12">
-                            <h1 class="bg-danger text-white">Estas son las Obras de Artes Seleccionadas</h1>
+                                                        <h1 class="bg-danger text-white">Estas son las Obras de Artes Seleccionadas</h1>
                         </div>
                         <table class="table-responsive-lg table-hover table-dark table-bordered">
 <!--                            <h3 class="titulo-tabla">Estas son las Obras de Artes Seleccionadas</h3>-->
@@ -182,12 +170,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        
-                        
-<!--                        CARDS TITLE SECTION
-                        <div class="col-12">
-                            <h1 class="bg-danger text-white">Estas son las Obras de Artes Seleccionadas</h1>
+<!--                            <h1 class="bg-danger text-white">Libros disponibles</h1>
                         </div>
                         <div class="col-12 card-filter">
                             <div class="card text-white bg-warning col-12" id="login-card">
@@ -231,8 +214,8 @@
                                 </div>
                             </div>
                         </div>
-                        PRESTAMO
-                         Modal arte
+                        <!--PRESTAMO
+                        <!-- Modal 
 
                         <div th:each="arte: ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
@@ -267,20 +250,20 @@
                                         <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        FIN USUARIO SECTION-->
+                            </div> -->
+                        
+                        <!--FIN USUARIO SECTION-->
                     </div>
                 </div>
 
                 <!-- SCRIPTS-->
-                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!--                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>-->
 
 
             </div>
 
-
+ </div>
             <!--FOOTER-->
             <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
