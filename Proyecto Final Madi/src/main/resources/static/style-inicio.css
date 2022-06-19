@@ -48,6 +48,7 @@ div h1#encabezado {
 
 div#contenido {
     background-color: #202020;
+    height: 800px;
 }
 
 .bg-dark {
