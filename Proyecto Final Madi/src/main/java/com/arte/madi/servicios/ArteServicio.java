@@ -319,4 +319,8 @@ public class ArteServicio {
     public List<Arte> listarDeBaja() {
         return arteRepositorio.listarDeBaja();
     }
+    
+    public List<Arte> listarDeCompra() {
+        return arteRepositorio.listarDeCompra();
+    }
 }

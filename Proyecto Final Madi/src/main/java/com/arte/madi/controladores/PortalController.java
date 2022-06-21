@@ -97,7 +97,14 @@ public class PortalController {
     }
     
     @GetMapping("/carrito")
-    public String carrito() {
+    public String carrito(ModelMap model) {
+        List<Arte> artesDeCompra = arteServicio.listarDeCompra();
+        model.addAttribute("artesDeCompra", artesDeCompra);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("autorSelected", null);
+        List <Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
         return "carrito.html";
     }
     
