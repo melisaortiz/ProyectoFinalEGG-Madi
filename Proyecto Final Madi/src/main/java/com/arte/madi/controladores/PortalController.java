@@ -2,6 +2,7 @@ package com.arte.madi.controladores;
 
 import com.arte.madi.entidades.Arte;
 import com.arte.madi.entidades.Autor;
+import com.arte.madi.enums.Categoria;
 import com.arte.madi.servicios.ArteServicio;
 import com.arte.madi.servicios.AutorServicio;
 import com.arte.madi.servicios.UsuarioServicio;
@@ -11,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,9 +62,29 @@ public class PortalController {
     }
     
          @GetMapping("/tienda")
-    public String tienda() {
-        return "tienda.html";
+         public String tienda(ModelMap model) {
+
+            List<Autor> autores = autorServicio.findAll();
+             model.addAttribute("autores", autores);
+             model.addAttribute("autorSelected", null);
+             List <Arte> artes = arteServicio.findAll();
+             model.addAttribute("artes", artes);
+
+           return "tienda.html";
     }
+         
+             
+         @GetMapping("/tiendas")
+         public String tiendas(ModelMap model , String idAutor) {
+             model.addAttribute("autorSelected", autorServicio.getById(idAutor));
+             List<Autor> autores = autorServicio.findAll();
+             model.addAttribute("autores", autores);
+             List <Arte> artes = arteServicio.buscarPorAutor(idAutor);
+             model.addAttribute("artes", artes);
+
+           return "tienda.html";
+    }
+         
     
          @GetMapping("/contacto")
     public String contacto() {
@@ -73,6 +95,12 @@ public class PortalController {
     public String faqs() {
         return "faqs.html";
     }
+    
+    @GetMapping("/carrito")
+    public String carrito() {
+        return "carrito.html";
+    }
+    
     
     /**
      * Vista principal para los usuarios logueados. Para los ADMIN se ve el Menú
@@ -151,4 +179,27 @@ public class PortalController {
        
         return "inicio.html";
     }
+    
+    @GetMapping("/altaDeCompra/{id}")
+    public String altaDeCompra(ModelMap model, @PathVariable String id) {
+        try {
+            arteServicio.altaDeCompra(id);
+            // Mensaje de éxito inyectado al modelo:
+            model.put("success", "La Obra '" + arteServicio.getById(id).getNombre().toUpperCase() + "' fue dado de alta exitosamente.");
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar dar de alta el arte: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+             
+             List<Autor> autores = autorServicio.findAll();
+             model.addAttribute("autores", autores);
+             List <Arte> artes = arteServicio.findAll();
+             model.addAttribute("artes", artes);
+        
+        return "tienda.html";
+    }
 }
+
+
+
