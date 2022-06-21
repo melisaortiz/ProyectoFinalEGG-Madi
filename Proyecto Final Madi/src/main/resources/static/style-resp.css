@@ -203,66 +203,85 @@ footer {
     justify-content: space-between;
 }
 
-.colum1 {
+.column1footer {
     max-width: 400px;
 }
 
-.colum1 h1 {
-    font-size: 22px;
+.column1footer h2 {
+    font-size: 100%;
 }
 
-.colum1 p {
-    font-size: 14px;
+.column1footer p {
+    font-size: 80%;
     color: #C7C7C7;
-    margin-top: 20px;
+    margin-top: 5%;
 }
 
-.colum2 {
-    max-width: 500px;
+#linkinfo{
+    color: orange;
 }
 
-.colum2 h1 {
-    font-size: 22px;
+.column2footer {
+    max-width: 100%;
+    margin-left: 20%;
 }
 
-#redes-sociales {
-    margin-top: 20px;
+.column2footer h2 {
+    font-size: 100%;
+}
+
+
+.redes {
+    margin-top: 4%;
+    margin-bottom: -5%;
     display: flex;
 }
 
-.row img.redes {
-    width: 60px;
-    height: 36px;
+.imgredes {
+    width: 6%;
+    height: 6%;
 }
 
-.row label {
-    margin-top: 10px;
-    margin-left: 20px;
+
+.label {
+    margin-bottom: 5%;
+    
+}
+
+.redes label {
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 5%;
     color: #C7C7C7;
+    font-size: 80%;
 }
 
-.colum3 {
+.column3footer {
     max-width: 400px;
 }
 
-.colum3 h1 {
-    font-size: 22px;
+.column3footer h2 {
+    font-size: 100%;
+    margin-bottom:15%
 }
 
-.row2 {
-    margin-top: 20px;
+.contact {
+    margin-top: 5%;
     display: flex;
 }
 
-.row2 img {
-    width: 36px;
-    height: 36px;
+.contact img {
+    width: 17%;
+    height: 17%;
 }
 
-.row2 label {
-    margin-top: 10px;
-    margin-left: 20px;
-    max-width: 140px;
+.contact label {
+    margin-top: -2%;
+    margin-left: 8%;
+    margin-bottom: 8%;
+    max-width: 100%;
+    color: #C7C7C7;
+    font-size: 80%;
 }
 
 .container-footer {
@@ -271,11 +290,12 @@ footer {
 }
 
 .footer {
-    max-width: 1200px;
+    max-width: 75%;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1%;
+    font-size: 85%;
 }
 
 .copyright {
@@ -297,11 +317,11 @@ footer {
     .container-body {
         flex-wrap: wrap;
     }
-    .colum1 {
+    .column1footer {
         max-width: 100%;
     }
-    .colum2,
-    .colum3 {
-        margin-top: 40px;
+    .column2footer,
+    .column3footer {
+        margin-top: 5%;
     }
 }
