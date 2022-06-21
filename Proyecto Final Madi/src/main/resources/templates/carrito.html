@@ -46,7 +46,7 @@
     <section class="flex-container">
         <section class="carrusel-grid" style="order: 2;">
             <!-------------- CARROUSEL --------------->
-            <section class="carousel">
+            <!--<section class="carousel">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -75,7 +75,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            </section>
+            </section>-->
 
             <!----------------  GRID ------------->
                <div class="row">
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <br><div th:each="arte : ${artes}" class="col card-body-container">
+                    <br><div th:each="arte : ${artesDeCompra}" class="col card-body-container">
                         <div class="row bg-dark text-white card-content">
                             <div class="col-4">
                                 <a th:title="'Conocer más sobre ' + ${arte.nombre}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}"><img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada"></a><br>
@@ -200,7 +200,7 @@
 <!-------------------------------------------->
         </section>
 
-        <!--SIDEBAR -->
+        <!--SIDEBAR 
         <aside class="sidebar" style="order: 1;">
 
             <label id="icon2">
@@ -258,7 +258,7 @@
                     <li><a class="nav-link" href="faqs.html">artista</a></li>
                 </Ul>
             </section>
-        </aside>
+        </aside> -->
     </section>
 
 

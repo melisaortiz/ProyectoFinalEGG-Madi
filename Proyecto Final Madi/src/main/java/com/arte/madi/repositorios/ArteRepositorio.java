@@ -36,4 +36,7 @@ public interface ArteRepositorio extends JpaRepository<Arte, String> {
     @Query("SELECT art FROM Arte art WHERE art.alta IS false ORDER BY art.nombre ASC")
     public List<Arte> listarDeBaja();
     
+    @Query("SELECT art FROM Arte art WHERE art.compra IS true ORDER BY art.nombre ASC")
+    public List<Arte> listarDeCompra();
+    
 }
