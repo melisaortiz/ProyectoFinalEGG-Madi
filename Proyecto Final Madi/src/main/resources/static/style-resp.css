@@ -325,3 +325,83 @@ footer {
         margin-top: 5%;
     }
 }
+/*-------------tarjetas tienda------------*/
+#login-card {
+    width: 18rem;
+    max-height: 100%;
+}
+
+#btn-orange {
+    background-color: #d35400;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+    padding:1%;
+    height: 45px;
+}
+
+/*CARD FILTRO DE BÚSQUEDA*/
+.card-filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+    align-items: center;
+}
+
+#card-filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#card-filter-buttons button {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*CARDS CON PORTADAS DE LIBROS*/
+.card-body-container {    
+    margin: 1%;
+    text-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-content {
+    height: 250px;
+    width: 420px;
+    border-radius: 15px;
+}
+
+.card-content:hover {
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-img-top-portada {
+    max-width: 128px;
+    height: 197px;
+    align-content: center;
+    vertical-align: middle;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+
+}
+
+.card-img-top-portada:hover {
+    box-shadow: 1px 1px 15px rgb(19, 19, 24);
+}
+
+.card-body-content {
+    height: 197px;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    vertical-align: middle;
+}
+
+.card-body-content-button {
+    align-self: center;
+    vertical-align: bottom;
+}
+
+modal-content {
+    border-style: none;
+}
