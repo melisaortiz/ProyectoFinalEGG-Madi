@@ -180,7 +180,7 @@
                                         <form action="/autor" method="GET" enctype="multipart/form-data">
                                             <select class="form-control custom-select" name="idAutor">
                                             <option th:if="${autorSelected} == null" selected disabled value="">Seleccionar...</option>
-                                            <option th:if="${autorSelected} != null" selected th:value="${autorSelected.id}"><span th:text="${autorSelected.nombre}"></span></option>
+                                            <option th:if="${autorSelected} != null" selected th:value="${autorSelected.id}"><span th:text="${autorSelected.nombre}"></span></option><
                                             <option th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
                                         </select><br>
                                             <br>
