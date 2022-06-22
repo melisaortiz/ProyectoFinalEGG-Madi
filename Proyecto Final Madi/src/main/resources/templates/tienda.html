@@ -177,8 +177,8 @@
                             <div class="card col-12" id="login-card">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <form action="/categoria" method="GET" enctype="multipart/form-data">
-                                            <select class="form-control custom-select" name="categoria">
+                                        <form action="/tiendas" method="GET" enctype="multipart/form-data">
+                                            <select class="form-control custom-select" name="categorias">
                                             <option selected disabled value="">Seleccionar...</option>
                                     <!--        <option th:if="${categorias} != null" selected th:value="${arte}"><span th:text="${arte.displayName()}"></span></option> -->
                                             <option th:each="arte : ${categorias}" th:value="${arte}" th:text="${arte.displayName()}"></option>
