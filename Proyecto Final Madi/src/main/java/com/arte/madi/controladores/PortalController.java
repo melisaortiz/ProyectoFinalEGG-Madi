@@ -98,6 +98,15 @@ public class PortalController {
     
     @GetMapping("/carrito")
     public String carrito(ModelMap model) {
+           try {
+            arteServicio.sumaCarrito();
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar sumar el precio final: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+        List<Long> sumaCarrito = arteServicio.sumaCarrito();
+        model.addAttribute("sumaCarrito", sumaCarrito);
         List<Arte> artesDeCompra = arteServicio.listarDeCompra();
         model.addAttribute("artesDeCompra", artesDeCompra);
         List<Autor> autores = autorServicio.findAll();
@@ -206,7 +215,46 @@ public class PortalController {
         
         return "tienda.html";
     }
-}
+    
+    @GetMapping("/bajaDeCompra/{id}")
+    public String bajaDeCompra(ModelMap model, @PathVariable String id) {
+        try {
+            arteServicio.bajaDeCompra(id);
+            // Mensaje de éxito inyectado al modelo:
+            model.put("success", "La Obra '" + arteServicio.getById(id).getNombre().toUpperCase() + "' fue dado de baja exitosamente.");
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar dar de baja el arte: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+       List<Arte> artesDeCompra = arteServicio.listarDeCompra();
+        model.addAttribute("artesDeCompra", artesDeCompra);
+        List<Autor> autores = autorServicio.findAll();
+        model.addAttribute("autores", autores);
+        model.addAttribute("autorSelected", null);
+        List <Arte> artes = arteServicio.findAll();
+        model.addAttribute("artes", artes);
+        List<Long> sumaCarrito = arteServicio.sumaCarrito();
+        model.addAttribute("sumaCarrito", sumaCarrito);
+        
+        return "carrito.html";
+    }
+    
+//    @GetMapping("/sumaCarrito")
+//    public String sumaCarrito(ModelMap model) {
+//        try {
+//            arteServicio.sumaCarrito();
+//        } catch (Exception e) {
+//            // Mensaje de error inyectado al modelo:
+//            model.put("error", "Error al intentar sumar el precio final: " + e.getMessage());
+//        }
+//        // Datos inyectados al modelo de "admin-arte.html":
+//        List<Arte> sumaCarrito = arteServicio.sumaCarrito();
+//        model.addAttribute("sumaCarrito", sumaCarrito);
+//        
+//        return "carrito.html";
+    }
+
 
 
 

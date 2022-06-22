@@ -83,7 +83,7 @@
 <!--                    <div class="col-12">
                         <h1 class="bg-danger text-white">Libros disponibles</h1>
                     </div>-->
-                    <div class="col-12 card-filter">
+<!--                    <div class="col-12 card-filter">
                         <div class="card text-white bg-warning col-12" id="login-card">
                             <div class="card-header">Buscar por Autor</div>
                             <div class="card-body">
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <br><div th:each="arte : ${artesDeCompra}" class="col card-body-container">
                         <div class="row bg-dark text-white card-content">
                             <div class="col-4">
@@ -113,13 +113,14 @@
                                 <h5><strong><span th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></span></strong></h5>
                                 <div>
                                     <span th:text="'Autor: ' + ${arte.autor.nombre}"></span><br>
-<!--                                    <span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span><br>
-                                    <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
+                                    <strong><span th:text="'Precio: $ ' + ${arte.precio}"></span></span><br></strong>
+ <!--                                   <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
                                 </div>
                                 <br>
                                 <div class="card-body-content-button">
-                                    <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br>
-                                    <a th:if="${arte.compra == true}"><small class="text-muted">Obra de Arte cargada en carrito</small></a>
+                                 <!--   <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br> -->
+                                 <a th:if="${arte.compra == true}" th:href="@{/bajaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Eliminar de Carrito</i> </a>
+                                 <!--   <a th:if="${arte.compra == false}"><small class="text-muted">Obra de Arte de a eliminado en carrito</small></a> -->
                                 </div>
                             </div>
                         </div>
@@ -155,6 +156,8 @@
                                         
                                             </div>
                                         </div>
+                                        
+                                        
 <!--                                        <button th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}" class="btn btn-warning" type="button" title="Icluido en carrito de compras.">
                                             Solicitar Préstamo
                                         </button>
@@ -195,7 +198,10 @@
                     </div>
                 <!--FIN USUARIO SECTION-->
             </div>
+                    
                      </div>
+                                        <label>Precio Total</label>
+                                        <span th:text="'$ ' + ${sumaCarrito}"></span>         
 
 <!-------------------------------------------->
         </section>
