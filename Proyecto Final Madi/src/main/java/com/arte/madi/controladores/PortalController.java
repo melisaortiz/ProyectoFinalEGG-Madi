@@ -131,10 +131,21 @@ public class PortalController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USUARIO')")
     @GetMapping("/inicio")
     public String inicio(ModelMap model) {
+         try {
+            arteServicio.sumaCarrito();
+        } catch (Exception e) {
+            // Mensaje de error inyectado al modelo:
+            model.put("error", "Error al intentar sumar el precio final: " + e.getMessage());
+        }
+        // Datos inyectados al modelo de "admin-arte.html":
+        List<Long> sumaCarrito = arteServicio.sumaCarrito();
+        model.addAttribute("sumaCarrito", sumaCarrito);
+        List<Arte> artesDeCompra = arteServicio.listarDeCompra();
+        model.addAttribute("artesDeCompra", artesDeCompra);
         List<Autor> autores = autorServicio.findAll();
         model.addAttribute("autores", autores);
         model.addAttribute("autorSelected", null);
-        List<Arte> artes = arteServicio.findAll();
+        List <Arte> artes = arteServicio.findAll();
         model.addAttribute("artes", artes);
 
         return "inicio.html";
