@@ -53,8 +53,9 @@ a.nav-link:hover {
 }
 
 img#logo {
-    height: 100%;
-    margin-left: 50%;
+    height: 3rem;
+    width: 6.5rem;
+    margin-left: 10rem;
 }
 
 .seccion-tres {
@@ -64,7 +65,8 @@ img#logo {
 }
 
 #inicses {
-    margin-left: -60%;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
     width: 100%;
 }
 

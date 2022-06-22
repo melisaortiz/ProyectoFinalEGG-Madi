@@ -39,15 +39,22 @@ body {
 /* --------------------------- ESTILOS DE CARDS --------------------------- */
 
 .col {
-    margin-bottom: 10%;
-    margin-top: 5%;
+    margin-bottom: 10rem;
+    margin-top: 8rem;
+}
+
+.card-text form label{
+    display: table;
+    margin-top: 4%;
+    font-size: 66%;
+    color: #6d7780;
 }
 
 #login-card {
-    margin: 0% 25%;
-    width: 45%;
-    height: 415px;
-    border-radius: 10px;
+    margin: 0rem 13rem;
+    width: 35rem;
+    height: 25rem;
+    border-radius: 0.5rem;
 }
 
 #login-card-banner {
@@ -55,13 +62,12 @@ body {
 }
 
 #login-card-body {
-    min-height: 410px;
+    min-height: 9rem;
     background-color: #202020;
-    border-radius: 10px;
 }
 
 .card {
-    border-radius: 10px;
+    border: 0rem;
     box-shadow: 1px 1px 5px #202020;
     align-self: center;
     margin-top: 1%;
