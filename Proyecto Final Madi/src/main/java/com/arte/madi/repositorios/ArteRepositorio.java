@@ -2,6 +2,7 @@ package com.arte.madi.repositorios;
 
 
 import com.arte.madi.entidades.Arte;
+import com.arte.madi.enums.Categoria;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -41,5 +42,8 @@ public interface ArteRepositorio extends JpaRepository<Arte, String> {
     
     @Query ("SELECT SUM(art.precio) FROM Arte art WHERE art.compra IS true")
     public List<Long> sumaCarrito();
+    
+    @Query("SELECT art FROM Arte art WHERE art.categoria = :categoria")
+    public List<Arte> buscarPorCategoria(@Param("categoria") Categoria categoria);
     
 }

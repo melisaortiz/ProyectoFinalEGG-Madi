@@ -69,35 +69,42 @@ public class PortalController {
              model.addAttribute("autorSelected", null);
              List <Arte> artes = arteServicio.findAll();
              model.addAttribute("artes", artes);
-
+             model.addAttribute("categorias", Categoria.values());
            return "tienda.html";
     }
          
              
          @GetMapping("/tiendas")
          public String tiendas(ModelMap model , String idAutor) {
-             model.addAttribute("autorSelected", autorServicio.getById(idAutor));
-             List<Autor> autores = autorServicio.findAll();
-             model.addAttribute("autores", autores);
-             List <Arte> artes = arteServicio.buscarPorAutor(idAutor);
-             model.addAttribute("artes", artes);
-
+            model.addAttribute("autorSelected", autorServicio.getById(idAutor));
+            List<Autor> autores = autorServicio.findAll();
+            model.addAttribute("autores", autores);
+            List <Arte> artes = arteServicio.buscarPorAutor(idAutor);
+            model.addAttribute("artes", artes);
+           return "tienda.html";
+    }
+         
+         @GetMapping("/categoria")
+         public String categoria(ModelMap model, Categoria categoria) {
+            model.addAttribute("categorias", Categoria.values());
+            List <Arte> cat = arteServicio.buscarPorCategoria(categoria);
+            model.addAttribute("artes", cat);
            return "tienda.html";
     }
          
     
          @GetMapping("/contacto")
-    public String contacto() {
+        public String contacto() {
         return "contacto.html";
     }
     
          @GetMapping("/faqs")
-    public String faqs() {
+        public String faqs() {
         return "faqs.html";
     }
     
-    @GetMapping("/carrito")
-    public String carrito(ModelMap model) {
+        @GetMapping("/carrito")
+        public String carrito(ModelMap model) {
            try {
             arteServicio.sumaCarrito();
         } catch (Exception e) {
@@ -223,7 +230,7 @@ public class PortalController {
              model.addAttribute("autores", autores);
              List <Arte> artes = arteServicio.findAll();
              model.addAttribute("artes", artes);
-        
+             
         return "tienda.html";
     }
     

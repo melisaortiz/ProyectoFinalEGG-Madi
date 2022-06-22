@@ -327,4 +327,8 @@ public class ArteServicio {
     public List<Long> sumaCarrito() {
         return arteRepositorio.sumaCarrito();
     }
+    
+    public List<Arte> buscarPorCategoria(Categoria categoria) {
+        return arteRepositorio.buscarPorCategoria(categoria);
+    }
 }
