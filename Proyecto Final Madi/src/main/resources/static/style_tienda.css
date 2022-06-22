@@ -1,331 +1,325 @@
-        * {
-            padding: 0;
-            margin: 0;
-            text-decoration: none;
-            list-style: none;
-        }
-        
-        body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        
-        section {
-            text-align: center;
-        }
-        
-        section.flex-container {
-            display: flex;
-        }
-        
-        section.carrusel-grid {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 5em;
-            margin-left: 2rem;
-        }
-        /*-------------card artistas--------------*/
-        
-        .card-img-top {
-            border-top-left-radius: calc(0.25rem - 1px);
-            border-top-right-radius: calc(0.25rem - 1px);
-            height: 12rem;
-            object-fit: cover;
-        }
-        
-        #boton-artistas {
-            width: 100%;
-        }
-        
-        .card.mb-3 {
-            margin-top: 2rem;
-        }
-        
-        ol {
-            list-style-type: circle;
-        }
-        
-.carousel {
-    width: 90%;
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
 }
-        /*-----------------GRID------------------*/
-        /*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
-        
-        section.grid-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 0;
-            max-width: 100%;
-        }
-        
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 40px;
-            justify-content: space-evenly;
-        }
-        /*producto del grid*/
-        
-        .grid div.product {
-            max-width: 200px;
-            padding: 10px;
-            margin: 1em;
-            text-align: center;
-            font-family: sans-serif;
-            font-size: 80%;
-            box-sizing: border-box;
-        }
-        /*cuando le pasamos el mouse se le pone borde*/
-        
-        .grid div.product:hover {
-            border: 1px solid black;
-        }
-        
-        img.imagen_tienda {
-            width: 100%;
-        }
-        
-        div.product-name {
-            padding: 10px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-        /*-------------ASIDE------------*/
-        
-        aside.sidebar {
-            max-width: 200px;
-            width: 30%;
-            margin-top: 30px;
-            padding-left: 15px;
-        }
-        
-        .sidebar li {
-            font-size: 12px;
-            padding: 1px;
-            margin: 2px 2px 2px 30px;
-        }
-        
-        .nav-link {
-            color: black;
-        }
-        
-        .sidebar ul {
-            margin-top: 80px;
-        }
-        /*icono fas fa aside*/
-        
-        aside label#icon2 {
-            color: black;
-            font-size: 20px;
-            float: left;
-            margin-left: 40px;
-            cursor: pointer;
-            display: none;
-        }
-        /*PRICE RANGE*/
-        
-        .wrapper {
-            position: relative;
-            width: 20vmin;
-        }
-        
-        input[type="range"] {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 100%;
-            outline: none;
-            position: absolute;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            background-color: transparent;
-            pointer-events: none;
-        }
-        
-        .slider-track {
-            width: 100%;
-            height: 5px;
-            background-color: #d5d5d5;
-            position: absolute;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            border-radius: 5px;
-        }
-        
-        input[type="range"]::-webkit-slider-runnable-track {
-            -webkit-appearance: none;
-            height: 5px;
-        }
-        
-        input[type="range"]::-moz-range-track {
-            -moz-appearance: none;
-            height: 5px;
-        }
-        
-        input[type="range"]::-ms-track {
-            appearance: none;
-            height: 5px;
-        }
-        
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 1.6em;
-            width: 0.3em;
-            background-color: #101010;
-            cursor: pointer;
-            pointer-events: auto;
-            margin-top: -9px;
-        }
-        
-        input[type="range"]::-moz-range-thumb {
-            -webkit-appearance: none;
-            height: 1.7em;
-            width: 1.7em;
-            cursor: pointer;
-            border-radius: 50%;
-            background-color: #3264fe;
-            pointer-events: auto;
-        }
-        
-        input[type="range"]::-ms-thumb {
-            appearance: none;
-            height: 1.7em;
-            width: 1.7em;
-            cursor: pointer;
-            border-radius: 50%;
-            background-color: #3264fe;
-            pointer-events: auto;
-        }
-        
-        input[type="range"]:active ::-webkit-slider-thumb {
-            background-color: #ffffff;
-            border: 3px solid#3264fe;
-        }
-        /*-------------tarjetas tienda------------*/
-        
-        #login-card {
-            width: 13rem;
-            max-height: 150%;
-            margin-left: -2rem;
-            margin-right: 2rem;
-        }
-        
-        div #login-card.card.col-12 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: none;
-            border-radius: 0.25rem;
-        }
-        
-        #btn-orange {
-            background-color: #d35400;
-            color: white;
-            margin-left: 5px;
-            height: 2rem;
-            width: 10rem;
-            text-decoration: none;
-            margin-top: -2rem;
-        }
-        /*CARD FILTRO DE BÚSQUEDA*/
-        
-        .card-filter {
-            width: 15rem;
-            margin-left: -2rem;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1%;
-            align-items: center;
-        }
-        
-        .card-body {
-            flex: 1 1 auto;
-            padding: 0.9rem 0rem;
-        }
-        
-        .form-control.custom-select {
-            font-size: 12px;
-        }
-        
-        #card-filter-buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-        
-        #card-filter-buttons button {
-            margin-left: 1%;
-            margin-right: 1%;
-            font-size: 14px;
-            margin-top: -1.5rem;
-        }
-        /*CARDS CON PORTADAS DE LIBROS*/
-        
-        .card-body-container {
-            margin: 1%;
-            margin-top: 4rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        
-        .card-content {
-            height: 14rem;
-            width: 29rem;
-            border-radius: 15px;
-        }
-        
-        .card-content:hover {
-            box-shadow: 1px 1px 5px rgb(19, 19, 24);
-        }
-        
-        .card-img-top-portada {
-            max-width: 10rem;
-            height: 10rem;
-            align-content: center;
-            vertical-align: middle;
-            box-shadow: 1px 1px 5px rgb(19 19 24);
-            object-fit: cover;
-            margin-top: 1.5rem;
-        }
-        
-        .card-img-top-portada:hover {
-            box-shadow: 1px 1px 15px rgb(19, 19, 24);
-        }
-        
-        .card-body-content {
-            height: 13rem;
-            font-size: small;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            vertical-align: middle;
-            margin-left: 0px;
-            left: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .card-body-content-button {
-            align-self: center;
-            vertical-align: bottom;
-        }
-        
-        .modal-content {
-            border-style: none;
-        }
-        
-        .modal-header .close {
-            padding: 1rem 1rem;
-            margin: -1rem -1rem -1rem auto;
-            width: 12%;
-        }
-        
-        .text-white {
-            --bs-text-opacity: 1;
-            color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
-            width: 100%;
-            margin-top: -2rem;
-        }
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.carrusel-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5em;
+    margin-left: 0;
+}
+
+
+/*-------------CARRUSEL--------------*/
+
+section.carousel {
+    display: flex;
+    max-width: 700px;
+    max-height: 300px;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+
+/*imagen carrusel*/
+
+.d-block.w-100 {
+    width: 500px;
+    height: 350px;
+}
+
+.carousel-inner button {
+    float: right;
+}
+
+ol {
+    list-style-type: circle;
+}
+
+#carousel2-list {
+    top: 30px;
+    text-align: left;
+}
+
+.carousel-item li {
+    font-size: small;
+}
+
+#carousel2 {
+    max-width: 100%;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+}
+
+
+/*-----------------GRID------------------*/
+
+
+/*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
+
+section.grid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    max-width: 100%;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    justify-content: space-evenly;
+}
+
+
+/*producto del grid*/
+
+.grid div.product {
+    max-width: 200px;
+    padding: 10px;
+    margin: 1em;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 80%;
+    box-sizing: border-box;
+}
+
+
+/*cuando le pasamos el mouse se le pone borde*/
+
+.grid div.product:hover {
+    border: 1px solid black;
+}
+
+img.imagen_tienda {
+    width: 100%;
+}
+
+div.product-name {
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*-------------ASIDE------------*/
+
+aside.sidebar {
+    max-width: 200px;
+    width: 30%;
+    height: 100vh;
+    margin-top: 30px;
+    padding-left: 15px;
+}
+
+.sidebar li {
+    font-size: 12px;
+    padding: 1px;
+    margin: 2px 2px 2px 30px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.sidebar ul {
+    margin-top: 80px;
+}
+
+
+/*icono fas fa aside*/
+
+aside label#icon2 {
+    color: black;
+    font-size: 20px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*PRICE RANGE*/
+
+.wrapper {
+    position: relative;
+    width: 20vmin;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.slider-track {
+    width: 100%;
+    height: 5px;
+    background-color: #d5d5d5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-ms-track {
+    appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.6em;
+    width: 0.3em;
+    background-color: #101010;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -9px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]:active ::-webkit-slider-thumb {
+    background-color: #ffffff;
+    border: 3px solid#3264fe;
+}
+
+/*-------------tarjetas tienda------------*/
+#login-card {
+    width: 18rem;
+    max-height: 100%;
+}
+
+#btn-orange {
+    background-color: #303030;
+    color: white;
+    font-size: 1em;
+    margin-left: 5px;
+    padding:1%;
+    height: 45px;
+}
+
+/*CARD FILTRO DE BÚSQUEDA*/
+.card-filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+    align-items: center;
+}
+
+#card-filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#card-filter-buttons button {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*CARDS CON PORTADAS DE LIBROS*/
+.card-body-container {    
+    margin: 1%;
+    text-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-content {
+    height: 250px;
+    width: 420px;
+    border-radius: 15px;
+}
+
+.card-content:hover {
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+}
+
+.card-img-top-portada {
+    max-width: 128px;
+    height: 197px;
+    align-content: center;
+    vertical-align: middle;
+    box-shadow: 1px 1px 5px rgb(19, 19, 24);
+
+}
+
+.card-img-top-portada:hover {
+    box-shadow: 1px 1px 15px rgb(19, 19, 24);
+}
+
+.card-body-content {
+    height: 197px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    vertical-align: middle;
+    padding: 1em 1em 1em 3em;
+}
+
+h5{
+    font-size: 1.1em;
+
+}
+
+.col-4{
+    padding: 1em 1em 3em 1.5em;
+}
+
+.card-body-content-button {
+    align-self: center;
+    vertical-align: bottom;
+}
+
+modal-content {
+    border-style: none;
+}
