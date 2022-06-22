@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="/style_tienda.css">
     <link rel="stylesheet" href="/style-resp.css">
-    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -47,116 +47,75 @@
         <section class="carrusel-grid" style="order: 2;">
             <!-------------- CARROUSEL --------------->
             <section class="carousel">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    </ol>
+                <div class="card mb-3">
+                    <img src="/img/artists5.png" class="card-img-top" alt="...">
+                    <a href="/artistas/mostrar-artistas"><button type="button"  id="boton-artistas" class="btn btn-dark">Conocé a nuestros artistas</button></a>
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="/img/carrousel1.jpeg" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <button type="button" class="btn btn-light">Artistas</button>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/img/carousel2.png" class="d-block w-100" id="carousel2" alt="...">
-                        </div>
-                    </div>
-
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </section>
-            
+
 
             <!----------------  GRID ------------->
-               <div class="row">
-                    <!--CARDS TITLE SECTION-->
-<!--                    <div class="col-12">
+            <div class="row">
+                <!--CARDS TITLE SECTION-->
+                <!--                    <div class="col-12">
                         <h1 class="bg-danger text-white">Libros disponibles</h1>
                     </div>-->
-                    <div class="col-12 card-filter">
-                        <div class="card text-white bg-warning col-12" id="login-card">
-                            <div class="card-header">Buscar por Autor</div>
-                            <div class="card-body">
-                                <div class="card-text">
-                                    <form action="/tiendas" method="GET" enctype="multipart/form-data">
-                                        <select class="form-control custom-select" name="idAutor">
-                                            <option th:if="${autorSelected} == null" selected disabled value="">Seleccionar...</option>
-                                            <option th:if="${autorSelected} != null" selected th:value="${autorSelected.id}"><span th:text="${autorSelected.nombre}"></span></option>
-                                            <option th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
-                                        </select><br>
-                                        <br><div id="card-filter-buttons">
-                                            <button th:if="${autorSelected} != null" type="submit" class="btn btn-dark" formaction="/tienda" formmethod="GET">Borrar filtro</button>
-                                            <button type="submit" class="btn btn-dark">Filtrar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+
+                <br>
+                <div th:each="arte : ${artes}" class="col card-body-container">
+                    <div class="row card-content">
+                        <div class="col-4">
+                            <a th:title="'Conocer más sobre ' + ${arte.nombre}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}"><img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada"></a><br>
+
                         </div>
-                    </div>
-                    <br><div th:each="arte : ${artes}" class="col card-body-container">
-                        <div class="row bg-dark text-white card-content">
-                            <div class="col-4">
-                                <a th:title="'Conocer más sobre ' + ${arte.nombre}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}"><img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada"></a><br>
-                                
-                            </div>
-                            <div class="col-8 card-body-content">
-                                <h5><strong><span th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></span></strong></h5>
-                                <div>
-                                    <span th:text="'Autor: ' + ${arte.autor.nombre}"></span><br>
-<!--                                    <span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span><br>
+                        <div class="col-8 card-body-content">
+                            <h5><strong><span th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></span></strong></h5>
+                            <div>
+                                <span th:text="'Autor: ' + ${arte.autor.nombre}"></span><br>
+                                <!--                                    <span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span><br>
                                     <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
-                                </div>
-                                <br>
-                                <div class="card-body-content-button">
-                                    <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br>
-                                    <a th:if="${arte.compra == true}"><small class="text-muted">Obra de Arte cargada en carrito</small></a>
-                                </div>
+                            </div>
+                            <br>
+                            <div class="card-body-content-button">
+                                <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br>
+                                <a th:if="${arte.compra == true}"><small class="text-muted">Obra de Arte cargada en carrito</small></a>
                             </div>
                         </div>
                     </div>
-                    <!--PRESTAMO-->
-                    <!-- Modal -->
-                    <div th:each="arte : ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
-                            <div class="modal-content bg-dark text-white">
-                                <div class="modal-header">
-                                    <strong><h5 class="modal-title" id="exampleModalLabel" th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></h5></strong>
-                                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                </div>
+                <!--PRESTAMO-->
+                <!-- Modal -->
+                <div th:each="arte : ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
+                        <div class="modal-content bg-dark text-white">
+                            <div class="modal-header">
+                                <strong><h5 class="modal-title" id="exampleModalLabel" th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></h5></strong>
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                </div>
-                                <div class="modal-body"><br>
-                                    <div class="row  text-white">
-                                        <div class="col-4">
-                                            <img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada">
-                                        </div>
-                                        <div class="col-8 card-body-content text-justify">
-                                        <div>
+                            </div>
+                            <div class="modal-body"><br>
+                                <div class="row  text-white">
+                                    <div class="col-4">
+                                        <img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada">
+                                    </div>
+                                    <div class="col-8 card-body-content text-justify">
+                                        <div class="contenido-card">
                                             <ul>
-                                                <li><span th:text="'Precio: ' + ${arte.precio}"></span></li>
+                                                <li><span th:text="'Precio: $ ' + ${arte.precio}"></span></li>
                                                 <li><span th:text="'Autor: ' + ${arte.autor.nombre}"></span></li>
-<!--                                                <li><span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span></li>
+                                                <!--                                                <li><span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span></li>
                                                 <li><span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span></li>-->
                                                 <li>Descripción: <span th:text="${arte.descripcion}" id="descripcion-libro"></span></li>
-                                                
+
                                             </ul>
-                                            
+
                                             <a th:if="${arte.compra == false}" th:href="@{/altaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Agregar a Carrito</i> </a>
-                                        
-                                            </div>
+
                                         </div>
-<!--                                        <button th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}" class="btn btn-warning" type="button" title="Icluido en carrito de compras.">
+                                    </div>
+                                    <!--                                        <button th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}" class="btn btn-warning" type="button" title="Icluido en carrito de compras.">
                                             Solicitar Préstamo
                                         </button>
                                   <div>
@@ -190,15 +149,15 @@
                                         </div>
                                     </div>-->
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
-                <!--FIN USUARIO SECTION-->
+                    <!--FIN USUARIO SECTION-->
+                </div>
             </div>
-                     </div>
 
-<!-------------------------------------------->
+            <!-------------------------------------------->
         </section>
 
         <!--SIDEBAR -->
@@ -211,52 +170,37 @@
             <section class="show2">
                 <Ul>
                     <strong>
-            <li> FILTRAR POR PRECIO </li>
-          </strong>
-                    <li style="font-size: 10px">Precio: $500 - $10.000</li>
-
-                    <li>
-                        <div class="wrapper">
-                            <div class="values" style="padding: 1em 1em 4em;">
-                                <span id="range1">
-                      $500
-                  </span>
-                                <span> &dash; </span>
-                                <span id="range2">
-                      $10000
-                  </span>
-                            </div>
-                            <div class="container">
-                                <div class="slider-track"></div>
-                                <input type="range" min="500" max="10000" value="500" id="slider-1" oninput="slideOne()">
-                                <input type="range" min="500" max="10000" value="5000" id="slider-2" oninput="slideTwo()">
-                            </div>
-                        </div>
-
-                    </li>
-                </Ul>
-
-                <Ul>
-                    <strong>
             <li> CATEGORIAS </li>
           </strong>
-                    <li><a class="nav-link" href="">fotografia</a></li>
-                    <li><a class="nav-link" href="faqs.html">óleo</a></li>
-                    <li><a class="nav-link" href="faqs.html">acuarela</a></li>
-                    <li><a class="nav-link" href="faqs.html">acrílico</a></li>
-                    <li><a class="nav-link" href="faqs.html">collage</a></li>
-                    <li><a class="nav-link" href="faqs.html">ilustraciones</a></li>
+                    <li></li>
                 </Ul>
 
                 <Ul>
                     <strong>
             <li> ARTISTAS </li>
           </strong>
-                    <li><a class="nav-link" href="faqs.html">artista</a></li>
-                    <li><a class="nav-link" href="faqs.html">artista</a></li>
-                    <li><a class="nav-link" href="faqs.html">artista</a></li>
-                    <li><a class="nav-link" href="faqs.html">artista</a></li>
-                    <li><a class="nav-link" href="faqs.html">artista</a></li>
+                    <li>
+                        <div class="card-filter">
+                            <div class="card col-12" id="login-card">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <form action="/tiendas" method="GET" enctype="multipart/form-data">
+                                            <select class="form-control custom-select" name="idAutor">
+                                            <option th:if="${autorSelected} == null" selected disabled value="">Seleccionar...</option>
+                                            <option th:if="${autorSelected} != null" selected th:value="${autorSelected.id}"><span th:text="${autorSelected.nombre}"></span></option>
+                                            <option th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+                                        </select><br>
+                                            <br>
+                                            <div id="card-filter-buttons">
+                                                <button th:if="${autorSelected} != null" type="submit" class="btn btn-dark" formaction="/tienda" formmethod="GET">Borrar filtro</button>
+                                                <button type="submit" class="btn btn-dark">Filtrar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </Ul>
             </section>
         </aside>
