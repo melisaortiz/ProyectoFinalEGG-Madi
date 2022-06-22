@@ -12,13 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-
-    <link rel="stylesheet" href="/style_tienda.css">
     <link rel="stylesheet" href="/style-resp.css">
-    
+    <link rel="stylesheet" href="/style-carrito.css">
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <script>
         $(document).ready(function() {
@@ -45,8 +46,10 @@
 
     <section class="flex-container">
         <section class="carrusel-grid" style="order: 2;">
-            <!-------------- CARROUSEL --------------->
-            <!--<section class="carousel">
+            <div class="carrito-de-compra">
+                <h2>Carrito de compras</h2>
+                <!-------------- CARROUSEL --------------->
+                <!--<section class="carousel">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -77,13 +80,13 @@
                 </div>
             </section>-->
 
-            <!----------------  GRID ------------->
-               <div class="row">
+                <!----------------  GRID ------------->
+                <div class="row">
                     <!--CARDS TITLE SECTION-->
-<!--                    <div class="col-12">
+                    <!--                    <div class="col-12">
                         <h1 class="bg-danger text-white">Libros disponibles</h1>
                     </div>-->
-<!--                    <div class="col-12 card-filter">
+                    <!--                    <div class="col-12 card-filter">
                         <div class="card text-white bg-warning col-12" id="login-card">
                             <div class="card-header">Buscar por Autor</div>
                             <div class="card-body">
@@ -103,62 +106,63 @@
                             </div>
                         </div>
                     </div> -->
-                    <br><div th:each="arte : ${artesDeCompra}" class="col card-body-container">
-                        <div class="row bg-dark text-white card-content">
+                    <br>
+                    <div th:each="arte : ${artesDeCompra}" class="col card-body-container">
+                        <div class="row card-content">
                             <div class="col-4">
                                 <a th:title="'Conocer más sobre ' + ${arte.nombre}" type="button" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}"><img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada"></a><br>
-                                
+
                             </div>
                             <div class="col-8 card-body-content">
                                 <h5><strong><span th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></span></strong></h5>
                                 <div>
                                     <span th:text="'Autor: ' + ${arte.autor.nombre}"></span><br>
                                     <strong><span th:text="'Precio: $ ' + ${arte.precio}"></span></span><br></strong>
- <!--                                   <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
+                                    <!--                                   <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
                                 </div>
                                 <br>
                                 <div class="card-body-content-button">
-                                 <!--   <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br> -->
-                                 <a th:if="${arte.compra == true}" th:href="@{/bajaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Eliminar de Carrito</i> </a>
-                                 <!--   <a th:if="${arte.compra == false}"><small class="text-muted">Obra de Arte de a eliminado en carrito</small></a> -->
+                                    <!--   <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br> -->
+                                    <a th:if="${arte.compra == true}" th:href="@{/bajaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-default" id="eliminar-carrito" title="" disabled></i> </a>
+                                    <!--   <a th:if="${arte.compra == false}"><small class="text-muted">Obra de Arte de a eliminado en carrito</small></a> -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--PRESTAMO-->
-                    <!-- Modal -->
-                    <div th:each="arte : ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
-                            <div class="modal-content bg-dark text-white">
-                                <div class="modal-header">
-                                    <strong><h5 class="modal-title" id="exampleModalLabel" th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></h5></strong>
-                                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+
+                        <!--PRESTAMO-->
+                        <!-- Modal -->
+                        <div th:each="arte : ${artes}" th:attr="id=${'editModal' + arte.id}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-white">
+                                <div class="modal-content bg-dark text-white">
+                                    <div class="modal-header">
+                                        <strong><h5 class="modal-title" id="exampleModalLabel" th:text="${arte.nombre} + ' (' + ${arte.anio} + ')'"></h5></strong>
+                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                </div>
-                                <div class="modal-body"><br>
-                                    <div class="row  text-white">
-                                        <div class="col-4">
-                                            <img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada">
-                                        </div>
-                                        <div class="col-8 card-body-content text-justify">
-                                        <div>
-                                            <ul>
-                                                <li><span th:text="'Precio: ' + ${arte.precio}"></span></li>
-                                                <li><span th:text="'Autor: ' + ${arte.autor.nombre}"></span></li>
-<!--                                                <li><span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span></li>
-                                                <li><span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span></li>-->
-                                                <li>Descripción: <span th:text="${arte.descripcion}" id="descripcion-libro"></span></li>
-                                                
-                                            </ul>
-                                            
-                                            <a th:if="${arte.compra == false}" th:href="@{/altaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Agregar a Carrito</i> </a>
-                                        
+                                    </div>
+                                    <div class="modal-body"><br>
+                                        <div class="row  text-white">
+                                            <div class="col-4">
+                                                <img th:src="@{'/foto/arte/' + ${arte.id}}" class="card-img-top-portada" alt="Portada">
                                             </div>
-                                        </div>
-                                        
-                                        
-<!--                                        <button th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}" class="btn btn-warning" type="button" title="Icluido en carrito de compras.">
+                                            <div class="col-8 card-body-content text-justify">
+                                                <div>
+                                                    <ul>
+                                                        <li><span th:text="'Precio: ' + ${arte.precio}"></span></li>
+                                                        <li><span th:text="'Autor: ' + ${arte.autor.nombre}"></span></li>
+                                                        <!--                                                <li><span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span></li>
+                                                <li><span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span></li>-->
+                                                        <li>Descripción: <span th:text="${arte.descripcion}" id="descripcion-libro"></span></li>
+
+                                                    </ul>
+
+                                                    <a th:if="${arte.compra == false}" th:href="@{/altaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Agregar a Carrito</i> </a>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!--                                        <button th:if="${arte.compra == false}" th:href="@{/admin/artes/altaDeCompra/__${arte.id}__}" class="btn btn-warning" type="button" title="Icluido en carrito de compras.">
                                             Solicitar Préstamo
                                         </button>
                                   <div>
@@ -191,20 +195,27 @@
                                             </div>
                                         </div>
                                     </div>-->
+                                        </div>
+
+                                    </div>
                                 </div>
-                                
                             </div>
+                            <!--FIN USUARIO SECTION-->
                         </div>
+
                     </div>
-                <!--FIN USUARIO SECTION-->
-            </div>
-                    
-                     </div>
-                                        <label>Precio Total</label>
-                                        <span th:text="'$ ' + ${sumaCarrito}"></span>         
-                                        <a href="/login"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Finalizar Compra</i></a>
-                                        <a href="/tienda"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Seguir Comprando</i></a>
-<!-------------------------------------------->
+
+                    <div class="precio-total">
+                        <label>Total: </label>
+                        <span th:text="'$ ' + ${sumaCarrito}"></span>
+                    </div>
+                    <div class="botones-carrito">
+
+                        <a href="/tienda"><i button type="button" class="btn btn-sm" id="seguir-compra" title="" disabled>Seguir comprando</i></a>
+                        <a href="/login"><i button type="button" class="btn btn-sm" id="final-compra" title="" disabled>Finalizar compra</i></a>
+                    </div>
+                </div>
+
         </section>
 
         <!--SIDEBAR 
