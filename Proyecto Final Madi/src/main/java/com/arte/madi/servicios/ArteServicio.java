@@ -323,4 +323,8 @@ public class ArteServicio {
     public List<Arte> listarDeCompra() {
         return arteRepositorio.listarDeCompra();
     }
+    
+    public List<Long> sumaCarrito() {
+        return arteRepositorio.sumaCarrito();
+    }
 }
