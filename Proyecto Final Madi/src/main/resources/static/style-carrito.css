@@ -30,11 +30,12 @@ section.carrusel-grid {
 }
 
 div.carrito-de-compra h2 {
-    background: #202020;
+    background: #c1bebe;
     width: 100%;
-    color: white;
+    color: rgb(0 0 0 / 80%);
+    font-size: 1.5rem;
     border-radius: 0.4rem 0.4rem 0rem 0rem;
-    padding: 0.2rem;
+    padding: 1.1999999999999993rem;
 }
 
 .row {
@@ -334,8 +335,8 @@ input[type="range"]:active ::-webkit-slider-thumb {
 }
 
 .card-img-top-portada {
-    max-width: 128px;
-    height: 197px;
+    max-width: 200%;
+    height: 200%;
     align-content: center;
     vertical-align: middle;
     box-shadow: 1px 1px 5px rgb(19, 19, 24);
@@ -346,7 +347,8 @@ input[type="range"]:active ::-webkit-slider-thumb {
 }
 
 .card-body-content {
-    height: 197px;
+    height: 100%;
+    right: -10%;
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
