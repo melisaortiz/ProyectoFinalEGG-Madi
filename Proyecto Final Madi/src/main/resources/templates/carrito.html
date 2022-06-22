@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 
-     <link rel="stylesheet" href="/style_tienda.css">
-     <link rel="stylesheet" href="/style-carrito.css">
+    <link rel="stylesheet" href="/style_tienda.css">
+    <link rel="stylesheet" href="/style-resp.css">
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
                                 <br>
                                 <div class="card-body-content-button">
                                  <!--   <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br> -->
-                                 <a th:if="${arte.compra == true}" th:href="@{/bajaDeCompra/__${arte.id}__}"><span button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Eliminar de Carrito</span> </a>
+                                 <a th:if="${arte.compra == true}" th:href="@{/bajaDeCompra/__${arte.id}__}"><i button type="button" class="btn btn-sm" id="btn-orange" title="" disabled>Eliminar de Carrito</i> </a>
                                  <!--   <a th:if="${arte.compra == false}"><small class="text-muted">Obra de Arte de a eliminado en carrito</small></a> -->
                                 </div>
                             </div>
