@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Esta clase tiene la responsabilidad de llevar adelante las funcionalidades
- * necesarias para administrar libros (consulta, creación, modificación y dar de
+ * necesarias para administrar artes (consulta, creación, modificación y dar de
  * baja).
  *
  * @author Mauro Montenegro <maumontenegro.s at gmail.com>
@@ -36,7 +36,7 @@ public class ArteServicio {
     private FotoServicio fotoServicio;
 
     /**
-     * Método para registrar un libro.
+     * Método para registrar un arte.
      *
      * @param archivo --> foto
      * @param isbn
@@ -56,13 +56,13 @@ public class ArteServicio {
             validar(nombre, anio, descripcion, precio);
             // Seteo de atributos:
             arte.setAlta(true);
-            arte.setVoto(true);
+            arte.setCompra(true);
             arte.setNombre(nombre);
             arte.setAnio(anio);
             arte.setDescripcion(descripcion);
             arte.setPrecio(precio);
             arte.setAutor(autor);
-            arte.setCategoria(categoria);
+            
             // Se da de alta el autor en caso de que esté dado de baja:
             if (!arte.getAutor().isAlta()) {
                 autorServicio.alta(arte.getAutor().getId());
@@ -71,15 +71,16 @@ public class ArteServicio {
             Foto foto = fotoServicio.guardar(archivo);
             arte.setFoto(foto);
             // Persistencia en la DB:
+            arte.setCategoria(categoria);
             arteRepositorio.save(arte);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
-//            throw new Exception("Error al intentar guardar el Libro.");
+//            throw new Exception("Error al intentar guardar el arte.");
         }
     }
 
     /**
-     * Método para modificar un libro.
+     * Método para modificar un arte.
      *
      * @param id
      * @param archivo
@@ -93,13 +94,13 @@ public class ArteServicio {
      * @throws Exception
      */
     @Transactional
-    public void modificarLibro(String id, MultipartFile archivo, String nombre, Integer anio, String descripcion, Integer precio, Autor autor, Categoria categoria) throws Exception {
+    public void modificarArte(String id, MultipartFile archivo, String nombre, Integer anio, String descripcion, Integer precio, Autor autor, Categoria categoria) throws Exception {
         try {
             // Valido los datos ingresados:
             validar(nombre, anio, descripcion, precio);
-            // Usamos el repositorio para que busque el libro cuyo id sea el pasado como parámetro.
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
             Optional<Arte> respuesta = arteRepositorio.findById(id);
-            if (respuesta.isPresent()) { // El Libro con ese id SI existe en la DB
+            if (respuesta.isPresent()) { // El arte con ese id SI existe en la DB
                 Arte arte = respuesta.get();
                 // Seteo de atributos:
                 
@@ -122,17 +123,17 @@ public class ArteServicio {
                 }
                 // Persistencia en la DB:
                 arteRepositorio.save(arte);
-            } else { // El libro con ese id NO existe en la DB
-                throw new Exception("No existe el Libro con el id indicado.");
+            } else { // El arte con ese id NO existe en la DB
+                throw new Exception("No existe el arte con el id indicado.");
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());
-//            throw new Exception("Error al intentar modificar el Libro.");
+//            throw new Exception("Error al intentar modificar el arte.");
         }
     }
 
     /**
-     * El método borra el libro de la DB (no se utiliza para darlo de baja).
+     * El método borra el arte de la DB (no se utiliza para darlo de baja).
      *
      * @param id
      * @throws java.lang.Exception
@@ -140,14 +141,14 @@ public class ArteServicio {
     @Transactional
     public void eliminarArte(String id) throws Exception {
         try {
-            // Usamos el repositorio para que busque el libro cuyo id sea el pasado como parámetro.
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
             Optional<Arte> respuesta = arteRepositorio.findById(id);
-            if (respuesta.isPresent()) { // El Libro con ese id SI existe en la DB
+            if (respuesta.isPresent()) { // El arte con ese id SI existe en la DB
                 Arte arte = respuesta.get();
-                // Se eliminan todos los préstamos del libro:
+                // Se eliminan todos los préstamos del arte:
                 //Persistencia en la DB:
                 arteRepositorio.delete(arte);
-            } else { // El libro con ese id NO existe en la DB
+            } else { // El arte con ese id NO existe en la DB
                 throw new Exception("No existe Arte con el id indicado.");
             }
         } catch (Exception e) {
@@ -156,7 +157,7 @@ public class ArteServicio {
     }
 
     /**
-     * El método sirve para setear como 'false' el atributo 'alta' del Libro.
+     * El método sirve para setear como 'false' el atributo 'alta' del arte.
      *
      * @param id
      * @throws Exception
@@ -164,14 +165,14 @@ public class ArteServicio {
     @Transactional
     public void baja(String id) throws Exception {
         try {
-            // Usamos el repositorio para que busque el libro cuyo id sea el pasado como parámetro.
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
             Arte arte = arteRepositorio.getById(id);
-            if (arte != null) { // El Libro con ese id SI existe en la DB
-                // Se dan de baja los préstamos del libro:
+            if (arte != null) { // El arte con ese id SI existe en la DB
+                // Se dan de baja los préstamos del arte:
                 
                 arte.setAlta(false);
                 arteRepositorio.save(arte);
-            } else { // El libro con ese id NO existe en la DB
+            } else { // El arte con ese id NO existe en la DB
                 throw new Exception("No existe Obra de Arte con el id indicado.");
             }
         } catch (Exception e) {
@@ -179,8 +180,48 @@ public class ArteServicio {
         }
     }
 
+     @Transactional
+    public void bajaDeCompra(String id) throws Exception {
+        try {
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
+            Arte arte = arteRepositorio.getById(id);
+            if (arte != null) { // El arte con ese id SI existe en la DB
+                // Se dan de baja los préstamos del arte:
+                
+                arte.setCompra(false);
+                arteRepositorio.save(arte);
+            } else { // El arte con ese id NO existe en la DB
+                throw new Exception("No existe Obra de Arte con el id indicado.");
+            }
+        } catch (Exception e) {
+            throw new Exception("Error al intentar dar de baja la Obra de Arte.");
+        }
+    }
+    
+     @Transactional
+    public void altaDeCompra(String id) throws Exception {
+        try {
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
+            Arte arte = arteRepositorio.getById(id);
+            if (arte != null) { // El arte con ese id SI existe en la DB
+                // Se dan de baja los préstamos del arte:
+                
+                arte.setCompra(true);
+                arteRepositorio.save(arte);
+            } else { // El arte con ese id NO existe en la DB
+                throw new Exception("No existe Obra de Arte con el id indicado.");
+            }
+        } catch (Exception e) {
+            throw new Exception("Error al intentar dar de alta la Obra de Arte.");
+        }
+    }
+    
+    
+    
+    
+    
     /**
-     * El método sirve para setear como 'true' el atributo 'alta' del Libro.
+     * El método sirve para setear como 'true' el atributo 'alta' del arte.
      * También da de alta el autor, en caso de que esté dado de baja.
      *
      * @param id
@@ -189,9 +230,9 @@ public class ArteServicio {
     @Transactional
     public void alta(String id) throws Exception {
         try {
-            // Usamos el repositorio para que busque el libro cuyo id sea el pasado como parámetro.
+            // Usamos el repositorio para que busque el arte cuyo id sea el pasado como parámetro.
             Optional<Arte> respuesta = arteRepositorio.findById(id);
-            if (respuesta.isPresent()) { // El Libro con ese id SI existe en la DB
+            if (respuesta.isPresent()) { // El arte con ese id SI existe en la DB
                 Arte arte = respuesta.get();
                 arte.setAlta(true);
                 arteRepositorio.save(arte);
@@ -200,7 +241,7 @@ public class ArteServicio {
                     autorServicio.alta(arte.getAutor().getId());
                 }
                 
-            } else { // El libro con ese id NO existe en la DB
+            } else { // El arte con ese id NO existe en la DB
                 throw new Exception("No existe Obra de Arte con el id indicado.");
             }
         } catch (Exception e) {
@@ -262,7 +303,7 @@ public class ArteServicio {
 
    
     /**
-     * Sólo devuelve los libros dados de alta.
+     * Sólo devuelve los artes dados de alta.
      *
      * @return
      */
@@ -271,11 +312,23 @@ public class ArteServicio {
     }
 
     /**
-     * Sólo devuelve los libros dados de baja.
+     * Sólo devuelve los artes dados de baja.
      *
      * @return
      */
     public List<Arte> listarDeBaja() {
         return arteRepositorio.listarDeBaja();
+    }
+    
+    public List<Arte> listarDeCompra() {
+        return arteRepositorio.listarDeCompra();
+    }
+    
+    public List<Long> sumaCarrito() {
+        return arteRepositorio.sumaCarrito();
+    }
+    
+    public List<Arte> buscarPorCategoria(Categoria categoria) {
+        return arteRepositorio.buscarPorCategoria(categoria);
     }
 }

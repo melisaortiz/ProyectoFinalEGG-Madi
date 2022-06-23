@@ -1,76 +1,84 @@
-<head th:replace="/fragments/head :: head"></head>
+<footer>
 
-<footer th:fragment="/fragments/footer :: footer">
-
-    <div class="container-footer-all">
-
-        <div class="container-body">
-
-            <div class="colum1">
-                <h1>Más información sobre nosotres</h1>
-
-                <p>Esta compañía se dedica a la venta arte priorizando el consumo de artistas nacionales. También nos enfocamos en generar consciencia medio-ambiental a través del arte reciclado.
-                </p>
-
-            </div>
-
-            <div class="colum2">
-
-                <h1>Redes sociales</h1>
-
-                <div class="row" id="redes-sociales">
-                    <img href="https://facebook.com" class="redes" src="/img/facebook.png">
-                    <label>Seguinos en Facebook</label>
-                </div>
-                <div class="row">
-                    <img href="https://instagram.com" class="redes" src="/img/instagram.png">
-                    <label>Seguinos en Instagram</label>
-                </div>
-            </div>
-
-            <div class="colum3">
-
-                <h1>Contactános</h1>
-
-                <div class="row2">
-                    <img src="img/house.png">
-                    <label>Balcarce 50, C1064 CABA</label>
-                </div>
-
-                <div class="row2">
-                    <img src="/img/smartphone.png">
-                    <label>+54926143434</label>
-                </div>
-
-                <div class="row2">
-                    <img src="/img/contact.png">
-                    <label>madiarte@gmail.com</label>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="container-footer">
-        <div class="footer">
-            <div class="copyright">
-                © 2022 Todos los derechos reservados | <a href="">Madí</a>
-            </div>
-
-            <div class="information">
-                <a href="">Información compañia</a> | <a href="">Política y privacidad</a> | <a href="">Terminos y
-            Condiciones</a>
-            </div>
-        </div>
-
-    </div>
-
-</footer>
-
-<!--Código para agregar en cada plantilla-->
-<!--FOOTER-->
-<!--
-<footer th:replace="/fragments/footer :: footer"></footer>
--->
+    <!--Bootstrap JS-->
+       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+               integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+               crossorigin="anonymous">
+       </script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+               integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+               crossorigin="anonymous">
+       </script>
+   
+       <div class="container-footer-all">
+   
+           <div class="container-body">
+   
+               <div class="column1footer">
+                   <h2>Más información sobre nosotres</h2>
+   
+                   <p>En Madí nos enfocamos en la venta de arte con objetivos concretos: darle visibilidad a artistas nacionales y generar consciencia medio-ambiental a través del arte reciclado. Le dimos otra vuelta de rosca más y concluímos que muches de les artistas elegides eran parte de lo mismo: <a href="https://masdearte.com/movimientos/art-brut/" id="linkinfo">el arte brut.</a>  
+                   </p>
+   
+               </div>
+   
+               <div class="column2footer">
+   
+                   <h2>Redes sociales</h2>
+   
+                   <div class="redes">
+                       <img href="https://facebook.com" class="imgredes" src="/img/facebook.png">
+                       <label>Seguinos en Facebook</label>
+                   </div>
+                   <div class="redes">
+                       <img href="https://instagram.com" class="imgredes" src="/img/instagram.png">
+                       <label>Seguinos en Instagram</label>
+                   </div>
+               </div>
+   
+               <div class="column3footer">
+   
+                   <h2>Contactános</h2>
+   
+                   <div class="contact">
+                       <img src="img/house.png">
+                       <label>Balcarce 50, CABA</label>
+                   </div>
+   
+                   <div class="contact">
+                       <img src="/img/smartphone.png">
+                       <label>+54926143434</label>
+                   </div>
+   
+                   <div class="contact">
+                       <img src="/img/contact.png">
+                       <label>madiarte@gmail.com</label>
+                   </div>
+   
+               </div>
+   
+           </div>
+   
+       </div>
+   
+       <div class="container-footer">
+           <div class="footer">
+               <div class="copyright">
+                   © 2022 Todos los derechos reservados | <a href="">Madí</a>
+               </div>
+   
+               <div class="information">
+                   <a href="">Información compañia</a> | <a href="">Política y privacidad</a> | <a href="">Terminos y
+               Condiciones</a>
+               </div>
+           </div>
+   
+       </div>
+   
+   </footer>
+   
+   <!--Código para agregar en cada plantilla-->
+   <!--FOOTER-->
+   <!--
+   <footer th:replace="/fragments/footer :: footer"></footer>
+   -->

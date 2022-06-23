@@ -1,22 +1,25 @@
 <nav id="" class="navbar" th:fragment="navbar">
     <!-- --------------------- EN COMUN-------------- -->
-    <ul>
-        <li class="nav-item"><a class="nav-link" href="/tienda">TIENDA </a></li>
-        <li class="nav-item"><a class="nav-link" href="/contacto">CONTACTO</a></li>
-        <li class="nav-item"><a class="nav-link" href="/faqs">FAQS</a></li>
-
-    </ul>
+    <div class="seccion-uno">
+        <ul>
+            <li class="nav-item"><a class="nav-link" href="/tienda">TIENDA </a></li>
+            <li class="nav-item"><a class="nav-link" href="/contacto">CONTACTO</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faqs">FAQS</a></li>
+        </ul>
+    </div>
 
     <label id="icon">
         <i class="fa fa-bars"></i>
     </label>
-
-    <li>
-        <a href="/index"><img id="logo" src="/img/logo.png"></a>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="/login" id="inicses">Iniciar sesión</a></li>
-    <li><button type="button" class="btn btn-light" id="carrito"><span class="bi bi-cart"></span></button></li>
-
+    <div class="seccion-dos">
+        <div class="menu-logo">
+            <a href="/"><img id="logo" src="/img/logo.png"></a>
+        </div>
+    </div>
+    <div class="seccion-tres">
+        <div class="nav-item"><a class="nav-link" href="/login" id="inicses">Iniciar sesión</a></div>
+        <div><a href="/carrito"><button type="button" class="btn btn-light" id="carrito"><span class="bi bi-cart"></span></button></a></div>
+    </div>
     <!-- --------------------- SESIÓN INICIADA ------------- -->
 
     <div sec:authorize="hasAnyRole('ADMIN','USUARIO')" class="navbar-nav">

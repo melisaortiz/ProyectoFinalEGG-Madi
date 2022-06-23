@@ -1,169 +1,12 @@
-/* --------------------------- ESTILOS GENERALES --------------------------- */
-
-html,
-body {
+* {
+    padding: 0;
     margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.container.text-center {
-    margin-bottom: 5%;
-}
-
-div h1#encabezado {
-    margin: 3%;
-    margin-left: 0;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    width: 0%;
-}
-
-.usuario {
-    align-items: center;
-    width: 100%;
-}
-
-.img-fluid.rounded-circle {
-    max-width: 100%;
-    width: 250px;
-    object-fit: cover;
-    position: relative;
-    align-items: center;
-    padding: 15px 15px;
-    margin-top: -2%;
-}
-
-.usuario h2,
-.usuario h5 {
-    padding: 0;
-}
-
-.usuario h5 {
-    font-style: italic;
-    font-size: 15px;
-    color: rgb(151, 150, 150);
-}
-
-div#contenido {
-    background-color: #202020;
-    margin-bottom: -5rem;
-}
-
-.bg-dark {
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.row {
-    font-size: 18px;
-}
-
-div.col-12 h1 {
-    padding: 15px;
-    margin-top: 10px;
-    font-size: 25px;
-}
-
-div#login-card {
-    padding: 10px 10px;
-    margin: 10px 10px;
-}
-
-div.col-auto h5 {
-    font-size: 16px;
-}
-
-.card-text {
-    flex: 1 1 auto;
-    padding: 1rem 1rem;
-    font-size: 15px;
-}
-
-.card-body h5 {
-    flex: 1 1 auto;
-    font-size: 18px;
-}
-
-.card-body button {
-    margin-top: 3%;
-    width: 100%;
-}
-
-.card-body button#btn-usuario {
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px rgb(19, 19, 24);
-    background-color: rgb(183, 109, 183);
-    border-color: transparent;
-}
-
-.card-body button#dropdownMenu2 {
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px rgb(19, 19, 24);
-    background-color: #d35400;
-    border-color: transparent;
-}
-
-.card-body button#btn-usuario:hover {
-    background-color: rgb(145, 93, 145);
-}
-
-.card-body button#dropdownMenu2:hover {
-    background-color: #e4742a;
-}
-
-.dropdown-menu {
-    width: 90%;
-    background-color: #e4742a;
-}
-
-.dropdown-menu a {
-    text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    list-style: none;
 }
 
-@media (max-width: 909px) {
-    .img-fluid {
-        max-width: 30%;
-        position: relative;
-        align-items: center;
-        padding: 15px 15px;
-    }
-    .bg-dark {
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    .row {
-        font-size: 12px;
-    }
-    div.col-12 h1 {
-        padding: 10px;
-        margin-top: 7px;
-        font-size: 18px;
-    }
-    div#login-card {
-        padding: 10px 10px;
-        margin: 10px 10px;
-    }
-    .card-text {
-        flex: 1 1 auto;
-        padding: 1rem 1rem;
-        font-size: 11px;
-    }
-    .card-body h5 {
-        flex: 1 1 auto;
-        font-size: 11px;
-    }
-    button.btn.btn-warning {
-        margin: 10px 5px;
-        font-size: 11px;
-    }
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 section.flex-container {
@@ -180,16 +23,19 @@ section.carrusel-grid {
 }
 
 .carrito-de-compra {
+    color: black;
     margin: 2rem;
     height: 100%;
     background-color: #e1e1e1;
 }
 
 div.carrito-de-compra h2 {
+    background: #c1bebe;
     width: 100%;
-    color: black;
+    color: rgb(0 0 0 / 80%);
+    font-size: 1.5rem;
     border-radius: 0.4rem 0.4rem 0rem 0rem;
-    padding: 0.2rem;
+    padding: 1.1999999999999993rem;
 }
 
 .row {
@@ -265,7 +111,10 @@ div.precio-total span {
 }
 
 
-/*-----------------GRID------------------/ /grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
+/*-----------------GRID------------------*/
+
+
+/*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
 
 section.grid-container {
     display: flex;
@@ -308,6 +157,126 @@ img.imagen_tienda {
 div.product-name {
     padding: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*-------------ASIDE------------*/
+
+aside.sidebar {
+    max-width: 200px;
+    width: 30%;
+    height: 100vh;
+    margin-top: 30px;
+    padding-left: 15px;
+}
+
+.sidebar li {
+    font-size: 12px;
+    padding: 1px;
+    margin: 2px 2px 2px 30px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.sidebar ul {
+    margin-top: 80px;
+}
+
+
+/*icono fas fa aside*/
+
+aside label#icon2 {
+    color: black;
+    font-size: 20px;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*PRICE RANGE*/
+
+.wrapper {
+    position: relative;
+    width: 20vmin;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.slider-track {
+    width: 100%;
+    height: 5px;
+    background-color: #d5d5d5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-ms-track {
+    appearance: none;
+    height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.6em;
+    width: 0.3em;
+    background-color: #101010;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -9px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]:active ::-webkit-slider-thumb {
+    background-color: #ffffff;
+    border: 3px solid#3264fe;
 }
 
 
