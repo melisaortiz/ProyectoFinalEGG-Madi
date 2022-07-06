@@ -76,6 +76,7 @@
                                 <!--                                    <span th:text="'Editorial: ' + ${libro.editorial.nombre}"></span><br>
                                     <span th:text="'Ejemplares disponibles: ' + ${libro.ejemplaresRestantes} + '/' + ${libro.ejemplares}"></span><br>-->
                             </div>
+                            <h6><strong><span th:text="${arte.categoria} "></span></strong></h6>
                             <br>
                             <div class="card-body-content-button">
                                 <a th:title="'Conocer más sobre ' + ${arte.nombre}"><button type="button" class="btn btn-sm" id="btn-orange" data-toggle="modal" th:attr="data-target=${'#editModal'+arte.id}">Conocer más</button></a><br>
