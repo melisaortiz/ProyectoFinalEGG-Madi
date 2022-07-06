@@ -45,9 +45,9 @@
             list-style-type: circle;
         }
         
-.carousel {
-    width: 90%;
-}
+        .carousel {
+            width: 90%;
+        }
         /*-----------------GRID------------------*/
         /*grid con 4 columnas q cada una ocupa un 25% del 70% de la pantalla*/
         
@@ -230,7 +230,7 @@
             height: 2rem;
             width: 10rem;
             text-decoration: none;
-            margin-top: -2rem;
+            margin-top: 1rem;
         }
         /*CARD FILTRO DE BÚSQUEDA*/
         
